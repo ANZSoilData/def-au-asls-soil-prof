@@ -6,38 +6,868 @@
 
 @prefix asls: <http://anzsoil.org/def/au/asls/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix ls: <http://anzsoil.org/def/au/asls/land-surface/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix reg: <http://purl.org/linked-data/registry#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix sp: <http://anzsoil.org/def/au/asls/soil-profile/> .
 @prefix subst: <http://anzsoil.org/def/au/asls/substrate/> .
-@prefix ui: <http://purl.org/linked-data/registry-ui#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+ls:aggradation-0
+  a skos:Concept ;
+  skos:prefLabel "No aggradation"@en ;
+.
+ls:aggradation-1
+  a skos:Concept ;
+  skos:prefLabel "Present"@en ;
+.
+ls:aggradation-X
+  a skos:Concept ;
+  skos:prefLabel "Not apparent"@en ;
+.
+ls:biotic-microrelief
+  a skos:Collection ;
+  skos:prefLabel "Biotic microrelief"@en ;
+.
+ls:biotic-microrelief-agent-A
+  a skos:Concept ;
+  skos:prefLabel "Ant"@en ;
+.
+ls:biotic-microrelief-agent-B
+  a skos:Concept ;
+  skos:prefLabel "Bird"@en ;
+.
+ls:biotic-microrelief-agent-M
+  a skos:Concept ;
+  skos:prefLabel "Human"@en ;
+.
+ls:biotic-microrelief-agent-N
+  a skos:Concept ;
+  skos:prefLabel "Animal"@en ;
+.
+ls:biotic-microrelief-agent-O
+  a skos:Concept ;
+  skos:prefLabel "Other"@en ;
+.
+ls:biotic-microrelief-agent-T
+  a skos:Concept ;
+  skos:prefLabel "Termite"@en ;
+.
+ls:biotic-microrelief-agent-V
+  a skos:Concept ;
+  skos:prefLabel "Vegetation"@en ;
+.
+ls:biotic-microrelief-agents
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Biotic microrelief agents"@en ;
+.
+ls:biotic-microrelief-component-D
+  a skos:Concept ;
+  skos:prefLabel "Depression"@en ;
+.
+ls:biotic-microrelief-component-E
+  a skos:Concept ;
+  skos:prefLabel "Elongate mound"@en ;
+.
+ls:biotic-microrelief-component-H
+  a skos:Concept ;
+  skos:prefLabel "Hole"@en ;
+.
+ls:biotic-microrelief-component-L
+  a skos:Concept ;
+  skos:prefLabel "Elongate depression"@en ;
+.
+ls:biotic-microrelief-component-M
+  a skos:Concept ;
+  skos:prefLabel "Mound"@en ;
+.
+ls:biotic-microrelief-component-O
+  a skos:Concept ;
+  skos:prefLabel "Other."@en ;
+.
+ls:biotic-microrelief-component-T
+  a skos:Concept ;
+  skos:prefLabel "Terrace"@en ;
+.
+ls:biotic-microrelief-components
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Component of biotic relief"@en ;
+.
+ls:coarse-fragments-abundance
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Abundance of coarse fragments"@en ;
+.
+ls:coarse-fragments-abundance-0
+  a skos:Concept ;
+  skos:prefLabel "No coarse fragments"@en ;
+.
+ls:coarse-fragments-abundance-1
+  a skos:Concept ;
+  skos:prefLabel "Very slightly or very few, for example very slightly fine gravelly; very few small pebbles"@en ;
+.
+ls:coarse-fragments-abundance-2
+  a skos:Concept ;
+  skos:prefLabel "Slightly or few, for example slightly stony; few stones"@en ;
+.
+ls:coarse-fragments-abundance-3
+  a skos:Concept ;
+  skos:prefLabel "No qualifier or common, for example medium gravelly; stony, common medium pebbles; common stones"@en ;
+.
+ls:coarse-fragments-abundance-4
+  a skos:Concept ;
+  skos:prefLabel "Moderately or many"@en ;
+.
+ls:coarse-fragments-abundance-5
+  a skos:Concept ;
+  skos:prefLabel "Very or abundant"@en ;
+.
+ls:coarse-fragments-abundance-6
+  a skos:Concept ;
+  skos:prefLabel "Extremely or very abundant"@en ;
+.
+ls:coarse-fragments-lithology
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Lithology of coarse fragments"@en ;
+.
+ls:coarse-fragments-shape
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Shape of coarse fragments"@en ;
+.
+ls:coarse-fragments-shape-A
+  a skos:Concept ;
+  skos:prefLabel "Angular"@en ;
+.
+ls:coarse-fragments-shape-AP
+  a skos:Concept ;
+  skos:prefLabel "Angular platy"@en ;
+.
+ls:coarse-fragments-shape-AT
+  a skos:Concept ;
+  skos:prefLabel "Angular tabular"@en ;
+.
+ls:coarse-fragments-shape-R
+  a skos:Concept ;
+  skos:prefLabel "Rounded"@en ;
+.
+ls:coarse-fragments-shape-RP
+  a skos:Concept ;
+  skos:prefLabel "Rounded platy"@en ;
+.
+ls:coarse-fragments-shape-RT
+  a skos:Concept ;
+  skos:prefLabel "Rounded tabular"@en ;
+.
+ls:coarse-fragments-shape-S
+  a skos:Concept ;
+  skos:prefLabel "Subangular"@en ;
+.
+ls:coarse-fragments-shape-SP
+  a skos:Concept ;
+  skos:prefLabel "Subangular platy"@en ;
+.
+ls:coarse-fragments-shape-ST
+  a skos:Concept ;
+  skos:prefLabel "Subangular tabular"@en ;
+.
+ls:coarse-fragments-shape-U
+  a skos:Concept ;
+  skos:prefLabel "Subrounded"@en ;
+.
+ls:coarse-fragments-shape-UP
+  a skos:Concept ;
+  skos:prefLabel "Subrounded platy"@en ;
+.
+ls:coarse-fragments-shape-UT
+  a skos:Concept ;
+  skos:prefLabel "Subrounded tabular"@en ;
+.
+ls:coarse-fragments-size
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Size of coarse fragments"@en ;
+.
+ls:coarse-fragments-size-1
+  a skos:Concept ;
+  skos:prefLabel "Fine gravelly or small pebbles"@en ;
+.
+ls:coarse-fragments-size-2
+  a skos:Concept ;
+  skos:prefLabel "Medium gravelly or medium pebbles"@en ;
+.
+ls:coarse-fragments-size-3
+  a skos:Concept ;
+  skos:prefLabel "Coarse gravelly or large pebbles"@en ;
+.
+ls:coarse-fragments-size-4
+  a skos:Concept ;
+  skos:prefLabel "Cobbly or cobbles"@en ;
+.
+ls:coarse-fragments-size-5
+  a skos:Concept ;
+  skos:prefLabel "Stony or stones"@en ;
+.
+ls:coarse-fragments-size-6
+  a skos:Concept ;
+  skos:prefLabel "Bouldery or boulders"@en ;
+.
+ls:coarse-fragments-size-7
+  a skos:Concept ;
+  skos:prefLabel "Large boulders"@en ;
+.
+ls:depth-free-water-0
+  a skos:Concept ;
+  skos:prefLabel "No free water"@en ;
+.
+ls:depth-free-water-above
+  a skos:Concept ;
+  skos:prefLabel "Above soil surface"@en ;
+.
+ls:depth-free-water-below
+  a skos:Concept ;
+  skos:prefLabel "Below soil surface"@en ;
+.
+ls:disturbance-of-site-0
+  a skos:Concept ;
+  skos:prefLabel "No effective disturbance; natural"@en ;
+.
+ls:disturbance-of-site-1
+  a skos:Concept ;
+  skos:prefLabel "No effective disturbance other than grazing by hoofed animals"@en ;
+.
+ls:disturbance-of-site-2
+  a skos:Concept ;
+  skos:prefLabel "Limited clearing"@en ;
+.
+ls:disturbance-of-site-3
+  a skos:Concept ;
+  skos:prefLabel "Extensive clearing"@en ;
+.
+ls:disturbance-of-site-4
+  a skos:Concept ;
+  skos:prefLabel "Complete clearing; pasture, native or improved, but never cultivated"@en ;
+.
+ls:disturbance-of-site-5
+  a skos:Concept ;
+  skos:prefLabel "Complete clearing; pasture, native or improved, cultivated at some stage"@en ;
+.
+ls:disturbance-of-site-6
+  a skos:Concept ;
+  skos:prefLabel "Cultivation; rainfed"@en ;
+.
+ls:disturbance-of-site-7
+  a skos:Concept ;
+  skos:prefLabel "Cultivation; irrigated, past or present"@en ;
+.
+ls:disturbance-of-site-8
+  a skos:Concept ;
+  skos:prefLabel "Highly disturbed"@en ;
+.
+ls:drainage-height-evaluation-means
+  a skos:Collection ;
+  skos:prefLabel "Means of evaluation of drainage height"@en ;
+.
+ls:drainage-height-evaluation-means-A
+  a skos:Concept ;
+  skos:prefLabel "Determined by altimeter (drainage height)"@en ;
+.
+ls:drainage-height-evaluation-means-E
+  a skos:Concept ;
+  skos:prefLabel "Estimate (drainage height)"@en ;
+.
+ls:drainage-height-evaluation-means-L
+  a skos:Concept ;
+  skos:prefLabel "Levelled from survey datum or estimated from contour plan (drainage height)"@en ;
+.
+ls:drainage-height-evaluation-means-M
+  a skos:Concept ;
+  skos:prefLabel "Interpolated from contour map (drainage height)"@en ;
+.
+ls:elevation-evaluation-means
+  a skos:Collection ;
+  skos:prefLabel "Means of evaluation of elevation"@en ;
+.
+ls:elevation-evaluation-means-A
+  a skos:Concept ;
+  skos:prefLabel "Determined by altimeter"@en ;
+.
+ls:elevation-evaluation-means-E
+  a skos:Concept ;
+  skos:prefLabel "Estimate"@en ;
+.
+ls:elevation-evaluation-means-L
+  a skos:Concept ;
+  skos:prefLabel "Levelled from survey datum or estimated from contour plan"@en ;
+.
+ls:elevation-evaluation-means-M
+  a skos:Concept ;
+  skos:prefLabel "Interpolated from contour map"@en ;
+.
+ls:erosion-B
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Stream bank erosion"@en ;
+.
+ls:erosion-B-0
+  a skos:Concept ;
+  skos:prefLabel "No stream bank erosion"@en ;
+.
+ls:erosion-B-1
+  a skos:Concept ;
+  skos:prefLabel "Present"@en ;
+.
+ls:erosion-B-X
+  a skos:Concept ;
+  skos:prefLabel "Not apparent"@en ;
+.
+ls:erosion-C
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Scald erosion"@en ;
+.
+ls:erosion-C-0
+  a skos:Concept ;
+  skos:prefLabel "No scalding"@en ;
+.
+ls:erosion-C-1
+  a skos:Concept ;
+  skos:prefLabel "Minor scalding"@en ;
+.
+ls:erosion-C-2
+  a skos:Concept ;
+  skos:prefLabel "Moderate scalding"@en ;
+.
+ls:erosion-C-3
+  a skos:Concept ;
+  skos:prefLabel "Severe scalding"@en ;
+.
+ls:erosion-G
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Gully erosion"@en ;
+.
+ls:erosion-G-0
+  a skos:Concept ;
+  skos:prefLabel "No gully erosion"@en ;
+.
+ls:erosion-G-1
+  a skos:Concept ;
+  skos:prefLabel "Minor gully erosion"@en ;
+.
+ls:erosion-G-2
+  a skos:Concept ;
+  skos:prefLabel "Moderate gully erosion"@en ;
+.
+ls:erosion-G-3
+  a skos:Concept ;
+  skos:prefLabel "Severe gully erosion"@en ;
+.
+ls:erosion-G-depth
+  a skos:Collection ;
+  skos:prefLabel "Gully depth"@en ;
+.
+ls:erosion-G-depth-1
+  a skos:Concept ;
+  skos:prefLabel "Gully depth <1.5 m"@en ;
+.
+ls:erosion-G-depth-2
+  a skos:Concept ;
+  skos:prefLabel "Gully depth 1.5-3.0 m"@en ;
+.
+ls:erosion-G-depth-3
+  a skos:Concept ;
+  skos:prefLabel "Gully depth >3 m"@en ;
+.
+ls:erosion-M
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Mass movement"@en ;
+.
+ls:erosion-M-0
+  a skos:Concept ;
+  skos:prefLabel "No mass movement"@en ;
+.
+ls:erosion-M-1
+  a skos:Concept ;
+  skos:prefLabel "Present"@en ;
+.
+ls:erosion-R
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Rill erosion"@en ;
+.
+ls:erosion-R-0
+  a skos:Concept ;
+  skos:prefLabel "No rill erosion"@en ;
+.
+ls:erosion-R-1
+  a skos:Concept ;
+  skos:prefLabel "Minor"@en ;
+.
+ls:erosion-R-2
+  a skos:Concept ;
+  skos:prefLabel "Moderate"@en ;
+.
+ls:erosion-R-3
+  a skos:Concept ;
+  skos:prefLabel "Severe"@en ;
+.
+ls:erosion-S
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Sheet erosion"@en ;
+.
+ls:erosion-S-0
+  a skos:Concept ;
+  skos:prefLabel "No sheet erosion"@en ;
+.
+ls:erosion-S-1
+  a skos:Concept ;
+  skos:prefLabel "Minor"@en ;
+.
+ls:erosion-S-2
+  a skos:Concept ;
+  skos:prefLabel "Moderate"@en ;
+.
+ls:erosion-S-3
+  a skos:Concept ;
+  skos:prefLabel "Severe"@en ;
+.
+ls:erosion-S-X
+  a skos:Concept ;
+  skos:prefLabel "Not apparent"@en ;
+.
+ls:erosion-T
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Tunnel erosion"@en ;
+.
+ls:erosion-T-0
+  a skos:Concept ;
+  skos:prefLabel "No tunnel erosion"@en ;
+.
+ls:erosion-T-1
+  a skos:Concept ;
+  skos:prefLabel "Present"@en ;
+.
+ls:erosion-T-X
+  a skos:Concept ;
+  skos:prefLabel "Not apparent"@en ;
+.
+ls:erosion-V
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Wave erosion"@en ;
+.
+ls:erosion-V-0
+  a skos:Concept ;
+  skos:prefLabel "No wave erosion"@en ;
+.
+ls:erosion-V-1
+  a skos:Concept ;
+  skos:prefLabel "Present"@en ;
+.
+ls:erosion-V-X
+  a skos:Concept ;
+  skos:prefLabel "Not apparent"@en ;
+.
+ls:erosion-W
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Wind erosion"@en ;
+.
+ls:erosion-W-0
+  a skos:Concept ;
+  skos:prefLabel "No wind erosion"@en ;
+.
+ls:erosion-W-1
+  a skos:Concept ;
+  skos:prefLabel "Minor or present"@en ;
+.
+ls:erosion-W-2
+  a skos:Concept ;
+  skos:prefLabel "Moderate"@en ;
+.
+ls:erosion-W-3
+  a skos:Concept ;
+  skos:prefLabel "Severe"@en ;
+.
+ls:erosion-W-4
+  a skos:Concept ;
+  skos:prefLabel "Very severe"@en ;
+.
+ls:erosion-W-X
+  a skos:Concept ;
+  skos:prefLabel "Not apparent"@en ;
+.
+ls:erosion-state
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "State of erosion"@en ;
+.
+ls:erosion-state-A
+  a skos:Concept ;
+  skos:prefLabel "Active"@en ;
+.
+ls:erosion-state-P
+  a skos:Concept ;
+  skos:prefLabel "Partly stabilised"@en ;
+.
+ls:erosion-state-S
+  a skos:Concept ;
+  skos:prefLabel "Stabilised"@en ;
+.
+ls:gilgai-microrelief
+  a skos:Collection ;
+  skos:prefLabel "Gilgai microrelief"@en ;
+.
+ls:gilgai-microrelief-proportions
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Proportions of gilgai components "@en ;
+.
+ls:gilgai-microrelief-proportions-A
+  a skos:Concept ;
+  skos:prefLabel "Equal mounds and depressions; no shelf present"@en ;
+.
+ls:gilgai-microrelief-proportions-B
+  a skos:Concept ;
+  skos:prefLabel "More mounds than depressions; no shelf present"@en ;
+.
+ls:gilgai-microrelief-proportions-C
+  a skos:Concept ;
+  skos:prefLabel "Fewer mounds than depressions; no shelf present"@en ;
+.
+ls:gilgai-microrelief-proportions-D
+  a skos:Concept ;
+  skos:prefLabel "Mound, shelf and depressions; shelf forms prominent part of gilgai"@en ;
+.
+ls:hummocky-microrelief
+  a skos:Collection ;
+  skos:prefLabel "Hummocky microrelief"@en ;
+.
+ls:inundation-depth
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Depth of inundation (annual)"@en ;
+.
+ls:inundation-depth-1
+  a skos:Concept ;
+  skos:prefLabel "Inundation depth <50 mm"@en ;
+.
+ls:inundation-depth-2
+  a skos:Concept ;
+  skos:prefLabel "Inundation depth 50-100 mm"@en ;
+.
+ls:inundation-depth-3
+  a skos:Concept ;
+  skos:prefLabel "Inundation depth 100-300 mm"@en ;
+.
+ls:inundation-depth-4
+  a skos:Concept ;
+  skos:prefLabel "Inundation depth 300-1000 mm"@en ;
+.
+ls:inundation-depth-5
+  a skos:Concept ;
+  skos:prefLabel "Inundation depth >1000 mm"@en ;
+.
+ls:inundation-duration
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Duration (annual) of inundation"@en ;
+.
+ls:inundation-duration-1
+  a skos:Concept ;
+  skos:prefLabel "Less than 1 day"@en ;
+.
+ls:inundation-duration-2
+  a skos:Concept ;
+  skos:prefLabel "Between 1 and 20 days"@en ;
+.
+ls:inundation-duration-3
+  a skos:Concept ;
+  skos:prefLabel "Between 20 and 120 days"@en ;
+.
+ls:inundation-duration-4
+  a skos:Concept ;
+  skos:prefLabel "More than 120 days"@en ;
+.
+ls:inundation-frequency
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Frequency of inundation"@en ;
+.
+ls:inundation-frequency-0
+  a skos:Concept ;
+  skos:prefLabel "No inundation"@en ;
+.
+ls:inundation-frequency-1
+  a skos:Concept ;
+  skos:prefLabel "Less than one occurrence per 100 years"@en ;
+.
+ls:inundation-frequency-2
+  a skos:Concept ;
+  skos:prefLabel "One occurrence in between 50 and 100 years"@en ;
+.
+ls:inundation-frequency-3
+  a skos:Concept ;
+  skos:prefLabel "One occurrence in between 10 and 50 years"@en ;
+.
+ls:inundation-frequency-4
+  a skos:Concept ;
+  skos:prefLabel "One occurrence in between 1 and 10 years"@en ;
+.
+ls:inundation-frequency-5
+  a skos:Concept ;
+  skos:prefLabel "More than one occurrence per year"@en ;
+.
+ls:inundation-runon-velocity
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Runon velocity of inundation"@en ;
+.
+ls:inundation-runon-velocity-H
+  a skos:Concept ;
+  skos:prefLabel "High velocity >300 mm/s"@en ;
+.
+ls:inundation-runon-velocity-L
+  a skos:Concept ;
+  skos:prefLabel "Low velocity <300 mm/s"@en ;
+.
+ls:lithology-CC
+  a skos:Concept ;
+  skos:prefLabel "Charcoal"@en ;
+.
+ls:lithology-IS
+  a skos:Concept ;
+  skos:prefLabel "Ironstone"@en ;
+.
+ls:lithology-OT
+  a skos:Concept ;
+  skos:prefLabel "Other"@en ;
+.
+ls:lithology-OW
+  a skos:Concept ;
+  skos:prefLabel "Opalised wood"@en ;
+.
+ls:lithology-PU
+  a skos:Concept ;
+  skos:prefLabel "Pumice"@en ;
+.
+ls:lithology-SS
+  a skos:Concept ;
+  skos:prefLabel "Shells"@en ;
+.
+ls:microrelief-A
+  a skos:Concept ;
+  skos:prefLabel "Lattice gilgai"@en ;
+.
+ls:microrelief-C
+  a skos:Concept ;
+  skos:prefLabel "Crabhole gilgai"@en ;
+.
+ls:microrelief-D
+  a skos:Concept ;
+  skos:prefLabel "Debil-debil"@en ;
+.
+ls:microrelief-G
+  a skos:Concept ;
+  skos:prefLabel "Contour gilgai"@en ;
+.
+ls:microrelief-H
+  a skos:Concept ;
+  skos:prefLabel "Spring hollow"@en ;
+.
+ls:microrelief-I
+  a skos:Concept ;
+  skos:prefLabel "Sinkhole"@en ;
+.
+ls:microrelief-K
+  a skos:Concept ;
+  skos:prefLabel "Karst microrelief"@en ;
+.
+ls:microrelief-L
+  a skos:Concept ;
+  skos:prefLabel "Linear gilgai"@en ;
+.
+ls:microrelief-M
+  a skos:Concept ;
+  skos:prefLabel "Melonhole gilgai"@en ;
+.
+ls:microrelief-N
+  a skos:Concept ;
+  skos:prefLabel "Normal gilgai"@en ;
+.
+ls:microrelief-P
+  a skos:Concept ;
+  skos:prefLabel "Spring mound"@en ;
+.
+ls:microrelief-R
+  a skos:Concept ;
+  skos:prefLabel "Terracettes"@en ;
+.
+ls:microrelief-S
+  a skos:Concept ;
+  skos:prefLabel "Mass movement microrelief"@en ;
+.
+ls:microrelief-T
+  a skos:Concept ;
+  skos:prefLabel "Contour trench"@en ;
+.
+ls:microrelief-U
+  a skos:Concept ;
+  skos:prefLabel "Mound/depression microrelief"@en ;
+.
+ls:microrelief-W
+  a skos:Concept ;
+  skos:prefLabel "Swamp hummock"@en ;
+.
+ls:microrelief-Z
+  a skos:Concept ;
+  skos:prefLabel "Zero or no microrelief"@en ;
+.
+ls:microrelief-component-D
+  a skos:Concept ;
+  skos:prefLabel "Depression"@en ;
+.
+ls:microrelief-component-E
+  a skos:Concept ;
+  skos:prefLabel "Elongate mound"@en ;
+.
+ls:microrelief-component-F
+  a skos:Concept ;
+  skos:prefLabel "Flat"@en ;
+.
+ls:microrelief-component-K
+  a skos:Concept ;
+  skos:prefLabel "Hummock"@en ;
+.
+ls:microrelief-component-L
+  a skos:Concept ;
+  skos:prefLabel "Elongate depression"@en ;
+.
+ls:microrelief-component-M
+  a skos:Concept ;
+  skos:prefLabel "Mound"@en ;
+.
+ls:microrelief-component-S
+  a skos:Concept ;
+  skos:prefLabel "Shelf"@en ;
+.
+ls:microrelief-component-sampled
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Component of microrelief sampled"@en ;
+.
+ls:microrelief-horizontal-interval
+  a skos:Concept ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Horizontal interval"@en ;
+.
+ls:microrelief-vertical-interval
+  a skos:Concept ;
+  skos:prefLabel "Vertical interval"@en ;
+.
+ls:other-microrelief-O
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Other microrelief"@en ;
+.
+ls:rock-outcrop-abundance
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Abundance of rock outcrop"@en ;
+.
+ls:rock-outcrop-abundance-0
+  a skos:Concept ;
+  skos:prefLabel "No rock outcrop"@en ;
+.
+ls:rock-outcrop-abundance-1
+  a skos:Concept ;
+  skos:prefLabel "Very slightly rocky"@en ;
+.
+ls:rock-outcrop-abundance-2
+  a skos:Concept ;
+  skos:prefLabel "Slightly rocky"@en ;
+.
+ls:rock-outcrop-abundance-3
+  a skos:Concept ;
+  skos:prefLabel "Rocky"@en ;
+.
+ls:rock-outcrop-abundance-4
+  a skos:Concept ;
+  skos:prefLabel "Very rocky"@en ;
+.
+ls:rock-outcrop-abundance-5
+  a skos:Concept ;
+  skos:prefLabel "Rockland"@en ;
+.
+ls:rock-outcrop-lithology
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Lithology of rock outcrop"@en ;
+.
+ls:runoff-0
+  a skos:Concept ;
+  skos:prefLabel "No runoff"@en ;
+.
+ls:runoff-1
+  a skos:Concept ;
+  skos:prefLabel "Very slow"@en ;
+.
+ls:runoff-2
+  a skos:Concept ;
+  skos:prefLabel "Slow"@en ;
+.
+ls:runoff-3
+  a skos:Concept ;
+  skos:prefLabel "Moderately rapid"@en ;
+.
+ls:runoff-4
+  a skos:Concept ;
+  skos:prefLabel "Rapid"@en ;
+.
+ls:runoff-5
+  a skos:Concept ;
+  skos:prefLabel "Very rapid"@en ;
+.
+ls:water-erosion
+  a skos:Collection ;
+  skos:prefLabel "Water erosion"@en ;
+.
 asls:soil-profile
   a owl:Ontology ;
   a skos:ConceptScheme ;
   dcterms:contributor <https://orcid.org/0000-0002-0693-1899> ;
   dcterms:contributor <https://orcid.org/0000-0002-3884-3420> ;
   dcterms:created "2017-10-26"^^xsd:date ;
-  dcterms:creator <mailto:asris@csiro.au> ;
-  dcterms:description """<p>This register contains a machine-readable representation of the classifiers described in chapter 8 <i>Soil Profile</i>, by R.C. McDonald and R.F. Isbell, in <a href='https://www.publish.csiro.au/book/5230'>Australian soil and land survey field handbook (3rd edn)</a>.</p>
-<p>A soil profile is a vertical section of a soil from the soil surface through all its horizons to parent material, other consolidated substrate material or selected depth in unconsolidated material.</p>
-<p>The data was converted from the print representation to this linked-data form by <a href='https://orcid.org/0000-0002-0693-1899'>Linda Gregory</a> assisted by <a href='https://orcid.org/0000-0002-3884-3420'>Simon J D Cox</a>.</p>"""^^rdf:HTML ;
+  dcterms:creator [
+      a dcterms:Agent ;
+      foaf:name "R.C. McDonald" ;
+    ] ;
+  dcterms:creator [
+      a dcterms:Agent ;
+      foaf:name "R.F. Isbell" ;
+    ] ;
+  dcterms:description """This vocabulary is a machine-readable representation of the classifiers described in chapter 8 Soil Profile, by R.C. McDonald and R.F. Isbell, in Australian soil and land survey field handbook (3rd edn).
+A soil profile is a vertical section of a soil from the soil surface through all its horizons to parent material, other consolidated substrate material or selected depth in unconsolidated material.""" ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile"^^xsd:anyURI ;
-  dcterms:isFormatOf "<p>Chapter 8 <i>Soil Profile</i>, by R.C. McDonald and R.F. Isbell, in <a href='https://www.publish.csiro.au/book/5230'>Australian soil and land survey field handbook (3rd edn)</a></p>"^^rdf:HTML ;
+  dcterms:isFormatOf <https://catalogue.nla.gov.au/Record/4273240> ;
   dcterms:license <http://creativecommons.org/licences/by/4.0> ;
-  dcterms:modified "2022-03-03"^^xsd:date ;
+  dcterms:modified "2022-03-25"^^xsd:date ;
   dcterms:publisher <http://www.publish.csiro.au/> ;
-  dcterms:rights "copyright CSIRO 2009, 2016, 2018. All rights reserved."@en ;
+  dcterms:rights "copyright CSIRO 2009, 2021. All rights reserved."@en ;
   dcterms:source "National Committee on Soil and Terrain (2009), 'Australian soil and land survey field handbook (3rd edn).' (CSIRO Publishing: Melbourne)"@en ;
-  rdfs:label "Soil Profile classifiers"@en ;
+  dcterms:title "Soil Profile classifiers"@en ;
   rdfs:seeAlso <http://www.publish.csiro.au/nid/22/pid/5230.htm> ;
   owl:imports asls:land-surface ;
   owl:imports asls:substrate ;
@@ -48,7 +878,9 @@ asls:soil-profile
   skos:changeNote "2021-04-08 - replace local material strength concepts with common material strength concepts from Substrate" ;
   skos:changeNote "2022-02-25 - remove reg, ui, ldp components; remove top-concept links" ;
   skos:changeNote "2022-03-03	- minor clean up of structure, remove inScheme links; remove duplicate labels and descriptions in favour of skos prefLabel and definition" ;
+  skos:editorialNote "<p>The data was converted from the print representation to this linked-data form by <a href='https://orcid.org/0000-0002-0693-1899'>Linda Gregory</a> assisted by <a href='https://orcid.org/0000-0002-3884-3420'>Simon J D Cox</a>.</p>"^^rdf:HTML ;
   skos:notation "soil-profile"@en ;
+  skos:prefLabel "Soil Profile classifiers"@en ;
 .
 sp:coarse-fragments
   a skos:Collection ;
@@ -3359,12 +4191,11 @@ sp:observable-properties
   dcterms:description "A set of soil-profile observable properties"@en ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/observable-properties"^^xsd:anyURI ;
   skos:definition "A set of soil-profile observable properties {@en}" ;
-  skos:member sp:coarse-fragments-abundance ;
+  skos:member ls:coarse-fragments-abundance ;
+  skos:member ls:coarse-fragments-lithology ;
+  skos:member ls:coarse-fragments-shape ;
+  skos:member ls:coarse-fragments-size ;
   skos:member sp:coarse-fragments-distribution ;
-  skos:member sp:coarse-fragments-lithology ;
-  skos:member sp:coarse-fragments-shape ;
-  skos:member sp:coarse-fragments-size ;
-  skos:member sp:coarse-fragments-strength ;
   skos:member sp:colour ;
   skos:member sp:condition-of-surface-soil-when-dry ;
   skos:member sp:consistence-plasticity-degree ;
@@ -3415,6 +4246,7 @@ sp:observable-properties
   skos:member sp:voids-macropores-diameter ;
   skos:member sp:voids-micropores ;
   skos:member sp:water-repellence ;
+  skos:member subst:material-strength ;
   skos:prefLabel "Observable properties of soil profiles"@en ;
 .
 sp:observation-type-A
@@ -5158,4 +5990,366 @@ sp:water-repellence-S
   skos:definition "2 Molar ethanol takes greater than 10 seconds to be absorbed into soil."@en ;
   skos:notation "S" ;
   skos:prefLabel "Strongly water repellent"@en ;
+.
+subst:lithology
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Lithology"@en ;
+.
+subst:lithology-AC
+  a skos:Concept ;
+  skos:prefLabel "Alcrete"@en ;
+.
+subst:lithology-AD
+  a skos:Concept ;
+  skos:prefLabel "Adamellite"@en ;
+.
+subst:lithology-AF
+  a skos:Concept ;
+  skos:prefLabel "Ash (fine)"@en ;
+.
+subst:lithology-AG
+  a skos:Concept ;
+  skos:prefLabel "Agglomerate"@en ;
+.
+subst:lithology-AH
+  a skos:Concept ;
+  skos:prefLabel "Anhydrite"@en ;
+.
+subst:lithology-AM
+  a skos:Concept ;
+  skos:prefLabel "Amphibolite"@en ;
+.
+subst:lithology-AN
+  a skos:Concept ;
+  skos:prefLabel "Andesite"@en ;
+.
+subst:lithology-AP
+  a skos:Concept ;
+  skos:prefLabel "Aplite"@en ;
+.
+subst:lithology-AR
+  a skos:Concept ;
+  skos:prefLabel "Arkose"@en ;
+.
+subst:lithology-AS
+  a skos:Concept ;
+  skos:prefLabel "Ash (sandy)"@en ;
+.
+subst:lithology-BA
+  a skos:Concept ;
+  skos:prefLabel "Basalt"@en ;
+.
+subst:lithology-BB
+  a skos:Concept ;
+  skos:prefLabel "Bombs"@en ;
+.
+subst:lithology-BR
+  a skos:Concept ;
+  skos:prefLabel "Breccia"@en ;
+.
+subst:lithology-C
+  a skos:Concept ;
+  skos:prefLabel "Clay"@en ;
+.
+subst:lithology-CG
+  a skos:Concept ;
+  skos:prefLabel "Conglomerate"@en ;
+.
+subst:lithology-CH
+  a skos:Concept ;
+  skos:prefLabel "Chert"@en ;
+.
+subst:lithology-CO
+  a skos:Concept ;
+  skos:prefLabel "Coal"@en ;
+.
+subst:lithology-CU
+  a skos:Concept ;
+  skos:prefLabel "Consolidated rock"@en ;
+.
+subst:lithology-DI
+  a skos:Concept ;
+  skos:prefLabel "Diorite"@en ;
+.
+subst:lithology-DM
+  a skos:Concept ;
+  skos:prefLabel "Dolomite"@en ;
+.
+subst:lithology-DR
+  a skos:Concept ;
+  skos:prefLabel "Dolerite"@en ;
+.
+subst:lithology-FC
+  a skos:Concept ;
+  skos:prefLabel "Ferricrete"@en ;
+.
+subst:lithology-GA
+  a skos:Concept ;
+  skos:prefLabel "Gabbro"@en ;
+.
+subst:lithology-GD
+  a skos:Concept ;
+  skos:prefLabel "Granodiorite"@en ;
+.
+subst:lithology-GE
+  a skos:Concept ;
+  skos:prefLabel "Greenstone"@en ;
+.
+subst:lithology-GN
+  a skos:Concept ;
+  skos:prefLabel "Granite"@en ;
+.
+subst:lithology-GR
+  a skos:Concept ;
+  skos:prefLabel "Granulite"@en ;
+.
+subst:lithology-GS
+  a skos:Concept ;
+  skos:prefLabel "Gneiss"@en ;
+.
+subst:lithology-GV
+  a skos:Concept ;
+  skos:prefLabel "Gravel"@en ;
+.
+subst:lithology-GW
+  a skos:Concept ;
+  skos:prefLabel "Graywacke"@en ;
+.
+subst:lithology-GY
+  a skos:Concept ;
+  skos:prefLabel "Gypsum"@en ;
+.
+subst:lithology-HA
+  a skos:Concept ;
+  skos:prefLabel "Halite"@en ;
+.
+subst:lithology-HO
+  a skos:Concept ;
+  skos:prefLabel "Hornfels"@en ;
+.
+subst:lithology-IG
+  a skos:Concept ;
+  skos:prefLabel "Igneous rock"@en ;
+.
+subst:lithology-JA
+  a skos:Concept ;
+  skos:prefLabel "Jasper"@en ;
+.
+subst:lithology-KA
+  a skos:Concept ;
+  skos:prefLabel "Calcarenite"@en ;
+.
+subst:lithology-KC
+  a skos:Concept ;
+  skos:prefLabel "Calcrete"@en ;
+.
+subst:lithology-KL
+  a skos:Concept ;
+  skos:prefLabel "Calcilutite"@en ;
+.
+subst:lithology-KM
+  a skos:Concept ;
+  skos:prefLabel "Calcareous mudstone"@en ;
+.
+subst:lithology-KR
+  a skos:Concept ;
+  skos:prefLabel "Calcirudite"@en ;
+.
+subst:lithology-KS
+  a skos:Concept ;
+  skos:prefLabel "Calcareous sand"@en ;
+.
+subst:lithology-LC
+  a skos:Concept ;
+  skos:prefLabel "Silcrete"@en ;
+.
+subst:lithology-LI
+  a skos:Concept ;
+  skos:prefLabel "Limestone"@en ;
+.
+subst:lithology-M
+  a skos:Concept ;
+  skos:prefLabel "Same as substrate material"@en ;
+.
+subst:lithology-MB
+  a skos:Concept ;
+  skos:prefLabel "Marble"@en ;
+.
+subst:lithology-MD
+  a skos:Concept ;
+  skos:prefLabel "Microdiorite"@en ;
+.
+subst:lithology-ME
+  a skos:Concept ;
+  skos:prefLabel "Metamorphic rock"@en ;
+.
+subst:lithology-MG
+  a skos:Concept ;
+  skos:prefLabel "Microgranite"@en ;
+.
+subst:lithology-MI
+  a skos:Concept ;
+  skos:prefLabel "Migmatite"@en ;
+.
+subst:lithology-ML
+  a skos:Concept ;
+  skos:prefLabel "Marl"@en ;
+.
+subst:lithology-MS
+  a skos:Concept ;
+  skos:prefLabel "Microsyenite"@en ;
+.
+subst:lithology-MU
+  a skos:Concept ;
+  skos:prefLabel "Mudstone"@en ;
+.
+subst:lithology-MY
+  a skos:Concept ;
+  skos:prefLabel "Mylonite"@en ;
+.
+subst:lithology-PC
+  a skos:Concept ;
+  skos:prefLabel "Porcellanite"@en ;
+.
+subst:lithology-PE
+  a skos:Concept ;
+  skos:prefLabel "Peridotite"@en ;
+.
+subst:lithology-PG
+  a skos:Concept ;
+  skos:prefLabel "Pegmatite"@en ;
+.
+subst:lithology-PH
+  a skos:Concept ;
+  skos:prefLabel "Phyllite"@en ;
+.
+subst:lithology-PL
+  a skos:Concept ;
+  skos:prefLabel "Phonolite"@en ;
+.
+subst:lithology-PO
+  a skos:Concept ;
+  skos:prefLabel "Porphyry"@en ;
+.
+subst:lithology-PY
+  a skos:Concept ;
+  skos:prefLabel "Pyroxenite"@en ;
+.
+subst:lithology-QP
+  a skos:Concept ;
+  skos:prefLabel "Quartz porphyry"@en ;
+.
+subst:lithology-QS
+  a skos:Concept ;
+  skos:prefLabel "Quartz sandstone"@en ;
+.
+subst:lithology-QU
+  a skos:Concept ;
+  skos:prefLabel "Quartzite"@en ;
+.
+subst:lithology-QZ
+  a skos:Concept ;
+  skos:prefLabel "Quartz"@en ;
+.
+subst:lithology-R
+  a skos:Concept ;
+  skos:prefLabel "Same as rock outcrop"@en ;
+.
+subst:lithology-RB
+  a skos:Concept ;
+  skos:prefLabel "Red-brown hardpan"@en ;
+.
+subst:lithology-RH
+  a skos:Concept ;
+  skos:prefLabel "Rhyolite"@en ;
+.
+subst:lithology-S
+  a skos:Concept ;
+  skos:prefLabel "Sand"@en ;
+.
+subst:lithology-SA
+  a skos:Concept ;
+  skos:prefLabel "Sandstone"@en ;
+.
+subst:lithology-SD
+  a skos:Concept ;
+  skos:prefLabel "Detrital sedimentary rock"@en ;
+.
+subst:lithology-SH
+  a skos:Concept ;
+  skos:prefLabel "Shale"@en ;
+.
+subst:lithology-SK
+  a skos:Concept ;
+  skos:prefLabel "Scoria"@en ;
+.
+subst:lithology-SL
+  a skos:Concept ;
+  skos:prefLabel "Slate"@en ;
+.
+subst:lithology-SR
+  a skos:Concept ;
+  skos:prefLabel "Serpentinite"@en ;
+.
+subst:lithology-ST
+  a skos:Concept ;
+  skos:prefLabel "Schist"@en ;
+.
+subst:lithology-SY
+  a skos:Concept ;
+  skos:prefLabel "Syenite"@en ;
+.
+subst:lithology-TR
+  a skos:Concept ;
+  skos:prefLabel "Trachyte"@en ;
+.
+subst:lithology-TU
+  a skos:Concept ;
+  skos:prefLabel "Tuff"@en ;
+.
+subst:lithology-UC
+  a skos:Concept ;
+  skos:prefLabel "Unconsolidated material"@en ;
+.
+subst:lithology-VB
+  a skos:Concept ;
+  skos:prefLabel "Volcanic breccia"@en ;
+.
+subst:lithology-VG
+  a skos:Concept ;
+  skos:prefLabel "Volcanic glass"@en ;
+.
+subst:lithology-Z
+  a skos:Concept ;
+  skos:prefLabel "Silt"@en ;
+.
+subst:lithology-ZS
+  a skos:Concept ;
+  skos:prefLabel "Siltstone"@en ;
+.
+subst:material-strength
+  a skos:Collection ;
+  a sosa:ObservableProperty ;
+  skos:prefLabel "Strength of material"@en ;
+.
+subst:material-strength-M
+  a skos:Concept ;
+  skos:prefLabel "Moderately strong rock"@en ;
+.
+subst:material-strength-S
+  a skos:Concept ;
+  skos:prefLabel "Strong rock"@en ;
+.
+subst:material-strength-VS
+  a skos:Concept ;
+  skos:prefLabel "Very strong rock"@en ;
+.
+subst:material-strength-VW
+  a skos:Concept ;
+  skos:prefLabel "Very weak rock"@en ;
+.
+subst:material-strength-W
+  a skos:Concept ;
+  skos:prefLabel "Weak rock"@en ;
 .
