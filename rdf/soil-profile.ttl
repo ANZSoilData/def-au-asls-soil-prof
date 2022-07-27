@@ -18,88 +18,6 @@
 @prefix subst: <http://anzsoil.org/def/au/asls/substrate/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ls:aggradation-0
-  a skos:Concept ;
-  skos:prefLabel "No aggradation"@en ;
-.
-ls:aggradation-1
-  a skos:Concept ;
-  skos:prefLabel "Present"@en ;
-.
-ls:aggradation-X
-  a skos:Concept ;
-  skos:prefLabel "Not apparent"@en ;
-.
-ls:biotic-microrelief
-  a skos:Collection ;
-  skos:prefLabel "Biotic microrelief"@en ;
-.
-ls:biotic-microrelief-agent-A
-  a skos:Concept ;
-  skos:prefLabel "Ant"@en ;
-.
-ls:biotic-microrelief-agent-B
-  a skos:Concept ;
-  skos:prefLabel "Bird"@en ;
-.
-ls:biotic-microrelief-agent-M
-  a skos:Concept ;
-  skos:prefLabel "Human"@en ;
-.
-ls:biotic-microrelief-agent-N
-  a skos:Concept ;
-  skos:prefLabel "Animal"@en ;
-.
-ls:biotic-microrelief-agent-O
-  a skos:Concept ;
-  skos:prefLabel "Other"@en ;
-.
-ls:biotic-microrelief-agent-T
-  a skos:Concept ;
-  skos:prefLabel "Termite"@en ;
-.
-ls:biotic-microrelief-agent-V
-  a skos:Concept ;
-  skos:prefLabel "Vegetation"@en ;
-.
-ls:biotic-microrelief-agents
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Biotic microrelief agents"@en ;
-.
-ls:biotic-microrelief-component-D
-  a skos:Concept ;
-  skos:prefLabel "Depression"@en ;
-.
-ls:biotic-microrelief-component-E
-  a skos:Concept ;
-  skos:prefLabel "Elongate mound"@en ;
-.
-ls:biotic-microrelief-component-H
-  a skos:Concept ;
-  skos:prefLabel "Hole"@en ;
-.
-ls:biotic-microrelief-component-L
-  a skos:Concept ;
-  skos:prefLabel "Elongate depression"@en ;
-.
-ls:biotic-microrelief-component-M
-  a skos:Concept ;
-  skos:prefLabel "Mound"@en ;
-.
-ls:biotic-microrelief-component-O
-  a skos:Concept ;
-  skos:prefLabel "Other."@en ;
-.
-ls:biotic-microrelief-component-T
-  a skos:Concept ;
-  skos:prefLabel "Terrace"@en ;
-.
-ls:biotic-microrelief-components
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Component of biotic relief"@en ;
-.
 ls:coarse-fragments-abundance
   a skos:Collection ;
   a sosa:ObservableProperty ;
@@ -224,425 +142,6 @@ ls:coarse-fragments-size-7
   a skos:Concept ;
   skos:prefLabel "Large boulders"@en ;
 .
-ls:depth-free-water-0
-  a skos:Concept ;
-  skos:prefLabel "No free water"@en ;
-.
-ls:depth-free-water-above
-  a skos:Concept ;
-  skos:prefLabel "Above soil surface"@en ;
-.
-ls:depth-free-water-below
-  a skos:Concept ;
-  skos:prefLabel "Below soil surface"@en ;
-.
-ls:disturbance-of-site-0
-  a skos:Concept ;
-  skos:prefLabel "No effective disturbance; natural"@en ;
-.
-ls:disturbance-of-site-1
-  a skos:Concept ;
-  skos:prefLabel "No effective disturbance other than grazing by hoofed animals"@en ;
-.
-ls:disturbance-of-site-2
-  a skos:Concept ;
-  skos:prefLabel "Limited clearing"@en ;
-.
-ls:disturbance-of-site-3
-  a skos:Concept ;
-  skos:prefLabel "Extensive clearing"@en ;
-.
-ls:disturbance-of-site-4
-  a skos:Concept ;
-  skos:prefLabel "Complete clearing; pasture, native or improved, but never cultivated"@en ;
-.
-ls:disturbance-of-site-5
-  a skos:Concept ;
-  skos:prefLabel "Complete clearing; pasture, native or improved, cultivated at some stage"@en ;
-.
-ls:disturbance-of-site-6
-  a skos:Concept ;
-  skos:prefLabel "Cultivation; rainfed"@en ;
-.
-ls:disturbance-of-site-7
-  a skos:Concept ;
-  skos:prefLabel "Cultivation; irrigated, past or present"@en ;
-.
-ls:disturbance-of-site-8
-  a skos:Concept ;
-  skos:prefLabel "Highly disturbed"@en ;
-.
-ls:drainage-height-evaluation-means
-  a skos:Collection ;
-  skos:prefLabel "Means of evaluation of drainage height"@en ;
-.
-ls:drainage-height-evaluation-means-A
-  a skos:Concept ;
-  skos:prefLabel "Determined by altimeter (drainage height)"@en ;
-.
-ls:drainage-height-evaluation-means-E
-  a skos:Concept ;
-  skos:prefLabel "Estimate (drainage height)"@en ;
-.
-ls:drainage-height-evaluation-means-L
-  a skos:Concept ;
-  skos:prefLabel "Levelled from survey datum or estimated from contour plan (drainage height)"@en ;
-.
-ls:drainage-height-evaluation-means-M
-  a skos:Concept ;
-  skos:prefLabel "Interpolated from contour map (drainage height)"@en ;
-.
-ls:elevation-evaluation-means
-  a skos:Collection ;
-  skos:prefLabel "Means of evaluation of elevation"@en ;
-.
-ls:elevation-evaluation-means-A
-  a skos:Concept ;
-  skos:prefLabel "Determined by altimeter"@en ;
-.
-ls:elevation-evaluation-means-E
-  a skos:Concept ;
-  skos:prefLabel "Estimate"@en ;
-.
-ls:elevation-evaluation-means-L
-  a skos:Concept ;
-  skos:prefLabel "Levelled from survey datum or estimated from contour plan"@en ;
-.
-ls:elevation-evaluation-means-M
-  a skos:Concept ;
-  skos:prefLabel "Interpolated from contour map"@en ;
-.
-ls:erosion-B
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Stream bank erosion"@en ;
-.
-ls:erosion-B-0
-  a skos:Concept ;
-  skos:prefLabel "No stream bank erosion"@en ;
-.
-ls:erosion-B-1
-  a skos:Concept ;
-  skos:prefLabel "Present"@en ;
-.
-ls:erosion-B-X
-  a skos:Concept ;
-  skos:prefLabel "Not apparent"@en ;
-.
-ls:erosion-C
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Scald erosion"@en ;
-.
-ls:erosion-C-0
-  a skos:Concept ;
-  skos:prefLabel "No scalding"@en ;
-.
-ls:erosion-C-1
-  a skos:Concept ;
-  skos:prefLabel "Minor scalding"@en ;
-.
-ls:erosion-C-2
-  a skos:Concept ;
-  skos:prefLabel "Moderate scalding"@en ;
-.
-ls:erosion-C-3
-  a skos:Concept ;
-  skos:prefLabel "Severe scalding"@en ;
-.
-ls:erosion-G
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Gully erosion"@en ;
-.
-ls:erosion-G-0
-  a skos:Concept ;
-  skos:prefLabel "No gully erosion"@en ;
-.
-ls:erosion-G-1
-  a skos:Concept ;
-  skos:prefLabel "Minor gully erosion"@en ;
-.
-ls:erosion-G-2
-  a skos:Concept ;
-  skos:prefLabel "Moderate gully erosion"@en ;
-.
-ls:erosion-G-3
-  a skos:Concept ;
-  skos:prefLabel "Severe gully erosion"@en ;
-.
-ls:erosion-G-depth
-  a skos:Collection ;
-  skos:prefLabel "Gully depth"@en ;
-.
-ls:erosion-G-depth-1
-  a skos:Concept ;
-  skos:prefLabel "Gully depth <1.5 m"@en ;
-.
-ls:erosion-G-depth-2
-  a skos:Concept ;
-  skos:prefLabel "Gully depth 1.5-3.0 m"@en ;
-.
-ls:erosion-G-depth-3
-  a skos:Concept ;
-  skos:prefLabel "Gully depth >3 m"@en ;
-.
-ls:erosion-M
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Mass movement"@en ;
-.
-ls:erosion-M-0
-  a skos:Concept ;
-  skos:prefLabel "No mass movement"@en ;
-.
-ls:erosion-M-1
-  a skos:Concept ;
-  skos:prefLabel "Present"@en ;
-.
-ls:erosion-R
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Rill erosion"@en ;
-.
-ls:erosion-R-0
-  a skos:Concept ;
-  skos:prefLabel "No rill erosion"@en ;
-.
-ls:erosion-R-1
-  a skos:Concept ;
-  skos:prefLabel "Minor"@en ;
-.
-ls:erosion-R-2
-  a skos:Concept ;
-  skos:prefLabel "Moderate"@en ;
-.
-ls:erosion-R-3
-  a skos:Concept ;
-  skos:prefLabel "Severe"@en ;
-.
-ls:erosion-S
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Sheet erosion"@en ;
-.
-ls:erosion-S-0
-  a skos:Concept ;
-  skos:prefLabel "No sheet erosion"@en ;
-.
-ls:erosion-S-1
-  a skos:Concept ;
-  skos:prefLabel "Minor"@en ;
-.
-ls:erosion-S-2
-  a skos:Concept ;
-  skos:prefLabel "Moderate"@en ;
-.
-ls:erosion-S-3
-  a skos:Concept ;
-  skos:prefLabel "Severe"@en ;
-.
-ls:erosion-S-X
-  a skos:Concept ;
-  skos:prefLabel "Not apparent"@en ;
-.
-ls:erosion-T
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Tunnel erosion"@en ;
-.
-ls:erosion-T-0
-  a skos:Concept ;
-  skos:prefLabel "No tunnel erosion"@en ;
-.
-ls:erosion-T-1
-  a skos:Concept ;
-  skos:prefLabel "Present"@en ;
-.
-ls:erosion-T-X
-  a skos:Concept ;
-  skos:prefLabel "Not apparent"@en ;
-.
-ls:erosion-V
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Wave erosion"@en ;
-.
-ls:erosion-V-0
-  a skos:Concept ;
-  skos:prefLabel "No wave erosion"@en ;
-.
-ls:erosion-V-1
-  a skos:Concept ;
-  skos:prefLabel "Present"@en ;
-.
-ls:erosion-V-X
-  a skos:Concept ;
-  skos:prefLabel "Not apparent"@en ;
-.
-ls:erosion-W
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Wind erosion"@en ;
-.
-ls:erosion-W-0
-  a skos:Concept ;
-  skos:prefLabel "No wind erosion"@en ;
-.
-ls:erosion-W-1
-  a skos:Concept ;
-  skos:prefLabel "Minor or present"@en ;
-.
-ls:erosion-W-2
-  a skos:Concept ;
-  skos:prefLabel "Moderate"@en ;
-.
-ls:erosion-W-3
-  a skos:Concept ;
-  skos:prefLabel "Severe"@en ;
-.
-ls:erosion-W-4
-  a skos:Concept ;
-  skos:prefLabel "Very severe"@en ;
-.
-ls:erosion-W-X
-  a skos:Concept ;
-  skos:prefLabel "Not apparent"@en ;
-.
-ls:erosion-state
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "State of erosion"@en ;
-.
-ls:erosion-state-A
-  a skos:Concept ;
-  skos:prefLabel "Active"@en ;
-.
-ls:erosion-state-P
-  a skos:Concept ;
-  skos:prefLabel "Partly stabilised"@en ;
-.
-ls:erosion-state-S
-  a skos:Concept ;
-  skos:prefLabel "Stabilised"@en ;
-.
-ls:gilgai-microrelief
-  a skos:Collection ;
-  skos:prefLabel "Gilgai microrelief"@en ;
-.
-ls:gilgai-microrelief-proportions
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Proportions of gilgai components "@en ;
-.
-ls:gilgai-microrelief-proportions-A
-  a skos:Concept ;
-  skos:prefLabel "Equal mounds and depressions; no shelf present"@en ;
-.
-ls:gilgai-microrelief-proportions-B
-  a skos:Concept ;
-  skos:prefLabel "More mounds than depressions; no shelf present"@en ;
-.
-ls:gilgai-microrelief-proportions-C
-  a skos:Concept ;
-  skos:prefLabel "Fewer mounds than depressions; no shelf present"@en ;
-.
-ls:gilgai-microrelief-proportions-D
-  a skos:Concept ;
-  skos:prefLabel "Mound, shelf and depressions; shelf forms prominent part of gilgai"@en ;
-.
-ls:hummocky-microrelief
-  a skos:Collection ;
-  skos:prefLabel "Hummocky microrelief"@en ;
-.
-ls:inundation-depth
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Depth of inundation (annual)"@en ;
-.
-ls:inundation-depth-1
-  a skos:Concept ;
-  skos:prefLabel "Inundation depth <50 mm"@en ;
-.
-ls:inundation-depth-2
-  a skos:Concept ;
-  skos:prefLabel "Inundation depth 50-100 mm"@en ;
-.
-ls:inundation-depth-3
-  a skos:Concept ;
-  skos:prefLabel "Inundation depth 100-300 mm"@en ;
-.
-ls:inundation-depth-4
-  a skos:Concept ;
-  skos:prefLabel "Inundation depth 300-1000 mm"@en ;
-.
-ls:inundation-depth-5
-  a skos:Concept ;
-  skos:prefLabel "Inundation depth >1000 mm"@en ;
-.
-ls:inundation-duration
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Duration (annual) of inundation"@en ;
-.
-ls:inundation-duration-1
-  a skos:Concept ;
-  skos:prefLabel "Less than 1 day"@en ;
-.
-ls:inundation-duration-2
-  a skos:Concept ;
-  skos:prefLabel "Between 1 and 20 days"@en ;
-.
-ls:inundation-duration-3
-  a skos:Concept ;
-  skos:prefLabel "Between 20 and 120 days"@en ;
-.
-ls:inundation-duration-4
-  a skos:Concept ;
-  skos:prefLabel "More than 120 days"@en ;
-.
-ls:inundation-frequency
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Frequency of inundation"@en ;
-.
-ls:inundation-frequency-0
-  a skos:Concept ;
-  skos:prefLabel "No inundation"@en ;
-.
-ls:inundation-frequency-1
-  a skos:Concept ;
-  skos:prefLabel "Less than one occurrence per 100 years"@en ;
-.
-ls:inundation-frequency-2
-  a skos:Concept ;
-  skos:prefLabel "One occurrence in between 50 and 100 years"@en ;
-.
-ls:inundation-frequency-3
-  a skos:Concept ;
-  skos:prefLabel "One occurrence in between 10 and 50 years"@en ;
-.
-ls:inundation-frequency-4
-  a skos:Concept ;
-  skos:prefLabel "One occurrence in between 1 and 10 years"@en ;
-.
-ls:inundation-frequency-5
-  a skos:Concept ;
-  skos:prefLabel "More than one occurrence per year"@en ;
-.
-ls:inundation-runon-velocity
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Runon velocity of inundation"@en ;
-.
-ls:inundation-runon-velocity-H
-  a skos:Concept ;
-  skos:prefLabel "High velocity >300 mm/s"@en ;
-.
-ls:inundation-runon-velocity-L
-  a skos:Concept ;
-  skos:prefLabel "Low velocity <300 mm/s"@en ;
-.
 ls:lithology-CC
   a skos:Concept ;
   skos:prefLabel "Charcoal"@en ;
@@ -666,183 +165,6 @@ ls:lithology-PU
 ls:lithology-SS
   a skos:Concept ;
   skos:prefLabel "Shells"@en ;
-.
-ls:microrelief-A
-  a skos:Concept ;
-  skos:prefLabel "Lattice gilgai"@en ;
-.
-ls:microrelief-C
-  a skos:Concept ;
-  skos:prefLabel "Crabhole gilgai"@en ;
-.
-ls:microrelief-D
-  a skos:Concept ;
-  skos:prefLabel "Debil-debil"@en ;
-.
-ls:microrelief-G
-  a skos:Concept ;
-  skos:prefLabel "Contour gilgai"@en ;
-.
-ls:microrelief-H
-  a skos:Concept ;
-  skos:prefLabel "Spring hollow"@en ;
-.
-ls:microrelief-I
-  a skos:Concept ;
-  skos:prefLabel "Sinkhole"@en ;
-.
-ls:microrelief-K
-  a skos:Concept ;
-  skos:prefLabel "Karst microrelief"@en ;
-.
-ls:microrelief-L
-  a skos:Concept ;
-  skos:prefLabel "Linear gilgai"@en ;
-.
-ls:microrelief-M
-  a skos:Concept ;
-  skos:prefLabel "Melonhole gilgai"@en ;
-.
-ls:microrelief-N
-  a skos:Concept ;
-  skos:prefLabel "Normal gilgai"@en ;
-.
-ls:microrelief-P
-  a skos:Concept ;
-  skos:prefLabel "Spring mound"@en ;
-.
-ls:microrelief-R
-  a skos:Concept ;
-  skos:prefLabel "Terracettes"@en ;
-.
-ls:microrelief-S
-  a skos:Concept ;
-  skos:prefLabel "Mass movement microrelief"@en ;
-.
-ls:microrelief-T
-  a skos:Concept ;
-  skos:prefLabel "Contour trench"@en ;
-.
-ls:microrelief-U
-  a skos:Concept ;
-  skos:prefLabel "Mound/depression microrelief"@en ;
-.
-ls:microrelief-W
-  a skos:Concept ;
-  skos:prefLabel "Swamp hummock"@en ;
-.
-ls:microrelief-Z
-  a skos:Concept ;
-  skos:prefLabel "Zero or no microrelief"@en ;
-.
-ls:microrelief-component-D
-  a skos:Concept ;
-  skos:prefLabel "Depression"@en ;
-.
-ls:microrelief-component-E
-  a skos:Concept ;
-  skos:prefLabel "Elongate mound"@en ;
-.
-ls:microrelief-component-F
-  a skos:Concept ;
-  skos:prefLabel "Flat"@en ;
-.
-ls:microrelief-component-K
-  a skos:Concept ;
-  skos:prefLabel "Hummock"@en ;
-.
-ls:microrelief-component-L
-  a skos:Concept ;
-  skos:prefLabel "Elongate depression"@en ;
-.
-ls:microrelief-component-M
-  a skos:Concept ;
-  skos:prefLabel "Mound"@en ;
-.
-ls:microrelief-component-S
-  a skos:Concept ;
-  skos:prefLabel "Shelf"@en ;
-.
-ls:microrelief-component-sampled
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Component of microrelief sampled"@en ;
-.
-ls:microrelief-horizontal-interval
-  a skos:Concept ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Horizontal interval"@en ;
-.
-ls:microrelief-vertical-interval
-  a skos:Concept ;
-  skos:prefLabel "Vertical interval"@en ;
-.
-ls:other-microrelief-O
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Other microrelief"@en ;
-.
-ls:rock-outcrop-abundance
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Abundance of rock outcrop"@en ;
-.
-ls:rock-outcrop-abundance-0
-  a skos:Concept ;
-  skos:prefLabel "No rock outcrop"@en ;
-.
-ls:rock-outcrop-abundance-1
-  a skos:Concept ;
-  skos:prefLabel "Very slightly rocky"@en ;
-.
-ls:rock-outcrop-abundance-2
-  a skos:Concept ;
-  skos:prefLabel "Slightly rocky"@en ;
-.
-ls:rock-outcrop-abundance-3
-  a skos:Concept ;
-  skos:prefLabel "Rocky"@en ;
-.
-ls:rock-outcrop-abundance-4
-  a skos:Concept ;
-  skos:prefLabel "Very rocky"@en ;
-.
-ls:rock-outcrop-abundance-5
-  a skos:Concept ;
-  skos:prefLabel "Rockland"@en ;
-.
-ls:rock-outcrop-lithology
-  a skos:Collection ;
-  a sosa:ObservableProperty ;
-  skos:prefLabel "Lithology of rock outcrop"@en ;
-.
-ls:runoff-0
-  a skos:Concept ;
-  skos:prefLabel "No runoff"@en ;
-.
-ls:runoff-1
-  a skos:Concept ;
-  skos:prefLabel "Very slow"@en ;
-.
-ls:runoff-2
-  a skos:Concept ;
-  skos:prefLabel "Slow"@en ;
-.
-ls:runoff-3
-  a skos:Concept ;
-  skos:prefLabel "Moderately rapid"@en ;
-.
-ls:runoff-4
-  a skos:Concept ;
-  skos:prefLabel "Rapid"@en ;
-.
-ls:runoff-5
-  a skos:Concept ;
-  skos:prefLabel "Very rapid"@en ;
-.
-ls:water-erosion
-  a skos:Collection ;
-  skos:prefLabel "Water erosion"@en ;
 .
 asls:soil-profile
   a owl:Ontology ;
@@ -904,7 +226,7 @@ sp:coarse-fragments-distribution
   skos:member sp:coarse-fragments-distribution-R ;
   skos:member sp:coarse-fragments-distribution-S ;
   skos:member sp:coarse-fragments-distribution-U ;
-  skos:prefLabel "Distribution of coarse fragments"@en ;
+  skos:prefLabel "Distribution of coarse fragments - enumeration"^^rdf:langString ;
 .
 sp:coarse-fragments-distribution-D
   a skos:Concept ;
@@ -939,8 +261,7 @@ sp:coarse-fragments-distribution-U
   skos:prefLabel "Undisturbed"@en ;
 .
 sp:colour
-  a skos:Concept ;
-  a sosa:ObservableProperty ;
+  a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour"^^xsd:anyURI ;
   rdfs:comment "A moisture status must be recorded with the colour description"@en ;
   skos:definition """Record colours by comparing soils with colour charts using the Munsell Color system, for example the Munsell Soil Color Charts or the Revised Standard Soil Color Charts (Oyama and Takehara 1970).
@@ -948,19 +269,20 @@ Hue, value and chroma of the matrix colour are recorded, for example 10YR4/2.
 Soil colours rarely match the chart colour chips perfectly. They should be matched to the chip closest in colour, or the nearest whole number in chroma where chips are not provided, for example chromas 5 and 7.
 The soil colour is measured on the surface of a freshly broken aggregate of moist soil. Moisten the soil if it is dry. Record the colour when the visible moisture film disappears from the surface of the moistened broken aggregate. The aggregate should be held as close as possible to the colour chips. Take care not to smear the broken surface, as this can give an incorrect recording of the colour of the soil matrix.
 Dry colours may also be recorded."""@en ;
+  skos:member sp:colour-stat ;
+  skos:member sp:colour-value ;
   skos:prefLabel "Colour"@en ;
-  skos:related sp:colour-stat ;
 .
 sp:colour-stat
   a skos:Collection ;
   a sosa:ObservableProperty ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour-stat" ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour-stat"^^xsd:anyURI ;
   rdfs:comment "C_MOISTURE_STAT; Moisture status for colour description"@en ;
   skos:definition "Moisture status for colour description {@en}" ;
   skos:definition "Moisture status for colour description"@en ;
   skos:member sp:colour-stat-D ;
   skos:member sp:colour-stat-M ;
-  skos:prefLabel "Moisture status for colour description"@en ;
+  skos:prefLabel "Moisture status for colour description - enumeration"@en ;
 .
 sp:colour-stat-D
   a skos:Concept ;
@@ -975,6 +297,19 @@ sp:colour-stat-M
   skos:definition "Moist"@en ;
   skos:notation "M" ;
   skos:prefLabel "Moist"@en ;
+.
+sp:colour-value
+  a skos:Concept ;
+  a sosa:ObservableProperty ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour-value"^^xsd:anyURI ;
+  rdfs:comment "A moisture status must be recorded with the colour description"@en ;
+  skos:definition """Record colours by comparing soils with colour charts using the Munsell Color system, for example the Munsell Soil Color Charts or the Revised Standard Soil Color Charts (Oyama and Takehara 1970).
+Hue, value and chroma of the matrix colour are recorded, for example 10YR4/2.
+Soil colours rarely match the chart colour chips perfectly. They should be matched to the chip closest in colour, or the nearest whole number in chroma where chips are not provided, for example chromas 5 and 7.
+The soil colour is measured on the surface of a freshly broken aggregate of moist soil. Moisten the soil if it is dry. Record the colour when the visible moisture film disappears from the surface of the moistened broken aggregate. The aggregate should be held as close as possible to the colour chips. Take care not to smear the broken surface, as this can give an incorrect recording of the colour of the soil matrix.
+Dry colours may also be recorded."""@en ;
+  skos:prefLabel "Colour value"@en ;
+  skos:related sp:colour-stat ;
 .
 sp:condition-of-surface-soil-when-dry
   a skos:Collection ;
@@ -995,7 +330,7 @@ sp:condition-of-surface-soil-when-dry
   skos:member sp:surfacecondition-X ;
   skos:member sp:surfacecondition-Y ;
   skos:member sp:surfacecondition-Z ;
-  skos:prefLabel "Condition of surface soil when dry"@en ;
+  skos:prefLabel "Condition of surface soil when dry - enumeration"^^rdf:langString ;
 .
 sp:consistence
   a skos:Collection ;
@@ -1017,7 +352,7 @@ sp:consistence-plasticity-degree
   skos:member sp:consistence-plasticity-degree-1 ;
   skos:member sp:consistence-plasticity-degree-2 ;
   skos:member sp:consistence-plasticity-degree-3 ;
-  skos:prefLabel "Plasticity Degree"@en ;
+  skos:prefLabel "Plasticity Degree - enumeration"^^rdf:langString ;
 .
 sp:consistence-plasticity-degree-0
   a skos:Concept ;
@@ -1063,7 +398,7 @@ sp:consistence-plasticity-type
   skos:member sp:consistence-plasticity-type-S ;
   skos:member sp:consistence-plasticity-type-T ;
   skos:member sp:consistence-plasticity-type-U ;
-  skos:prefLabel "Plasticity Type"@en ;
+  skos:prefLabel "Plasticity Type - enumeration"^^rdf:langString ;
 .
 sp:consistence-plasticity-type-N
   a skos:Concept ;
@@ -1108,7 +443,7 @@ sp:consistence-stickiness
   skos:member sp:consistence-stickiness-1 ;
   skos:member sp:consistence-stickiness-2 ;
   skos:member sp:consistence-stickiness-3 ;
-  skos:prefLabel "Stickiness"@en ;
+  skos:prefLabel "Stickiness - enumeration"^^rdf:langString ;
 .
 sp:consistence-stickiness-0
   a skos:Concept ;
@@ -1164,7 +499,7 @@ Forces 0 to 5 are equivalent to the following dry consistence classes in the ‘
   skos:member sp:consistence-strength-5 ;
   skos:member sp:consistence-strength-6 ;
   skos:member sp:consistence-strength-7 ;
-  skos:prefLabel "Strength"@en ;
+  skos:prefLabel "Strength - enumeration"^^rdf:langString ;
 .
 sp:consistence-strength-0
   a skos:Concept ;
@@ -1257,7 +592,7 @@ sp:cutans-abundance
   skos:member sp:cutans-abundance-1 ;
   skos:member sp:cutans-abundance-2 ;
   skos:member sp:cutans-abundance-3 ;
-  skos:prefLabel "Abundance of cutans"@en ;
+  skos:prefLabel "Abundance of cutans - enumeration"^^rdf:langString ;
 .
 sp:cutans-abundance-0
   a skos:Concept ;
@@ -1300,7 +635,7 @@ sp:cutans-distinctness
   skos:member sp:cutans-distinctness-D ;
   skos:member sp:cutans-distinctness-F ;
   skos:member sp:cutans-distinctness-P ;
-  skos:prefLabel "Distinctness of cutans"@en ;
+  skos:prefLabel "Distinctness of cutans - enumeration"^^rdf:langString ;
 .
 sp:cutans-distinctness-D
   a skos:Concept ;
@@ -1339,7 +674,7 @@ sp:cutans-type
   skos:member sp:cutans-type-S ;
   skos:member sp:cutans-type-U ;
   skos:member sp:cutans-type-Z ;
-  skos:prefLabel "Types of cutans"@en ;
+  skos:prefLabel "Types of cutans - enumeration"^^rdf:langString ;
 .
 sp:cutans-type-C
   a skos:Concept ;
@@ -1397,13 +732,27 @@ sp:cutans-type-Z
   skos:notation "Z" ;
   skos:prefLabel "Zero or no cutans"@en ;
 .
-sp:depth-of-horizons
+sp:depth-of-horizon
   a skos:Concept ;
   a sosa:ObservableProperty ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/depth-of-horizons"^^xsd:anyURI ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/depth-of-horizon"^^xsd:anyURI ;
   skos:definition """The upper and lower depths, in metres, of each horizon are measured from the soil surface, excluding O horizons. O horizon depths are measured above the mineral soil surface, for example O1 0.120.10 m, O2 0.10.0 m.
 A scaled horizon diagram may be useful where horizons are irregular."""@en ;
+  skos:narrower sp:depth-of-horizon-lower ;
+  skos:narrower sp:depth-of-horizon-upper ;
   skos:prefLabel "Depth of Horizons"@en ;
+.
+sp:depth-of-horizon-lower
+  a skos:Concept ;
+  a sosa:ObservableProperty ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/depth-of-horizon-lower"^^xsd:anyURI ;
+  skos:prefLabel "Lower depth of soil horizon in metres" ;
+.
+sp:depth-of-horizon-upper
+  a skos:Concept ;
+  a sosa:ObservableProperty ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/depth-of-horizon-upper"^^xsd:anyURI ;
+  skos:prefLabel "Upper depth of soil horizon in metres" ;
 .
 sp:depth-to-r-horizon
   a skos:Concept ;
@@ -1464,7 +813,7 @@ sp:effervescence-of-carbonate-in-fine-earth
   skos:member sp:effervescence-N ;
   skos:member sp:effervescence-S ;
   skos:member sp:effervescence-V ;
-  skos:prefLabel "Effervescence of carbonate in fine earth"@en ;
+  skos:prefLabel "Effervescence of carbonate in fine earth - enumeration"^^rdf:langString ;
 .
 sp:fabric
   a skos:Collection ;
@@ -1477,7 +826,7 @@ Fabric describes the appearance of the soil material (under ×10 hand lens). Dif
   skos:member sp:fabric-G ;
   skos:member sp:fabric-R ;
   skos:member sp:fabric-S ;
-  skos:prefLabel "Fabric"@en ;
+  skos:prefLabel "Fabric - enumeration"^^rdf:langString ;
 .
 sp:fabric-E
   a skos:Concept ;
@@ -1533,6 +882,19 @@ sp:field-texture-AP
   skos:definition "strongly to completely decomposed organic material. Plant remains vary from few being identifiable to completely amorphous."@en ;
   skos:notation "AP" ;
   skos:prefLabel "Sapric peat"@en ;
+.
+sp:field-texture-C
+  a skos:Concept ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-C"^^xsd:anyURI ;
+  rdfs:comment "Approximate clay content (%): 35% or more"@en ;
+  skos:definition "."@en ;
+  skos:narrower sp:field-texture-HC ;
+  skos:narrower sp:field-texture-LC ;
+  skos:narrower sp:field-texture-LMC ;
+  skos:narrower sp:field-texture-MC ;
+  skos:narrower sp:field-texture-MHC ;
+  skos:notation "C" ;
+  skos:prefLabel "Clay"@en ;
 .
 sp:field-texture-CFS
   a skos:Concept ;
@@ -3311,7 +2673,7 @@ The recommended field texture grades as characterised by the behaviour of the mo
   skos:member sp:field-texture-SL ;
   skos:member sp:field-texture-ZCL ;
   skos:member sp:field-texture-ZL ;
-  skos:prefLabel "Mineral soils field texture grade"@en ;
+  skos:prefLabel "Mineral soils field texture grade - enumeration"@en ;
 .
 sp:field-texture-organic
   a skos:Collection ;
@@ -3325,7 +2687,7 @@ sp:field-texture-organic
   skos:member sp:field-texture-IP ;
   skos:member sp:field-texture-LP ;
   skos:member sp:field-texture-SP ;
-  skos:prefLabel "Organic soils field texture"@en ;
+  skos:prefLabel "Organic soils field texture - enumeration"@en ;
 .
 sp:field-texture-qualifier
   a skos:Collection ;
@@ -3340,7 +2702,7 @@ It is strongly recommended that qualifiers only be used where considered essenti
   skos:member sp:field-texture-qualifier-heavy ;
   skos:member sp:field-texture-qualifier-light ;
   skos:member sp:field-texture-qualifier-sapric ;
-  skos:prefLabel "Field texture qualifier"@en ;
+  skos:prefLabel "Field texture qualifier - enumeration"^^rdf:langString ;
 .
 sp:field-texture-qualifier-fibric
   a skos:Concept ;
@@ -3496,7 +2858,7 @@ sp:horizon-boundary-distinctness
   skos:member sp:horizon-boundary-distinctness-D ;
   skos:member sp:horizon-boundary-distinctness-G ;
   skos:member sp:horizon-boundary-distinctness-S ;
-  skos:prefLabel "Boundary distinctness"@en ;
+  skos:prefLabel "Boundary distinctness - enumeration"^^rdf:langString ;
 .
 sp:horizon-boundary-distinctness-A
   a skos:Concept ;
@@ -3545,7 +2907,7 @@ sp:horizon-boundary-shape
   skos:member sp:horizon-boundary-shape-S ;
   skos:member sp:horizon-boundary-shape-T ;
   skos:member sp:horizon-boundary-shape-W ;
-  skos:prefLabel "Boundary shape"@en ;
+  skos:prefLabel "Boundary shape - enumeration"^^rdf:langString ;
 .
 sp:horizon-boundary-shape-B
   a skos:Concept ;
@@ -3586,7 +2948,9 @@ sp:horizon-prefix
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-prefix"^^xsd:anyURI ;
   skos:definition """Where obvious contrasts in lithology exist between different horizons in the soil profile, or between the soil profile and the underlying lithology, the different lithologic layers are given a numeric prefix (Figure 13).
+
 Each layer may consist of one or more horizons. The different layers are numbered from the top downward. The upper layer is not numbered 1, this being understood. Numbering starts with the second layer, which is designated 2. Even though a layer below material 3, for example, is similar to material 2, it is designated 4 in the sequence (see Profiles C and D in Figure 13). Discrimination of lithological discontinuities from soil horizon boundaries will depend in each case upon the degree of pedological organisation and the contrast between lithological units (see, for example, Profiles C and D in Figure 13).
+
 Where lithologic discontinuities are suspected in the profile but there is no clear evidence, either the numeric prefix should not be used or a query should be added to indicate doubt. It is better used only where there is clear evidence. Whether the numeric prefix is used or not, the horizon naming, with appropriate suffixes, remains the same, as illustrated in the examples in Figure 13."""@en ;
   skos:note """<p>Figure 13	Lithologic discontinuities and soil horizon nomenclature.</p><p>
 	In Profile C, the degree of development of the B22 horizon overrides any lithologic discontinuity between the B22 and 2B22 horizon; hence, no soil horizon boundary is shown between them.</p><p>
@@ -3762,18 +3126,14 @@ sp:horizon-suffix-z
   skos:notation "z" ;
   skos:prefLabel "Horizon suffix z"@en ;
 .
-sp:horizons
+sp:horizon-type
   a skos:Collection ;
-  a sosa:ObservableProperty ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizons"^^xsd:anyURI ;
-  rdfs:comment """As horizon notation is deduced from the profile description data (Northcote 1979) and in some instances laboratory data, record it after the profile is described. Horizons may be difficult to name, but should be named in the field. Opinions formed at the time of description are useful for later reference.
-Cracking clays
-The A and B horizons in cracking clays are defined and recognised on the basis of structure rather than colour (McDonald 1977).
-The A horizon in cracking clays may be structured or massive. The structural A horizon is the granular, subangular blocky, angular blocky or polyhedral surface horizon where ped faces are not accommodated and have irregular coarse voids between them. This is exemplified in soils with a self-mulching surface. The A horizon structure is unstable only in the sense that relatively rapid wetting and drying continually creates new peds and voids.
-The B horizon is the coarse angular blocky and/or lenticular horizon where ped faces are all accommodated and usually have only narrow planar voids between them. The B horizon structure is stable because of relatively slow wetting and drying. The B horizon will usually occur within 200 mm of the surface, but the structural change must be confirmed using a spade or exposure to examine the soil. The boundary may often be gradual or diffuse, but can be clear or abrupt."""@en ;
-  skos:definition "A soil horizon is a layer of soil, approximately parallel to the land surface, with morphological properties different from layers below and/or above it. Tongues of material from one horizon may penetrate into adjacent horizons."@en ;
-  skos:member sp:horizon-prefix ;
-  skos:member sp:horizon-suffix ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-type"^^xsd:anyURI ;
+  skos:definition """A soil horizon is a layer of soil, approximately parallel to the land surface, with morphological properties different from layers below and/or above it. Tongues of material from one horizon may penetrate into adjacent horizons. Give horizon notation as described below.
+
+As horizon notation is deduced from the profile description data (Northcote 1979) and in some instances laboratory data, record it after the profile is described. Horizons may be difficult to name, but should be named in the field. Opinions formed at the time of description are useful for later reference.
+
+With regard to horizon notation, the long-established usage in horizon designation is adopted. Emphasis is on factual objective notation rather than assumed genesis, as genetic implications are often uncertain and difficult to establish. Thus the notation E indicating eluvial horizon (International Society of Soil Science 1967) has not been used, even though this has been adopted by a number of overseas organisations, for example Hodgson (1974), Soil Survey Staff (1990).""" ;
   skos:member sp:horizons-A ;
   skos:member sp:horizons-B ;
   skos:member sp:horizons-C ;
@@ -3781,6 +3141,22 @@ The B horizon is the coarse angular blocky and/or lenticular horizon where ped f
   skos:member sp:horizons-O ;
   skos:member sp:horizons-P ;
   skos:member sp:horizons-R ;
+  skos:prefLabel "Type of soil horizon - enumeration"@en ;
+.
+sp:horizons
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizons"^^xsd:anyURI ;
+  rdfs:comment """As horizon notation is deduced from the profile description data (Northcote 1979) and in some instances laboratory data, record it after the profile is described. Horizons may be difficult to name, but should be named in the field. Opinions formed at the time of description are useful for later reference.
+Cracking clays
+The A and B horizons in cracking clays are defined and recognised on the basis of structure rather than colour (McDonald 1977).
+The A horizon in cracking clays may be structured or massive. The structural A horizon is the granular, subangular blocky, angular blocky or polyhedral surface horizon where ped faces are not accommodated and have irregular coarse voids between them. This is exemplified in soils with a self-mulching surface. The A horizon structure is unstable only in the sense that relatively rapid wetting and drying continually creates new peds and voids.
+The B horizon is the coarse angular blocky and/or lenticular horizon where ped faces are all accommodated and usually have only narrow planar voids between them. The B horizon structure is stable because of relatively slow wetting and drying. The B horizon will usually occur within 200 mm of the surface, but the structural change must be confirmed using a spade or exposure to examine the soil. The boundary may often be gradual or diffuse, but can be clear or abrupt."""@en ;
+  skos:definition "A soil horizon is a layer of soil, approximately parallel to the land surface, with morphological properties different from layers below and/or above it. Tongues of material from one horizon may penetrate into adjacent horizons."@en ;
+  skos:member sp:depth-of-horizon ;
+  skos:member sp:depth-to-r-horizon ;
+  skos:member sp:horizon-prefix ;
+  skos:member sp:horizon-suffix ;
+  skos:member sp:horizon-type ;
   skos:member sp:horizons-bleached ;
   skos:member sp:horizons-subdivision ;
   skos:member sp:horizons-transitional ;
@@ -3893,7 +3269,7 @@ sp:mottle-abundance
   skos:member sp:mottle-abundance-2 ;
   skos:member sp:mottle-abundance-3 ;
   skos:member sp:mottle-abundance-4 ;
-  skos:prefLabel "Mottle abundance"@en ;
+  skos:prefLabel "Mottle abundance - enumeration"^^rdf:langString ;
 .
 sp:mottle-abundance-0
   a skos:Concept ;
@@ -3968,7 +3344,7 @@ sp:mottle-boundary-distinctness
   skos:member sp:mottle-boundary-C ;
   skos:member sp:mottle-boundary-D ;
   skos:member sp:mottle-boundary-S ;
-  skos:prefLabel "Mottle distinctness of boundaries"@en ;
+  skos:prefLabel "Mottle distinctness of boundaries - enumeration"^^rdf:langString ;
 .
 sp:mottle-colour
   a skos:Collection ;
@@ -3984,7 +3360,7 @@ sp:mottle-colour
   skos:member sp:mottle-colour-P ;
   skos:member sp:mottle-colour-R ;
   skos:member sp:mottle-colour-Y ;
-  skos:prefLabel "Mottle colour"@en ;
+  skos:prefLabel "Mottle colour - enumeration"^^rdf:langString ;
 .
 sp:mottle-colour-B
   a skos:Concept ;
@@ -4059,7 +3435,7 @@ sp:mottle-contrast
   skos:member sp:mottle-contrast-D ;
   skos:member sp:mottle-contrast-F ;
   skos:member sp:mottle-contrast-P ;
-  skos:prefLabel "Mottle contrast"@en ;
+  skos:prefLabel "Mottle contrast - enumeration"^^rdf:langString ;
 .
 sp:mottle-contrast-D
   a skos:Concept ;
@@ -4095,7 +3471,7 @@ sp:mottle-size
   skos:member sp:mottle-size-2 ;
   skos:member sp:mottle-size-3 ;
   skos:member sp:mottle-size-4 ;
-  skos:prefLabel "Mottle size"@en ;
+  skos:prefLabel "Mottle size - enumeration"^^rdf:langString ;
 .
 sp:mottle-size-1
   a skos:Concept ;
@@ -4140,7 +3516,7 @@ sp:mottle-type
   skos:member sp:mottle-type-X ;
   skos:member sp:mottle-type-Y ;
   skos:member sp:mottle-type-Z ;
-  skos:prefLabel "Mottle type"@en ;
+  skos:prefLabel "Mottle type - enumeration"^^rdf:langString ;
 .
 sp:mottle-type-M
   a skos:Concept ;
@@ -4195,8 +3571,10 @@ sp:observable-properties
   skos:member ls:coarse-fragments-lithology ;
   skos:member ls:coarse-fragments-shape ;
   skos:member ls:coarse-fragments-size ;
+  skos:member ls:coarse-fragments-strength ;
   skos:member sp:coarse-fragments-distribution ;
-  skos:member sp:colour ;
+  skos:member sp:colour-stat ;
+  skos:member sp:colour-value ;
   skos:member sp:condition-of-surface-soil-when-dry ;
   skos:member sp:consistence-plasticity-degree ;
   skos:member sp:consistence-plasticity-type ;
@@ -4205,13 +3583,14 @@ sp:observable-properties
   skos:member sp:cutans-abundance ;
   skos:member sp:cutans-distinctness ;
   skos:member sp:cutans-type ;
-  skos:member sp:depth-of-horizons ;
+  skos:member sp:depth-of-horizon ;
   skos:member sp:depth-to-r-horizon ;
   skos:member sp:effervescence-of-carbonate-in-fine-earth ;
   skos:member sp:fabric ;
   skos:member sp:field-ph ;
   skos:member sp:field-texture-mineral ;
   skos:member sp:field-texture-organic ;
+  skos:member sp:field-texture-qualifier ;
   skos:member sp:horizon-boundary-distinctness ;
   skos:member sp:horizon-boundary-shape ;
   skos:member sp:horizons ;
@@ -4243,9 +3622,12 @@ sp:observable-properties
   skos:member sp:type-of-soil-observation ;
   skos:member sp:voids-cracks ;
   skos:member sp:voids-macropores-abundance ;
+  skos:member sp:voids-macropores-abundance-coarse ;
+  skos:member sp:voids-macropores-abundance-fine ;
   skos:member sp:voids-macropores-diameter ;
   skos:member sp:voids-micropores ;
   skos:member sp:water-repellence ;
+  skos:member subst:lithology ;
   skos:member subst:material-strength ;
   skos:prefLabel "Observable properties of soil profiles"@en ;
 .
@@ -4302,7 +3684,7 @@ sp:pans-cementation
   skos:member sp:pans-cementation-2 ;
   skos:member sp:pans-cementation-3 ;
   skos:member sp:pans-cementation-4 ;
-  skos:prefLabel "Cementation of pan"@en ;
+  skos:prefLabel "Cementation of pan - enumeration"^^rdf:langString ;
 .
 sp:pans-cementation-0
   a skos:Concept ;
@@ -4353,7 +3735,7 @@ sp:pans-continuity
   skos:member sp:pans-continuity-B ;
   skos:member sp:pans-continuity-C ;
   skos:member sp:pans-continuity-D ;
-  skos:prefLabel "Continuity of pan"@en ;
+  skos:prefLabel "Continuity of pan - enumeration"^^rdf:langString ;
 .
 sp:pans-continuity-B
   a skos:Concept ;
@@ -4388,7 +3770,7 @@ sp:pans-structure
   skos:member sp:pans-structure-R ;
   skos:member sp:pans-structure-S ;
   skos:member sp:pans-structure-V ;
-  skos:prefLabel "Structure of pan"@en ;
+  skos:prefLabel "Structure of pan - enumeration"^^rdf:langString ;
 .
 sp:pans-structure-C
   a skos:Concept ;
@@ -4453,7 +3835,7 @@ sp:pans-type
   skos:member sp:pans-type-T ;
   skos:member sp:pans-type-V ;
   skos:member sp:pans-type-Z ;
-  skos:prefLabel "Type of pan"@en ;
+  skos:prefLabel "Type of pan - enumeration"^^rdf:langString ;
 .
 sp:pans-type-A
   a skos:Concept ;
@@ -4678,7 +4060,7 @@ sp:roots-abundance
   skos:member sp:roots-abundance-2 ;
   skos:member sp:roots-abundance-3 ;
   skos:member sp:roots-abundance-4 ;
-  skos:prefLabel "Root abundance"@en ;
+  skos:prefLabel "Root abundance - enumeration"^^rdf:langString ;
 .
 sp:roots-abundance-0
   a skos:Concept ;
@@ -4733,7 +4115,7 @@ sp:roots-size
   skos:member sp:roots-size-2 ;
   skos:member sp:roots-size-3 ;
   skos:member sp:roots-size-4 ;
-  skos:prefLabel "Root size"@en ;
+  skos:prefLabel "Root size - enumeration"^^rdf:langString ;
 .
 sp:roots-size-1
   a skos:Concept ;
@@ -4789,7 +4171,7 @@ sp:segregations-abundance
   skos:member sp:segregations-abundance-3 ;
   skos:member sp:segregations-abundance-4 ;
   skos:member sp:segregations-abundance-5 ;
-  skos:prefLabel "Abundance of segregations"@en ;
+  skos:prefLabel "Abundance of segregations - enumeration"^^rdf:langString ;
 .
 sp:segregations-abundance-0
   a skos:Concept ;
@@ -4854,7 +4236,7 @@ sp:segregations-form
   skos:member sp:segregations-form-T ;
   skos:member sp:segregations-form-V ;
   skos:member sp:segregations-form-X ;
-  skos:prefLabel "Form of segregations"@en ;
+  skos:prefLabel "Form of segregations - enumeration"^^rdf:langString ;
 .
 sp:segregations-form-C
   a skos:Concept ;
@@ -4936,7 +4318,7 @@ sp:segregations-magnetic
   skos:definition "attraction to surface of hand-held magnet"@en ;
   skos:member sp:segregations-magnetic-M ;
   skos:member sp:segregations-magnetic-N ;
-  skos:prefLabel "Magnetic attributes of segregations"@en ;
+  skos:prefLabel "Magnetic attributes of segregations - enumeration"^^rdf:langString ;
 .
 sp:segregations-magnetic-M
   a skos:Concept ;
@@ -4974,7 +4356,7 @@ sp:segregations-nature
   skos:member sp:segregations-nature-U ;
   skos:member sp:segregations-nature-Y ;
   skos:member sp:segregations-nature-Z ;
-  skos:prefLabel "Nature of segregations"@en ;
+  skos:prefLabel "Nature of segregations - enumeration"^^rdf:langString ;
 .
 sp:segregations-nature-A
   a skos:Concept ;
@@ -5099,7 +4481,7 @@ sp:segregations-size
   skos:member sp:segregations-size-3 ;
   skos:member sp:segregations-size-4 ;
   skos:member sp:segregations-size-5 ;
-  skos:prefLabel "Size of segregations"@en ;
+  skos:prefLabel "Size of segregations - enumeration"^^rdf:langString ;
 .
 sp:segregations-size-1
   a skos:Concept ;
@@ -5149,7 +4531,7 @@ sp:segregations-strength
   skos:definition "Strength may be recorded where appropriate"@en ;
   skos:member sp:segregations-strength-1 ;
   skos:member sp:segregations-strength-2 ;
-  skos:prefLabel "Strength of segregations"@en ;
+  skos:prefLabel "Strength of segregations - enumeration"^^rdf:langString ;
 .
 sp:segregations-strength-1
   a skos:Concept ;
@@ -5179,7 +4561,7 @@ sp:soil-water-drainage
   skos:member sp:soil-water-drainage-4 ;
   skos:member sp:soil-water-drainage-5 ;
   skos:member sp:soil-water-drainage-6 ;
-  skos:prefLabel "Drainage"@en ;
+  skos:prefLabel "Drainage - enumeration"^^rdf:langString ;
 .
 sp:soil-water-drainage-1
   a skos:Concept ;
@@ -5239,7 +4621,7 @@ sp:soil-water-permeability
   skos:member sp:soil-water-permeability-2 ;
   skos:member sp:soil-water-permeability-3 ;
   skos:member sp:soil-water-permeability-4 ;
-  skos:prefLabel "Permeability"@en ;
+  skos:prefLabel "Permeability - enumeration"^^rdf:langString ;
 .
 sp:soil-water-permeability-1
   a skos:Concept ;
@@ -5475,7 +4857,7 @@ sp:structure-pedality-pedal
   skos:member sp:structure-pedality-grade-M ;
   skos:member sp:structure-pedality-grade-S ;
   skos:member sp:structure-pedality-grade-W ;
-  skos:prefLabel "Pedal soil grades" ;
+  skos:prefLabel "Pedal soil grades - enumeration" ;
 .
 sp:structure-pedality-size
   a skos:Collection ;
@@ -5743,7 +5125,6 @@ sp:surfacecondition-Z
 .
 sp:type-of-soil-observation
   a skos:Collection ;
-  a sosa:ObservableProperty ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/type-of-soil-observation"^^xsd:anyURI ;
   rdfs:comment "C_O_TYPE" ;
   skos:definition "The soil profile may be described using several types of observation."@en ;
@@ -5751,8 +5132,7 @@ sp:type-of-soil-observation
   skos:member sp:observation-type-C ;
   skos:member sp:observation-type-E ;
   skos:member sp:observation-type-P ;
-  skos:prefLabel "Observation type"@en ;
-  skos:prefLabel "Type of soil observation"@en ;
+  skos:prefLabel "Type of soil observation - enumeration"^^rdf:langString ;
 .
 sp:voids
   a skos:Collection ;
