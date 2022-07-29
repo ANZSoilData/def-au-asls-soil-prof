@@ -28,15 +28,15 @@ ls:coarse-fragments-abundance-0
 .
 ls:coarse-fragments-abundance-1
   a skos:Concept ;
-  skos:prefLabel "Very slightly or very few, for example very slightly fine gravelly; very few small pebbles"@en ;
+  skos:prefLabel "Very slightly or very few"@en ;
 .
 ls:coarse-fragments-abundance-2
   a skos:Concept ;
-  skos:prefLabel "Slightly or few, for example slightly stony; few stones"@en ;
+  skos:prefLabel "Slightly or few"@en ;
 .
 ls:coarse-fragments-abundance-3
   a skos:Concept ;
-  skos:prefLabel "No qualifier or common, for example medium gravelly; stony, common medium pebbles; common stones"@en ;
+  skos:prefLabel "No qualifier or common"@en ;
 .
 ls:coarse-fragments-abundance-4
   a skos:Concept ;
@@ -198,7 +198,7 @@ A soil profile is a vertical section of a soil from the soil surface through all
   skos:changeNote "2022-03-03	- minor clean up of structure, remove inScheme links; remove duplicate labels and descriptions in favour of skos prefLabel and definition" ;
   skos:changeNote "2022-07-27 - delete duplicate comment & label annotations" ;
   skos:changeNote "2022-07-28 - minor refactoring of Horizon collections" ;
-  skos:changeNote "2022-07-29 - replace `sosa:ObservableProperty` type on enumerations with `skos:related` link to the OP in the domain model" ;
+  skos:changeNote "2022-07-29 - replace `sosa:ObservableProperty , skos:Concept` type on enumerations with `skos:related` link to the OP in the domain model" ;
   skos:editorialNote "<p>The data was converted from the print representation to this linked-data form by <a href='https://orcid.org/0000-0002-0693-1899'>Linda Gregory</a> assisted by <a href='https://orcid.org/0000-0002-3884-3420'>Simon J D Cox</a>.</p>"^^rdf:HTML ;
   skos:notation "soil-profile"@en ;
   skos:prefLabel "Soil Profile classifiers"@en ;
@@ -276,7 +276,6 @@ sp:colour-stat
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour-stat"^^xsd:anyURI ;
   rdfs:comment "C_MOISTURE_STAT"@en ;
-  skos:definition "Moisture status for colour description {@en}" ;
   skos:definition "Moisture status for colour description"@en ;
   skos:member sp:colour-stat-D ;
   skos:member sp:colour-stat-M ;
@@ -328,7 +327,7 @@ sp:condition-of-surface-soil-when-dry
   skos:member sp:surfacecondition-X ;
   skos:member sp:surfacecondition-Y ;
   skos:member sp:surfacecondition-Z ;
-  skos:prefLabel "Condition of surface soil when dry - enumeration"^^rdf:langString ;
+  skos:prefLabel "Condition of surface soil when dry - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/condition-of-surface-soil-when-dry> ;
 .
 sp:consistence
@@ -811,7 +810,7 @@ sp:effervescence-of-carbonate-in-fine-earth
   skos:member sp:effervescence-N ;
   skos:member sp:effervescence-S ;
   skos:member sp:effervescence-V ;
-  skos:prefLabel "Effervescence of carbonate in fine earth - enumeration"^^rdf:langString ;
+  skos:prefLabel "Effervescence of carbonate in fine earth - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/effervescence-of-carbonate-in-fine-earth> ;
 .
 sp:fabric
@@ -824,7 +823,7 @@ Fabric describes the appearance of the soil material (under ×10 hand lens). Dif
   skos:member sp:fabric-G ;
   skos:member sp:fabric-R ;
   skos:member sp:fabric-S ;
-  skos:prefLabel "Fabric - enumeration"^^rdf:langString ;
+  skos:prefLabel "Fabric - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/fabric> ;
 .
 sp:fabric-E
@@ -2700,7 +2699,7 @@ It is strongly recommended that qualifiers only be used where considered essenti
   skos:member sp:field-texture-qualifier-heavy ;
   skos:member sp:field-texture-qualifier-light ;
   skos:member sp:field-texture-qualifier-sapric ;
-  skos:prefLabel "Field texture qualifier - enumeration"^^rdf:langString ;
+  skos:prefLabel "Field texture qualifier - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/field-texture-qualifier> ;
 .
 sp:field-texture-qualifier-fibric
@@ -2851,7 +2850,7 @@ sp:horizon-boundary-distinctness
   dcterms:description "Distinctness of the boundaries between horizons"@en ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-distinctness"^^xsd:anyURI ;
   rdfs:comment "N_H_BOUND_DISTINCT" ;
-  skos:definition "Distinctness of the boundaries between horizons {@en}" ;
+  skos:definition "Distinctness of the boundaries between horizons"@en ;
   skos:member sp:horizon-boundary-distinctness-A ;
   skos:member sp:horizon-boundary-distinctness-C ;
   skos:member sp:horizon-boundary-distinctness-D ;
@@ -2900,7 +2899,7 @@ sp:horizon-boundary-shape
   dcterms:description "Shape of boundary between horizons"@en ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-shape"^^xsd:anyURI ;
   rdfs:comment "H_BOUND_SHAPE" ;
-  skos:definition "Shape of boundary between horizons {@en}" ;
+  skos:definition "Shape of boundary between horizons"@en ;
   skos:member sp:horizon-boundary-shape-B ;
   skos:member sp:horizon-boundary-shape-I ;
   skos:member sp:horizon-boundary-shape-S ;
@@ -3515,7 +3514,7 @@ sp:mottle-type
   skos:member sp:mottle-type-X ;
   skos:member sp:mottle-type-Y ;
   skos:member sp:mottle-type-Z ;
-  skos:prefLabel "Mottle type - enumeration"^^rdf:langString ;
+  skos:prefLabel "Mottle type - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/mottle-type> ;
 .
 sp:mottle-type-M
@@ -3726,7 +3725,7 @@ sp:pans-cementation
   skos:member sp:pans-cementation-2 ;
   skos:member sp:pans-cementation-3 ;
   skos:member sp:pans-cementation-4 ;
-  skos:prefLabel "Cementation of pan - enumeration"^^rdf:langString ;
+  skos:prefLabel "Cementation of pan - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/pans-cementation> ;
 .
 sp:pans-cementation-0
@@ -3777,7 +3776,7 @@ sp:pans-continuity
   skos:member sp:pans-continuity-B ;
   skos:member sp:pans-continuity-C ;
   skos:member sp:pans-continuity-D ;
-  skos:prefLabel "Continuity of pan - enumeration"^^rdf:langString ;
+  skos:prefLabel "Continuity of pan - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/pans-continuity> ;
 .
 sp:pans-continuity-B
@@ -3812,7 +3811,7 @@ sp:pans-structure
   skos:member sp:pans-structure-R ;
   skos:member sp:pans-structure-S ;
   skos:member sp:pans-structure-V ;
-  skos:prefLabel "Structure of pan - enumeration"^^rdf:langString ;
+  skos:prefLabel "Structure of pan - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/pans-structure> ;
 .
 sp:pans-structure-C
@@ -3877,7 +3876,7 @@ sp:pans-type
   skos:member sp:pans-type-T ;
   skos:member sp:pans-type-V ;
   skos:member sp:pans-type-Z ;
-  skos:prefLabel "Type of pan - enumeration"^^rdf:langString ;
+  skos:prefLabel "Type of pan - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/pans-type> ;
 .
 sp:pans-type-A
@@ -4102,7 +4101,7 @@ sp:roots-abundance
   skos:member sp:roots-abundance-2 ;
   skos:member sp:roots-abundance-3 ;
   skos:member sp:roots-abundance-4 ;
-  skos:prefLabel "Root abundance - enumeration"^^rdf:langString ;
+  skos:prefLabel "Root abundance - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/roots-abundance> ;
 .
 sp:roots-abundance-0
@@ -4157,7 +4156,7 @@ sp:roots-size
   skos:member sp:roots-size-2 ;
   skos:member sp:roots-size-3 ;
   skos:member sp:roots-size-4 ;
-  skos:prefLabel "Root size - enumeration"^^rdf:langString ;
+  skos:prefLabel "Root size - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/roots-size> ;
 .
 sp:roots-size-1
@@ -4213,7 +4212,7 @@ sp:segregations-abundance
   skos:member sp:segregations-abundance-3 ;
   skos:member sp:segregations-abundance-4 ;
   skos:member sp:segregations-abundance-5 ;
-  skos:prefLabel "Abundance of segregations - enumeration"^^rdf:langString ;
+  skos:prefLabel "Abundance of segregations - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/segregations-abundance> ;
 .
 sp:segregations-abundance-0
@@ -4278,7 +4277,7 @@ sp:segregations-form
   skos:member sp:segregations-form-T ;
   skos:member sp:segregations-form-V ;
   skos:member sp:segregations-form-X ;
-  skos:prefLabel "Form of segregations - enumeration"^^rdf:langString ;
+  skos:prefLabel "Form of segregations - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/segregations-form> ;
 .
 sp:segregations-form-C
@@ -4360,7 +4359,7 @@ sp:segregations-magnetic
   skos:definition "attraction to surface of hand-held magnet"@en ;
   skos:member sp:segregations-magnetic-M ;
   skos:member sp:segregations-magnetic-N ;
-  skos:prefLabel "Magnetic attributes of segregations - enumeration"^^rdf:langString ;
+  skos:prefLabel "Magnetic attributes of segregations - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/segregations-magnetic> ;
 .
 sp:segregations-magnetic-M
@@ -4398,7 +4397,7 @@ sp:segregations-nature
   skos:member sp:segregations-nature-U ;
   skos:member sp:segregations-nature-Y ;
   skos:member sp:segregations-nature-Z ;
-  skos:prefLabel "Nature of segregations - enumeration"^^rdf:langString ;
+  skos:prefLabel "Nature of segregations - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/segregations-nature> ;
 .
 sp:segregations-nature-A
@@ -4523,7 +4522,7 @@ sp:segregations-size
   skos:member sp:segregations-size-3 ;
   skos:member sp:segregations-size-4 ;
   skos:member sp:segregations-size-5 ;
-  skos:prefLabel "Size of segregations - enumeration"^^rdf:langString ;
+  skos:prefLabel "Size of segregations - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/segregations-size> ;
 .
 sp:segregations-size-1
@@ -4573,7 +4572,7 @@ sp:segregations-strength
   skos:definition "Strength may be recorded where appropriate"@en ;
   skos:member sp:segregations-strength-1 ;
   skos:member sp:segregations-strength-2 ;
-  skos:prefLabel "Strength of segregations - enumeration"^^rdf:langString ;
+  skos:prefLabel "Strength of segregations - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/segregations-strength> ;
 .
 sp:segregations-strength-1
@@ -4603,7 +4602,7 @@ sp:soil-water-drainage
   skos:member sp:soil-water-drainage-4 ;
   skos:member sp:soil-water-drainage-5 ;
   skos:member sp:soil-water-drainage-6 ;
-  skos:prefLabel "Drainage - enumeration"^^rdf:langString ;
+  skos:prefLabel "Drainage - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/soil-water-drainage> ;
 .
 sp:soil-water-drainage-1
@@ -4663,7 +4662,7 @@ sp:soil-water-permeability
   skos:member sp:soil-water-permeability-2 ;
   skos:member sp:soil-water-permeability-3 ;
   skos:member sp:soil-water-permeability-4 ;
-  skos:prefLabel "Permeability - enumeration"^^rdf:langString ;
+  skos:prefLabel "Permeability - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/soil-water-permeability> ;
 .
 sp:soil-water-permeability-1
@@ -5175,7 +5174,7 @@ sp:type-of-soil-observation
   skos:member sp:observation-type-C ;
   skos:member sp:observation-type-E ;
   skos:member sp:observation-type-P ;
-  skos:prefLabel "Type of soil observation - enumeration"^^rdf:langString ;
+  skos:prefLabel "Type of soil observation - enumeration"@en ;
 .
 sp:voids
   a skos:Collection ;
@@ -5774,422 +5773,422 @@ subst:material-strength-W
   skos:prefLabel "Weak rock"@en ;
 .
 <https://anzsoil.org/def/au/property/aggradation>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Aggradation"@en ;
 .
 <https://anzsoil.org/def/au/property/alteration>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Alteration" ;
 .
 <https://anzsoil.org/def/au/property/aspect>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Aspect"@en ;
 .
 <https://anzsoil.org/def/au/property/biotic-microrelief-agents>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Biotic microrelief agents"@en ;
 .
 <https://anzsoil.org/def/au/property/biotic-microrelief-components>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Component of biotic relief"@en ;
 .
 <https://anzsoil.org/def/au/property/coarse-fragments-abundance>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Abundance of coarse fragments"@en ;
 .
 <https://anzsoil.org/def/au/property/coarse-fragments-distribution>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Distribution of coarse fragments"@en ;
 .
 <https://anzsoil.org/def/au/property/coarse-fragments-lithology>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Lithology of coarse fragments"@en ;
 .
 <https://anzsoil.org/def/au/property/coarse-fragments-shape>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Shape of coarse fragments"@en ;
 .
 <https://anzsoil.org/def/au/property/coarse-fragments-size>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Size of coarse fragments"@en ;
 .
 <https://anzsoil.org/def/au/property/coarse-fragments-strength>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Strength of coarse fragments"@en ;
 .
 <https://anzsoil.org/def/au/property/colour-stat>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Moisture status for colour description"@en ;
 .
 <https://anzsoil.org/def/au/property/colour-value>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Colour value"@en ;
 .
 <https://anzsoil.org/def/au/property/condition-of-surface-soil-when-dry>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Condition of surface soil when dry"@en ;
 .
 <https://anzsoil.org/def/au/property/confidence>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Confidence that substrate is parent material" ;
 .
 <https://anzsoil.org/def/au/property/consistence-plasticity-degree>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Plasticity Degree"@en ;
 .
 <https://anzsoil.org/def/au/property/consistence-plasticity-type>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Plasticity Type"@en ;
 .
 <https://anzsoil.org/def/au/property/consistence-stickiness>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Stickiness"@en ;
 .
 <https://anzsoil.org/def/au/property/consistence-strength>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Strength"@en ;
 .
 <https://anzsoil.org/def/au/property/cutans-abundance>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Abundance of cutans"@en ;
 .
 <https://anzsoil.org/def/au/property/cutans-distinctness>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Distinctness of cutans"@en ;
 .
 <https://anzsoil.org/def/au/property/cutans-type>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Types of cutans"@en ;
 .
 <https://anzsoil.org/def/au/property/depth-free-water>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Depth to free water"@en ;
 .
 <https://anzsoil.org/def/au/property/depth-of-horizon>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Depth of Horizons"@en ;
 .
 <https://anzsoil.org/def/au/property/depth-of-horizon-lower>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Lower depth of soil horizon in metres" ;
 .
 <https://anzsoil.org/def/au/property/depth-of-horizon-upper>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Upper depth of soil horizon in metres" ;
 .
 <https://anzsoil.org/def/au/property/depth-to-r-horizon>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Depth to R horizon or strongly cemented pan"@en ;
 .
 <https://anzsoil.org/def/au/property/discontinuity-spacing>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Spacing of discontinuities" ;
 .
 <https://anzsoil.org/def/au/property/disturbance-of-site>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Disturbance of site"@en ;
 .
 <https://anzsoil.org/def/au/property/drainage-height>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Drainage height"@en ;
 .
 <https://anzsoil.org/def/au/property/effervescence-of-carbonate-in-fine-earth>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Effervescence of carbonate in fine earth"@en ;
 .
 <https://anzsoil.org/def/au/property/elevation>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Elevation in metres above sea-level"@en ;
 .
 <https://anzsoil.org/def/au/property/erosion-gully>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Gully erosion"@en ;
 .
 <https://anzsoil.org/def/au/property/erosion-gully-depth>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Gully depth"@en ;
 .
 <https://anzsoil.org/def/au/property/erosion-mass-movement>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Mass movement"@en ;
 .
 <https://anzsoil.org/def/au/property/erosion-rill>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Rill erosion"@en ;
 .
 <https://anzsoil.org/def/au/property/erosion-scald>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Scald erosion"@en ;
 .
 <https://anzsoil.org/def/au/property/erosion-sheet>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Sheet erosion"@en ;
 .
 <https://anzsoil.org/def/au/property/erosion-state>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "State of erosion"@en ;
 .
 <https://anzsoil.org/def/au/property/erosion-stream-bank>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Stream bank erosion"@en ;
 .
 <https://anzsoil.org/def/au/property/erosion-tunnel>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Tunnel erosion"@en ;
 .
 <https://anzsoil.org/def/au/property/erosion-wave>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Wave erosion"@en ;
 .
 <https://anzsoil.org/def/au/property/erosion-wind>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Wind erosion"@en ;
 .
 <https://anzsoil.org/def/au/property/fabric>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Fabric"@en ;
 .
 <https://anzsoil.org/def/au/property/field-ph>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Field pH"@en ;
 .
 <https://anzsoil.org/def/au/property/field-texture-mineral>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Mineral soils field texture grade"@en ;
 .
 <https://anzsoil.org/def/au/property/field-texture-organic>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Organic soils field texture"@en ;
 .
 <https://anzsoil.org/def/au/property/field-texture-qualifier>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Field texture qualifier"@en ;
 .
 <https://anzsoil.org/def/au/property/gilgai-microrelief-proportions>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Proportions of gilgai components"@en ;
 .
 <https://anzsoil.org/def/au/property/gilgai-microrelief-type>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Type of gilgai microrelief"@en ;
 .
 <https://anzsoil.org/def/au/property/grain-size>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Grain size" ;
 .
 <https://anzsoil.org/def/au/property/horizon-boundary-distinctness>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Boundary distinctness"@en ;
 .
 <https://anzsoil.org/def/au/property/horizon-boundary-shape>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Boundary shape"@en ;
 .
 <https://anzsoil.org/def/au/property/hummocky-microrelief-type>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Type of hummocky microrelief"@en ;
 .
 <https://anzsoil.org/def/au/property/inundation-depth>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Depth of inundation (annual)"@en ;
 .
 <https://anzsoil.org/def/au/property/inundation-duration>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Duration (annual) of inundation"@en ;
 .
 <https://anzsoil.org/def/au/property/inundation-frequency>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Frequency of inundation"@en ;
 .
 <https://anzsoil.org/def/au/property/inundation-runon-velocity>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Runon velocity of inundation"@en ;
 .
 <https://anzsoil.org/def/au/property/lithology>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Lithology"@en ;
 .
 <https://anzsoil.org/def/au/property/material-strength>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Strength of material"@en ;
 .
 <https://anzsoil.org/def/au/property/material-structure>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Structure" ;
 .
 <https://anzsoil.org/def/au/property/microrelief-component-sampled>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Component of microrelief sampled"@en ;
 .
 <https://anzsoil.org/def/au/property/microrelief-horizontal-interval>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Horizontal interval"@en ;
 .
 <https://anzsoil.org/def/au/property/microrelief-vertical-interval>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Vertical interval"@en ;
 .
 <https://anzsoil.org/def/au/property/mineral-composition>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Mineral composition" ;
 .
 <https://anzsoil.org/def/au/property/mottle-abundance>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Mottle abundance"@en ;
 .
 <https://anzsoil.org/def/au/property/mottle-boundary-distinctness>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Mottle distinctness of boundaries"@en ;
 .
 <https://anzsoil.org/def/au/property/mottle-colour>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Mottle colour"@en ;
 .
 <https://anzsoil.org/def/au/property/mottle-contrast>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Mottle contrast"@en ;
 .
 <https://anzsoil.org/def/au/property/mottle-size>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Mottle size"@en ;
 .
 <https://anzsoil.org/def/au/property/mottle-type>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Mottle type"@en ;
 .
 <https://anzsoil.org/def/au/property/observation-depth>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Observation depth" ;
 .
 <https://anzsoil.org/def/au/property/other-microrelief-type>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Type of other microrelief"@en ;
 .
 <https://anzsoil.org/def/au/property/pans-cementation>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Cementation of pan"@en ;
 .
 <https://anzsoil.org/def/au/property/pans-continuity>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Continuity of pan"@en ;
 .
 <https://anzsoil.org/def/au/property/pans-structure>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Structure of pan"@en ;
 .
 <https://anzsoil.org/def/au/property/pans-type>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Type of pan"@en ;
 .
 <https://anzsoil.org/def/au/property/rock-outcrop-abundance>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Abundance of rock outcrop"@en ;
 .
 <https://anzsoil.org/def/au/property/rock-outcrop-lithology>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Lithology of rock outcrop"@en ;
 .
 <https://anzsoil.org/def/au/property/roots-abundance>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Root abundance"@en ;
 .
 <https://anzsoil.org/def/au/property/roots-size>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Root size"@en ;
 .
 <https://anzsoil.org/def/au/property/runoff>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Runoff"@en ;
 .
 <https://anzsoil.org/def/au/property/sample-distance>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Substrate-soil distance" ;
 .
 <https://anzsoil.org/def/au/property/segregations-abundance>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Abundance of segregations"@en ;
 .
 <https://anzsoil.org/def/au/property/segregations-form>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Form of segregations"@en ;
 .
 <https://anzsoil.org/def/au/property/segregations-magnetic>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Magnetic attributes of segregations"@en ;
 .
 <https://anzsoil.org/def/au/property/segregations-nature>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Nature of segregations"@en ;
 .
 <https://anzsoil.org/def/au/property/segregations-size>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Size of segregations"@en ;
 .
 <https://anzsoil.org/def/au/property/segregations-strength>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Strength of segregations"@en ;
 .
 <https://anzsoil.org/def/au/property/soil-water-drainage>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Drainage"@en ;
 .
 <https://anzsoil.org/def/au/property/soil-water-permeability>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Permeability"@en ;
 .
 <https://anzsoil.org/def/au/property/soil-water-status>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Soil water status"@en ;
 .
 <https://anzsoil.org/def/au/property/structure-artificial-aggregates>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Structure of artificial aggregates"@en ;
 .
 <https://anzsoil.org/def/au/property/structure-pedality-grade>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Grade of pedality"@en ;
 .
 <https://anzsoil.org/def/au/property/structure-pedality-size>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Size of peds"@en ;
 .
 <https://anzsoil.org/def/au/property/structure-pedality-type>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Type of pedality"@en ;
 .
 <https://anzsoil.org/def/au/property/substrate-genesis>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Genetic type of substrate masses" ;
 .
 <https://anzsoil.org/def/au/property/texture>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Texture" ;
 .
 <https://anzsoil.org/def/au/property/voids-cracks>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Width of cracks"@en ;
 .
 <https://anzsoil.org/def/au/property/voids-macropores-abundance>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Abundance of macropores"@en ;
 .
 <https://anzsoil.org/def/au/property/voids-macropores-abundance-coarse>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Abundance of medium and coarse macropores" ;
 .
 <https://anzsoil.org/def/au/property/voids-macropores-abundance-fine>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Abundance of very fine and fine macropores" ;
 .
 <https://anzsoil.org/def/au/property/voids-macropores-diameter>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Diameter of macropores"@en ;
 .
 <https://anzsoil.org/def/au/property/voids-micropores>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Micropores (presence)"@en ;
 .
 <https://anzsoil.org/def/au/property/water-repellence>
-  a sosa:ObservableProperty ;
+  a sosa:ObservableProperty , skos:Concept ;
   skos:prefLabel "Water repellence"@en ;
 .
