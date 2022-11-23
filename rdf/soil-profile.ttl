@@ -181,7 +181,7 @@ A soil profile is a vertical section of a soil from the soil surface through all
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile"^^xsd:anyURI ;
   dcterms:isFormatOf <https://catalogue.nla.gov.au/Record/4273240> ;
   dcterms:license <http://creativecommons.org/licences/by/4.0> ;
-  dcterms:modified "2022-07-29"^^xsd:date ;
+  dcterms:modified "2022-11-23"^^xsd:date ;
   dcterms:publisher <http://www.publish.csiro.au/> ;
   dcterms:rights "copyright CSIRO 2009, 2021. All rights reserved."@en ;
   dcterms:source "National Committee on Soil and Terrain (2009), 'Australian soil and land survey field handbook (3rd edn).' (CSIRO Publishing: Melbourne)"@en ;
@@ -199,119 +199,446 @@ A soil profile is a vertical section of a soil from the soil surface through all
   skos:changeNote "2022-07-27 - delete duplicate comment & label annotations" ;
   skos:changeNote "2022-07-28 - minor refactoring of Horizon collections" ;
   skos:changeNote "2022-07-29 - replace `sosa:ObservableProperty , skos:Concept` type on enumerations with `skos:related` link to the OP in the domain model" ;
+  skos:changeNote "2022-11-23 - Rename collections for consistency with ANSIS" ;
   skos:editorialNote "<p>The data was converted from the print representation to this linked-data form by <a href='https://orcid.org/0000-0002-0693-1899'>Linda Gregory</a> assisted by <a href='https://orcid.org/0000-0002-3884-3420'>Simon J D Cox</a>.</p>"^^rdf:HTML ;
   skos:notation "soil-profile"@en ;
   skos:prefLabel "Soil Profile classifiers"@en ;
 .
-sp:coarse-fragments
+sp:Mottle-abundance
+  a owl:Class ;
   a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/coarse-fragments"^^xsd:anyURI ;
-  skos:definition "Coarse fragments are particles coarser than 2 mm. They include unattached rock fragments and other fragments such as charcoal and shells. Coarse fragments are distinguished from segregations of pedogenic origin in that they are not, or not considered to be, of pedogenic origin. Coarse fragments may occur throughout the profile. Their abundance, size, shape, lithology and strength are described in exactly the same way on the surface as throughout the profile where their distribution is also described."@en ;
-  skos:member ls:coarse-fragments-abundance ;
-  skos:member ls:coarse-fragments-lithology ;
-  skos:member ls:coarse-fragments-shape ;
-  skos:member ls:coarse-fragments-size ;
-  skos:member sp:coarse-fragments-distribution ;
-  skos:member subst:material-strength ;
-  skos:prefLabel "Coarse fragments"@en ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Mottle-abundance"^^xsd:anyURI ;
+  rdfs:comment "N_MOTT_ABUN" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "The percentage of mottles is estimated by eye using the chart in Figure 11 (ASLSFH3Ed) for comparison. "@en ;
+  skos:member sp:mottle-abundance-0 ;
+  skos:member sp:mottle-abundance-1 ;
+  skos:member sp:mottle-abundance-2 ;
+  skos:member sp:mottle-abundance-3 ;
+  skos:member sp:mottle-abundance-4 ;
+  skos:prefLabel "Mottle abundance - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/mottle-abundance> ;
 .
-sp:coarse-fragments-distribution
+sp:Mottle-colour
+  a owl:Class ;
   a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/coarse-fragments-distribution"^^xsd:anyURI ;
-  rdfs:comment "C_CF_DISTRIBUTION" ;
-  skos:definition "Coarse fragments may occur throughout the profile."@en ;
-  skos:member sp:coarse-fragments-distribution-D ;
-  skos:member sp:coarse-fragments-distribution-R ;
-  skos:member sp:coarse-fragments-distribution-S ;
-  skos:member sp:coarse-fragments-distribution-U ;
-  skos:prefLabel "Distribution of coarse fragments - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/coarse-fragments-distribution> ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Mottle-colour"^^xsd:anyURI ;
+  rdfs:comment "C_MOTT_COLOUR" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "This should be described in terms of Munsell or Revised Standard Soil colours, but abbreviated forms can be used"@en ;
+  skos:member sp:mottle-colour-B ;
+  skos:member sp:mottle-colour-D ;
+  skos:member sp:mottle-colour-G ;
+  skos:member sp:mottle-colour-L ;
+  skos:member sp:mottle-colour-O ;
+  skos:member sp:mottle-colour-P ;
+  skos:member sp:mottle-colour-R ;
+  skos:member sp:mottle-colour-Y ;
+  skos:prefLabel "Mottle colour - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/mottle-colour> ;
 .
-sp:coarse-fragments-distribution-D
-  a skos:Concept ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/coarse-fragments-distribution-D"^^xsd:anyURI ;
-  rdfs:comment "C_CF_DISTRIBUTION" ;
-  skos:definition "fragments are scattered randomly throughout the soil and may be of mixed origin."@en ;
-  skos:notation "D" ;
-  skos:prefLabel "Dispersed"@en ;
-.
-sp:coarse-fragments-distribution-R
-  a skos:Concept ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/coarse-fragments-distribution-R"^^xsd:anyURI ;
-  rdfs:comment "C_CF_DISTRIBUTION" ;
-  skos:definition "all fragments are remnants of the underlying bedrock but their orientation is not related to the joint or bedding planes of the bedrock."@en ;
-  skos:notation "R" ;
-  skos:prefLabel "Reoriented"@en ;
-.
-sp:coarse-fragments-distribution-S
-  a skos:Concept ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/coarse-fragments-distribution-S"^^xsd:anyURI ;
-  rdfs:comment "C_CF_DISTRIBUTION" ;
-  skos:definition "fragments occur in bands, usually parallel with the soil surface (excluding those parallel with joint or bedding planes of the bedrock). They may include materials other than those from the underlying bedrock."@en ;
-  skos:notation "S" ;
-  skos:prefLabel "Stratified"@en ;
-.
-sp:coarse-fragments-distribution-U
-  a skos:Concept ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/coarse-fragments-distribution-U"^^xsd:anyURI ;
-  rdfs:comment "C_CF_DISTRIBUTION" ;
-  skos:definition "all fragments are remnants of the underlying bedrock and their orientation closely parallels that of the joint or bedding planes of the bedrock."@en ;
-  skos:notation "U" ;
-  skos:prefLabel "Undisturbed"@en ;
-.
-sp:colour
+sp:Mottle-contrast
+  a owl:Class ;
   a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour"^^xsd:anyURI ;
-  skos:definition """Record colours by comparing soils with colour charts using the Munsell Color system, for example the Munsell Soil Color Charts or the Revised Standard Soil Color Charts (Oyama and Takehara 1970).
-Hue, value and chroma of the matrix colour are recorded, for example 10YR4/2.
-Soil colours rarely match the chart colour chips perfectly. They should be matched to the chip closest in colour, or the nearest whole number in chroma where chips are not provided, for example chromas 5 and 7.
-The soil colour is measured on the surface of a freshly broken aggregate of moist soil. Moisten the soil if it is dry. Record the colour when the visible moisture film disappears from the surface of the moistened broken aggregate. The aggregate should be held as close as possible to the colour chips. Take care not to smear the broken surface, as this can give an incorrect recording of the colour of the soil matrix.
-Dry colours may also be recorded."""@en ;
-  skos:member sp:colour-stat ;
-  skos:member sp:colour-value ;
-  skos:note "A moisture status must be recorded with the colour description"@en ;
-  skos:prefLabel "Colour"@en ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-constrast"^^xsd:anyURI ;
+  rdfs:comment "C_CONTRAST" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Mottle contrast"@en ;
+  skos:member sp:mottle-contrast-D ;
+  skos:member sp:mottle-contrast-F ;
+  skos:member sp:mottle-contrast-P ;
+  skos:prefLabel "Mottle contrast - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/mottle-contrast> ;
 .
-sp:colour-stat
+sp:Mottle-distinctness
+  a owl:Class ;
   a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour-stat"^^xsd:anyURI ;
-  rdfs:comment "C_MOISTURE_STAT"@en ;
-  skos:definition "Moisture status for colour description"@en ;
-  skos:member sp:colour-stat-D ;
-  skos:member sp:colour-stat-M ;
-  skos:prefLabel "Moisture status for colour description - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/colour-stat> ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Mottle-distinctness"^^xsd:anyURI ;
+  rdfs:comment "C_MOTT_BOUN_DISTINCT" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Mottle distinctness of boundaries"@en ;
+  skos:member sp:mottle-boundary-C ;
+  skos:member sp:mottle-boundary-D ;
+  skos:member sp:mottle-boundary-S ;
+  skos:prefLabel "Mottle distinctness of boundaries - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/mottle-boundary-distinctness> ;
 .
-sp:colour-stat-D
-  a skos:Concept ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour-stat-D"^^xsd:anyURI ;
-  skos:definition "Dry"@en ;
-  skos:notation "D" ;
-  skos:prefLabel "Dry (colour status)"@en ;
-.
-sp:colour-stat-M
-  a skos:Concept ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour-stat-M"^^xsd:anyURI ;
-  skos:definition "Moist"@en ;
-  skos:notation "M" ;
-  skos:prefLabel "Moist"@en ;
-.
-sp:colour-value
-  a skos:Concept ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour-value"^^xsd:anyURI ;
-  skos:definition """Record colours by comparing soils with colour charts using the Munsell Color system, for example the Munsell Soil Color Charts or the Revised Standard Soil Color Charts (Oyama and Takehara 1970).
-Hue, value and chroma of the matrix colour are recorded, for example 10YR4/2.
-Soil colours rarely match the chart colour chips perfectly. They should be matched to the chip closest in colour, or the nearest whole number in chroma where chips are not provided, for example chromas 5 and 7.
-The soil colour is measured on the surface of a freshly broken aggregate of moist soil. Moisten the soil if it is dry. Record the colour when the visible moisture film disappears from the surface of the moistened broken aggregate. The aggregate should be held as close as possible to the colour chips. Take care not to smear the broken surface, as this can give an incorrect recording of the colour of the soil matrix.
-Dry colours may also be recorded."""@en ;
-  skos:note "A moisture status must be recorded with the colour description"@en ;
-  skos:prefLabel "Colour value"@en ;
-  skos:related sp:colour-stat ;
-  skos:related <https://anzsoil.org/def/au/property/colour-value> ;
-.
-sp:condition-of-surface-soil-when-dry
+sp:Mottle-size
+  a owl:Class ;
   a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/condition-of-surface-soil-when-dry"^^xsd:anyURI ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Mottle-size"^^xsd:anyURI ;
+  rdfs:comment "N_MOTT_SIZE" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Measure mottle size (mm) along the greatest dimension, except in streaks or linear forms where width is measured."@en ;
+  skos:member sp:mottle-size-1 ;
+  skos:member sp:mottle-size-2 ;
+  skos:member sp:mottle-size-3 ;
+  skos:member sp:mottle-size-4 ;
+  skos:prefLabel "Mottle size - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/mottle-size> ;
+.
+sp:Mottle-type
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Mottle-type"^^xsd:anyURI ;
+  rdfs:comment "C_MOTT_TYPE" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "The type of mottle can suggest the origin of the mottles."@en ;
+  skos:member sp:mottle-type-M ;
+  skos:member sp:mottle-type-X ;
+  skos:member sp:mottle-type-Y ;
+  skos:member sp:mottle-type-Z ;
+  skos:prefLabel "Mottle or colour pattern type - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/mottle-type> ;
+.
+sp:Pans-cementation
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Pans-cementation"^^xsd:anyURI ;
+  rdfs:comment "C_PAN_CEMENTATION" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Place a 30 mm diameter piece of the pan in water for 1 hour. If it slakes, it is uncemented; if not, it is cemented. The degree of cementation is assessed on the following scale after the 1 hour soaking in water."@en ;
+  skos:member sp:pans-cementation-0 ;
+  skos:member sp:pans-cementation-1 ;
+  skos:member sp:pans-cementation-2 ;
+  skos:member sp:pans-cementation-3 ;
+  skos:member sp:pans-cementation-4 ;
+  skos:prefLabel "Cementation of pan - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/pans-cementation> ;
+.
+sp:Pans-continuity
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Pans-continuity"^^xsd:anyURI ;
+  rdfs:comment "C_PAN_CONTINUITY" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Continuity of pan"@en ;
+  skos:member sp:pans-continuity-B ;
+  skos:member sp:pans-continuity-C ;
+  skos:member sp:pans-continuity-D ;
+  skos:prefLabel "Continuity of pan - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/pans-continuity> ;
+.
+sp:Pans-structure
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Pans-structure"^^xsd:anyURI ;
+  rdfs:comment "C_PAN_STRUCTURE" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Structure of pan"@en ;
+  skos:member sp:pans-structure-C ;
+  skos:member sp:pans-structure-L ;
+  skos:member sp:pans-structure-N ;
+  skos:member sp:pans-structure-R ;
+  skos:member sp:pans-structure-S ;
+  skos:member sp:pans-structure-V ;
+  skos:prefLabel "Structure of pan - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/pans-structure> ;
+.
+sp:Pans-type
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Pans-type"^^xsd:anyURI ;
+  rdfs:comment "C_PAN_TYPE" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Type of pan"@en ;
+  skos:member sp:pans-type-A ;
+  skos:member sp:pans-type-C ;
+  skos:member sp:pans-type-D ;
+  skos:member sp:pans-type-E ;
+  skos:member sp:pans-type-F ;
+  skos:member sp:pans-type-I ;
+  skos:member sp:pans-type-K ;
+  skos:member sp:pans-type-L ;
+  skos:member sp:pans-type-M ;
+  skos:member sp:pans-type-N ;
+  skos:member sp:pans-type-O ;
+  skos:member sp:pans-type-R ;
+  skos:member sp:pans-type-T ;
+  skos:member sp:pans-type-V ;
+  skos:member sp:pans-type-Z ;
+  skos:prefLabel "Type of pan - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/pans-type> ;
+.
+sp:Pedality-grade-apedal
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Pedality-grade-apedal"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Apedal soils have no observable peds and are divided into:" ;
+  skos:member sp:structure-pedality-grade-G ;
+  skos:member sp:structure-pedality-grade-V ;
+  skos:prefLabel "Apedal soil grades" ;
+.
+sp:Pedality-grade-pedal
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Pedality-grade-pedal"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Pedal soils have observable peds and are divided into:" ;
+  skos:member sp:structure-pedality-grade-M ;
+  skos:member sp:structure-pedality-grade-S ;
+  skos:member sp:structure-pedality-grade-W ;
+  skos:prefLabel "Pedal soil grades - enumeration" ;
+.
+sp:Pedality-size
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Pedality-size"^^xsd:anyURI ;
+  rdfs:comment "N_STR_PED_SIZE" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "The average least dimension of peds is used to determine the class interval. Use figure 17. The least dimension is the vertical dimension for platy structure; the horizontal dimension for prismatic, columnar, blocky and polyhedral peds; the maximum separation of convex faces for lenticular peds; and the diameter for granular peds."@en ;
+  skos:member sp:structure-pedality-size-1 ;
+  skos:member sp:structure-pedality-size-2 ;
+  skos:member sp:structure-pedality-size-3 ;
+  skos:member sp:structure-pedality-size-4 ;
+  skos:member sp:structure-pedality-size-5 ;
+  skos:member sp:structure-pedality-size-6 ;
+  skos:member sp:structure-pedality-size-7 ;
+  skos:member sp:structure-pedality-size-8 ;
+  skos:member sp:structure-pedality-size-9 ;
+  skos:note "<p>Figure 17	Ped size. <img src=\"http://anzsoil.org/resources/yellowbook/Figure17.png\" alt=\"Ped Size\"/> </p>"^^rdf:HTML ;
+  skos:prefLabel "Size of peds"@en ;
+  skos:related <https://anzsoil.org/def/au/property/structure-pedality-size> ;
+.
+sp:Pedality-type
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Pedality-type"^^xsd:anyURI ;
+  rdfs:comment "C_STR_PED_TYPE" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "The types of structure are illustrated in diagrammatic form. See figure 17."@en ;
+  skos:member sp:structure-pedality-type-AB ;
+  skos:member sp:structure-pedality-type-CA ;
+  skos:member sp:structure-pedality-type-CO ;
+  skos:member sp:structure-pedality-type-GR ;
+  skos:member sp:structure-pedality-type-LE ;
+  skos:member sp:structure-pedality-type-PL ;
+  skos:member sp:structure-pedality-type-PO ;
+  skos:member sp:structure-pedality-type-PR ;
+  skos:member sp:structure-pedality-type-SB ;
+  skos:note "<p>Figure 17	Ped size. <img src=\"http://anzsoil.org/resources/yellowbook/Figure17.png\" alt=\"Ped Size\"/> </p>"^^rdf:HTML ;
+  skos:prefLabel "Type of pedality"@en ;
+  skos:related <https://anzsoil.org/def/au/property/structure-pedality-type> ;
+.
+sp:Pore-abundance-coarse
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Pore-abundance-coarse"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Abundance of medium and coarse macropores (greater than 2 mm diameter)" ;
+  skos:member sp:voids-macropores-abundance-0 ;
+  skos:member sp:voids-macropores-abundance-4 ;
+  skos:member sp:voids-macropores-abundance-5 ;
+  skos:member sp:voids-macropores-abundance-6 ;
+  skos:prefLabel "Abundance of medium and coarse macropores" ;
+  skos:related <https://anzsoil.org/def/au/property/voids-macropores-abundance-coarse> ;
+.
+sp:Pore-abundance-fine
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Pore-abundance-fine"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Abundance of very fine and fine macropores (less than 2mm diameter)" ;
+  skos:member sp:voids-macropores-abundance-0 ;
+  skos:member sp:voids-macropores-abundance-1 ;
+  skos:member sp:voids-macropores-abundance-2 ;
+  skos:member sp:voids-macropores-abundance-3 ;
+  skos:prefLabel "Abundance of very fine and fine macropores" ;
+  skos:related <https://anzsoil.org/def/au/property/voids-macropores-abundance-fine> ;
+.
+sp:Pore-diameter
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:description "<p>Figure 18	Size of macropores.<img src=\"http://anzsoil.org/resources/yellowbook/Figure18.png\" /></p>"^^rdf:HTML ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Pore-diameter"^^xsd:anyURI ;
+  rdfs:comment "N_PORE_DIAMETER" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Diameter of macropores Use Figure 18 as a guide to average diameter"@en ;
+  skos:member sp:voids-macropores-diameter-1 ;
+  skos:member sp:voids-macropores-diameter-2 ;
+  skos:member sp:voids-macropores-diameter-3 ;
+  skos:member sp:voids-macropores-diameter-4 ;
+  skos:prefLabel "Diameter of macropores"@en ;
+  skos:related <https://anzsoil.org/def/au/property/voids-macropores-diameter> ;
+.
+sp:Profile-construction
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Profile-construction"^^xsd:anyURI ;
+  rdfs:comment "C_O_TYPE" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "The soil profile may be described using several types of observation."@en ;
+  skos:member sp:observation-type-A ;
+  skos:member sp:observation-type-C ;
+  skos:member sp:observation-type-E ;
+  skos:member sp:observation-type-P ;
+  skos:prefLabel "Type of soil observation - enumeration"@en ;
+.
+sp:Root-abundance
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:description "<p>Number of roots per 0.01 m<sup>2</sup> (100 mm × 100 mm)</p>"^^rdf:HTML ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Root-abundance"^^xsd:anyURI ;
+  rdfs:comment "N_ROOT_ABUN" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Number of roots per 0.01 m2 (100 mm × 100 mm)"@en ;
+  skos:member sp:roots-abundance-0 ;
+  skos:member sp:roots-abundance-1 ;
+  skos:member sp:roots-abundance-2 ;
+  skos:member sp:roots-abundance-3 ;
+  skos:member sp:roots-abundance-4 ;
+  skos:prefLabel "Root abundance - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/roots-abundance> ;
+.
+sp:Root-size
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Root-size"^^xsd:anyURI ;
+  rdfs:comment "N_ROOT_SIZE" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "The size (diameter) of roots observed in the horizon in mm"@en ;
+  skos:member sp:roots-size-1 ;
+  skos:member sp:roots-size-2 ;
+  skos:member sp:roots-size-3 ;
+  skos:member sp:roots-size-4 ;
+  skos:prefLabel "Root size - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/roots-size> ;
+.
+sp:Segregations-abundance
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:description "<p>Use Figure 11 as a guide <img src=\"http://anzsoil.org/resources/yellowbook/Figure11.png\" /></p>"^^rdf:HTML ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Segregations-abundance"^^xsd:anyURI ;
+  rdfs:comment "N_SEG_ABUN" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Abundance of segregations. Use figure 11 as a guide."@en ;
+  skos:member sp:segregations-abundance-0 ;
+  skos:member sp:segregations-abundance-1 ;
+  skos:member sp:segregations-abundance-2 ;
+  skos:member sp:segregations-abundance-3 ;
+  skos:member sp:segregations-abundance-4 ;
+  skos:member sp:segregations-abundance-5 ;
+  skos:prefLabel "Abundance of segregations - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/segregations-abundance> ;
+.
+sp:Segregations-form
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Segregations-form"^^xsd:anyURI ;
+  rdfs:comment "C_SEG_FORM" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Form of segregations"@en ;
+  skos:member sp:segregations-form-C ;
+  skos:member sp:segregations-form-F ;
+  skos:member sp:segregations-form-L ;
+  skos:member sp:segregations-form-N ;
+  skos:member sp:segregations-form-R ;
+  skos:member sp:segregations-form-S ;
+  skos:member sp:segregations-form-T ;
+  skos:member sp:segregations-form-V ;
+  skos:member sp:segregations-form-X ;
+  skos:prefLabel "Form of segregations - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/segregations-form> ;
+.
+sp:Segregations-magnetic-attributes
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Segregations-magnetic-attributes"^^xsd:anyURI ;
+  rdfs:comment "C_SEG_MAGNETIC_ATTR" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "attraction to surface of hand-held magnet"@en ;
+  skos:member sp:segregations-magnetic-M ;
+  skos:member sp:segregations-magnetic-N ;
+  skos:prefLabel "Magnetic attributes of segregations - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/segregations-magnetic> ;
+.
+sp:Segregations-nature
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Segregations-nature"^^xsd:anyURI ;
+  rdfs:comment "C_SEG_NATURE" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Nature of segregations"@en ;
+  skos:member sp:segregations-nature-A ;
+  skos:member sp:segregations-nature-E ;
+  skos:member sp:segregations-nature-F ;
+  skos:member sp:segregations-nature-G ;
+  skos:member sp:segregations-nature-H ;
+  skos:member sp:segregations-nature-K ;
+  skos:member sp:segregations-nature-L ;
+  skos:member sp:segregations-nature-M ;
+  skos:member sp:segregations-nature-N ;
+  skos:member sp:segregations-nature-O ;
+  skos:member sp:segregations-nature-S ;
+  skos:member sp:segregations-nature-U ;
+  skos:member sp:segregations-nature-Y ;
+  skos:member sp:segregations-nature-Z ;
+  skos:prefLabel "Nature of segregations - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/segregations-nature> ;
+.
+sp:Segregations-size
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Segregations-size"^^xsd:anyURI ;
+  rdfs:comment "N_SEG_SIZE" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Approximately equidimensional segregations (concretions, nodules) are measured in the greatest dimension. Segregations where one dimension is much greater than the other two (tubules, root linings, veins, laminae) are measured in the least dimension"@en ;
+  skos:member sp:segregations-size-1 ;
+  skos:member sp:segregations-size-2 ;
+  skos:member sp:segregations-size-3 ;
+  skos:member sp:segregations-size-4 ;
+  skos:member sp:segregations-size-5 ;
+  skos:prefLabel "Size of segregations - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/segregations-size> ;
+.
+sp:Segregations-strength
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Segregations-strength"^^xsd:anyURI ;
+  rdfs:comment "C_SEG_STRENGTH" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Strength may be recorded where appropriate"@en ;
+  skos:member sp:segregations-strength-1 ;
+  skos:member sp:segregations-strength-2 ;
+  skos:prefLabel "Strength of segregations - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/segregations-strength> ;
+.
+sp:Site-drainage
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Site-drainage"^^xsd:anyURI ;
+  rdfs:comment "C_O_DRAINAGE" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Drainage is a useful term to summarise local soil wetness conditions, that is, it provides a statement about soil and site drainage likely to occur in most years. It is affected by a number of attributes, both internal and external, that may act separately or together. Internal attributes include soil structure, texture, porosity, hydraulic conductivity, and water-holding capacity, while external attributes are source and quality of water, evapotranspiration, gradient and length of slope, and position in the landscape."@en ;
+  skos:member sp:soil-water-drainage-1 ;
+  skos:member sp:soil-water-drainage-2 ;
+  skos:member sp:soil-water-drainage-3 ;
+  skos:member sp:soil-water-drainage-4 ;
+  skos:member sp:soil-water-drainage-5 ;
+  skos:member sp:soil-water-drainage-6 ;
+  skos:prefLabel "Drainage - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/soil-water-drainage> ;
+.
+sp:Soil-permeability
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Soil-permeability"^^xsd:anyURI ;
+  rdfs:comment "C_PERMEABILITY" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Permeability is independent of climate and drainage, and – as applied to a soil – is controlled by the potential to transmit water (saturated hydraulic conductivity, Ks) of the least permeable layer in the soil. Therefore it is inferred from attributes of the soil such as structure, texture, porosity, cracks and shrink–swell properties. The rate of transmission of water in the profile is based on the assumption that loss by evapotranspiration is minimal. The Ks ranges are compatible with those of Nowland in Canada, as reported by McKeague et al. (1982)."@en ;
+  skos:member sp:soil-water-permeability-1 ;
+  skos:member sp:soil-water-permeability-2 ;
+  skos:member sp:soil-water-permeability-3 ;
+  skos:member sp:soil-water-permeability-4 ;
+  skos:prefLabel "Permeability - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/soil-water-permeability> ;
+.
+sp:Surface-condition
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Surface-condition"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "Many surface soils have a characteristic appearance when dry. Because surface conditions are often relevant to the use of the soil and indicative of particular kinds of soil, every effort should be made to observe the surface condition in the dry state. The surface conditions are not necessarily mutually exclusive:"@en ;
   skos:member sp:surfacecondition-C ;
   skos:member sp:surfacecondition-F ;
@@ -330,6 +657,138 @@ sp:condition-of-surface-soil-when-dry
   skos:prefLabel "Condition of surface soil when dry - enumeration"@en ;
   skos:related <https://anzsoil.org/def/au/property/condition-of-surface-soil-when-dry> ;
 .
+sp:Water-repellence
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/Water-repellence"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Water repellence of some soils, usually sandy, is caused by a series of long-chain polymethylene waxes, made up of acids, alcohols and esters, attached to the sand grains (Ma’shum et al. 1988). These soils occur Australia-wide but are more widespread in southern Australia (Wetherby 1984, McGhie and Posner 1980). Degree of repellence is assessed by determining the concentration of ethanol required to wet the sand in 10 seconds (King 1981). An abbreviated form of this method is recommended for routine field situations."@en ;
+  skos:member sp:water-repellence-N ;
+  skos:member sp:water-repellence-R ;
+  skos:member sp:water-repellence-S ;
+  skos:note "Soil temperature at testing should be between 15ºC and 25ºC. Higher temperatures will increase, and lower decrease, rates of absorption. Industrial-grade methylated spirits, available from chemists, at a concentration of 23.9 ml per 200 ml water can be substituted for the 2-molar ethanol to obtain approximate values."@en ;
+  skos:prefLabel "Water repellence"@en ;
+  skos:related <https://anzsoil.org/def/au/property/water-repellence> ;
+.
+sp:coarse-fragments
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/coarse-fragments"^^xsd:anyURI ;
+  skos:definition "Coarse fragments are particles coarser than 2 mm. They include unattached rock fragments and other fragments such as charcoal and shells. Coarse fragments are distinguished from segregations of pedogenic origin in that they are not, or not considered to be, of pedogenic origin. Coarse fragments may occur throughout the profile. Their abundance, size, shape, lithology and strength are described in exactly the same way on the surface as throughout the profile where their distribution is also described."@en ;
+  skos:member ls:coarse-fragments-abundance ;
+  skos:member ls:coarse-fragments-lithology ;
+  skos:member ls:coarse-fragments-shape ;
+  skos:member ls:coarse-fragments-size ;
+  skos:member sp:coarse-fragments-distribution ;
+  skos:member subst:material-strength ;
+  skos:prefLabel "Coarse fragments"@en ;
+.
+sp:coarse-fragments-distribution
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/coarse-fragments-distribution"^^xsd:anyURI ;
+  rdfs:comment "C_CF_DISTRIBUTION" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Coarse fragments may occur throughout the profile."@en ;
+  skos:member sp:coarse-fragments-distribution-D ;
+  skos:member sp:coarse-fragments-distribution-R ;
+  skos:member sp:coarse-fragments-distribution-S ;
+  skos:member sp:coarse-fragments-distribution-U ;
+  skos:prefLabel "Distribution of coarse fragments - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/coarse-fragments-distribution> ;
+.
+sp:coarse-fragments-distribution-D
+  a sp:coarse-fragments-distribution ;
+  a skos:Concept ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/coarse-fragments-distribution-D"^^xsd:anyURI ;
+  rdfs:comment "C_CF_DISTRIBUTION" ;
+  skos:definition "fragments are scattered randomly throughout the soil and may be of mixed origin."@en ;
+  skos:notation "D" ;
+  skos:prefLabel "Dispersed"@en ;
+.
+sp:coarse-fragments-distribution-R
+  a sp:coarse-fragments-distribution ;
+  a skos:Concept ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/coarse-fragments-distribution-R"^^xsd:anyURI ;
+  rdfs:comment "C_CF_DISTRIBUTION" ;
+  skos:definition "all fragments are remnants of the underlying bedrock but their orientation is not related to the joint or bedding planes of the bedrock."@en ;
+  skos:notation "R" ;
+  skos:prefLabel "Reoriented"@en ;
+.
+sp:coarse-fragments-distribution-S
+  a sp:coarse-fragments-distribution ;
+  a skos:Concept ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/coarse-fragments-distribution-S"^^xsd:anyURI ;
+  rdfs:comment "C_CF_DISTRIBUTION" ;
+  skos:definition "fragments occur in bands, usually parallel with the soil surface (excluding those parallel with joint or bedding planes of the bedrock). They may include materials other than those from the underlying bedrock."@en ;
+  skos:notation "S" ;
+  skos:prefLabel "Stratified"@en ;
+.
+sp:coarse-fragments-distribution-U
+  a sp:coarse-fragments-distribution ;
+  a skos:Concept ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/coarse-fragments-distribution-U"^^xsd:anyURI ;
+  rdfs:comment "C_CF_DISTRIBUTION" ;
+  skos:definition "all fragments are remnants of the underlying bedrock and their orientation closely parallels that of the joint or bedding planes of the bedrock."@en ;
+  skos:notation "U" ;
+  skos:prefLabel "Undisturbed"@en ;
+.
+sp:colour
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition """Record colours by comparing soils with colour charts using the Munsell Color system, for example the Munsell Soil Color Charts or the Revised Standard Soil Color Charts (Oyama and Takehara 1970).
+Hue, value and chroma of the matrix colour are recorded, for example 10YR4/2.
+Soil colours rarely match the chart colour chips perfectly. They should be matched to the chip closest in colour, or the nearest whole number in chroma where chips are not provided, for example chromas 5 and 7.
+The soil colour is measured on the surface of a freshly broken aggregate of moist soil. Moisten the soil if it is dry. Record the colour when the visible moisture film disappears from the surface of the moistened broken aggregate. The aggregate should be held as close as possible to the colour chips. Take care not to smear the broken surface, as this can give an incorrect recording of the colour of the soil matrix.
+Dry colours may also be recorded."""@en ;
+  skos:member sp:colour-stat ;
+  skos:member sp:colour-value ;
+  skos:note "A moisture status must be recorded with the colour description"@en ;
+  skos:prefLabel "Colour"@en ;
+.
+sp:colour-stat
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour-stat"^^xsd:anyURI ;
+  rdfs:comment "C_MOISTURE_STAT"@en ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Moisture status for colour description"@en ;
+  skos:member sp:colour-stat-D ;
+  skos:member sp:colour-stat-M ;
+  skos:prefLabel "Moisture status for colour description - enumeration"@en ;
+  skos:related <https://anzsoil.org/def/au/property/colour-stat> ;
+.
+sp:colour-stat-D
+  a sp:colour-stat ;
+  a skos:Concept ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour-stat-D"^^xsd:anyURI ;
+  skos:definition "Dry"@en ;
+  skos:notation "D" ;
+  skos:prefLabel "Dry (colour status)"@en ;
+.
+sp:colour-stat-M
+  a sp:colour-stat ;
+  a skos:Concept ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour-stat-M"^^xsd:anyURI ;
+  skos:definition "Moist"@en ;
+  skos:notation "M" ;
+  skos:prefLabel "Moist"@en ;
+.
+sp:colour-value
+  a sp:colour ;
+  a skos:Concept ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/colour-value"^^xsd:anyURI ;
+  skos:definition """Record colours by comparing soils with colour charts using the Munsell Color system, for example the Munsell Soil Color Charts or the Revised Standard Soil Color Charts (Oyama and Takehara 1970).
+Hue, value and chroma of the matrix colour are recorded, for example 10YR4/2.
+Soil colours rarely match the chart colour chips perfectly. They should be matched to the chip closest in colour, or the nearest whole number in chroma where chips are not provided, for example chromas 5 and 7.
+The soil colour is measured on the surface of a freshly broken aggregate of moist soil. Moisten the soil if it is dry. Record the colour when the visible moisture film disappears from the surface of the moistened broken aggregate. The aggregate should be held as close as possible to the colour chips. Take care not to smear the broken surface, as this can give an incorrect recording of the colour of the soil matrix.
+Dry colours may also be recorded."""@en ;
+  skos:note "A moisture status must be recorded with the colour description"@en ;
+  skos:prefLabel "Colour value"@en ;
+  skos:related sp:colour-stat ;
+  skos:related <https://anzsoil.org/def/au/property/colour-value> ;
+.
 sp:consistence
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence"^^xsd:anyURI ;
@@ -341,9 +800,11 @@ sp:consistence
   skos:prefLabel "Consistence"@en ;
 .
 sp:consistence-plasticity-degree
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-plasticity-degree"^^xsd:anyURI ;
   rdfs:comment "C_H_PLASTICITY_DEGREE" ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "Plasticity is the ability to change shape and retain the new shape after the stress is removed. The degree of plasticity given below applies only to normal plasticity. The degree of plasticity is determined at the soil moisture content used for field texturing, that is, just below sticky point. The soil is rolled between the palms of the hand and, if possible, 40 mm long rolls are formed. The rolls are dangled from the thumb and forefinger. Plasticity is determined on the behaviour of rolls of varying thickness."@en ;
   skos:member sp:consistence-plasticity-degree-0 ;
   skos:member sp:consistence-plasticity-degree-1 ;
@@ -353,6 +814,7 @@ sp:consistence-plasticity-degree
   skos:related <https://anzsoil.org/def/au/property/consistence-plasticity-degree> ;
 .
 sp:consistence-plasticity-degree-0
+  a sp:consistence-plasticity-degree ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-plasticity-degree-0"^^xsd:anyURI ;
   rdfs:comment "C_H_PLASTICITY_DEGREE" ;
@@ -361,6 +823,7 @@ sp:consistence-plasticity-degree-0
   skos:prefLabel "Non-plastic"@en ;
 .
 sp:consistence-plasticity-degree-1
+  a sp:consistence-plasticity-degree ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-plasticity-degree-1"^^xsd:anyURI ;
   rdfs:comment "C_H_PLASTICITY_DEGREE" ;
@@ -370,6 +833,7 @@ Roll (40mm length x 4mm diameter) will form but will not support its own weight.
   skos:prefLabel "Slightly plastic"@en ;
 .
 sp:consistence-plasticity-degree-2
+  a sp:consistence-plasticity-degree ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-plasticity-degree-2"^^xsd:anyURI ;
   rdfs:comment "C_H_PLASTICITY_DEGREE" ;
@@ -379,6 +843,7 @@ Roll (40mm length x 2mm diameter) will form but will not support its own weight.
   skos:prefLabel "Moderately plastic"@en ;
 .
 sp:consistence-plasticity-degree-3
+  a sp:consistence-plasticity-degree ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-plasticity-degree-3"^^xsd:anyURI ;
   rdfs:comment "C_H_PLASTICITY_DEGREE" ;
@@ -387,9 +852,11 @@ sp:consistence-plasticity-degree-3
   skos:prefLabel "Very plastic"@en ;
 .
 sp:consistence-plasticity-type
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-plasticity-type"^^xsd:anyURI ;
   rdfs:comment "C_H_PLASTICITY_TYPE" ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "The type of plasticity refers to the degree to which either the consistence, field texture or both properties of a soil suggest the amount of clay-sized particles it contains (Butler 1955). It may be identified by determining two field textures: one after an initial 1 to 2 minute working of the soil sample, and another after a prolonged 10 minute kneading. The change in field texture from the initial to the prolonged working of the soil sample indicates the type of plasticity."@en ;
   skos:member sp:consistence-plasticity-type-N ;
   skos:member sp:consistence-plasticity-type-S ;
@@ -399,6 +866,7 @@ sp:consistence-plasticity-type
   skos:related <https://anzsoil.org/def/au/property/consistence-plasticity-type> ;
 .
 sp:consistence-plasticity-type-N
+  a sp:consistence-plasticity-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-plasticity-type-N"^^xsd:anyURI ;
   rdfs:comment "C_H_PLASTICITY_TYPE" ;
@@ -407,6 +875,7 @@ sp:consistence-plasticity-type-N
   skos:prefLabel "Normal plasticity"@en ;
 .
 sp:consistence-plasticity-type-S
+  a sp:consistence-plasticity-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-plasticity-type-S"^^xsd:anyURI ;
   rdfs:comment "C_H_PLASTICITY_TYPE" ;
@@ -415,6 +884,7 @@ sp:consistence-plasticity-type-S
   skos:prefLabel "Superplastic"@en ;
 .
 sp:consistence-plasticity-type-T
+  a sp:consistence-plasticity-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-plasticity-type-T"^^xsd:anyURI ;
   rdfs:comment "C_H_PLASTICITY_TYPE" ;
@@ -423,6 +893,7 @@ sp:consistence-plasticity-type-T
   skos:prefLabel "Strongly subplastic"@en ;
 .
 sp:consistence-plasticity-type-U
+  a sp:consistence-plasticity-type ;
   a skos:Concept ;
   dcterms:description "ncreases one to two field texture groups."@en ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-plasticity-type-U"^^xsd:anyURI ;
@@ -432,9 +903,11 @@ sp:consistence-plasticity-type-U
   skos:prefLabel "Subplastic"@en ;
 .
 sp:consistence-stickiness
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-stickiness"^^xsd:anyURI ;
   rdfs:comment "C_H_STICKINESS" ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "Stickiness is determined on wet soil by pressing the wet sample between thumb and forefinger and then observing the adherence of the soil to the fingers."@en ;
   skos:member sp:consistence-stickiness-0 ;
   skos:member sp:consistence-stickiness-1 ;
@@ -444,6 +917,7 @@ sp:consistence-stickiness
   skos:related <https://anzsoil.org/def/au/property/consistence-stickiness> ;
 .
 sp:consistence-stickiness-0
+  a sp:consistence-stickiness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-stickiness-0"^^xsd:anyURI ;
   rdfs:comment "C_H_STICKINESS" ;
@@ -452,6 +926,7 @@ sp:consistence-stickiness-0
   skos:prefLabel "Non-sticky"@en ;
 .
 sp:consistence-stickiness-1
+  a sp:consistence-stickiness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-stickiness-1"^^xsd:anyURI ;
   rdfs:comment "C_H_STICKINESS" ;
@@ -460,6 +935,7 @@ sp:consistence-stickiness-1
   skos:prefLabel "Slightly sticky"@en ;
 .
 sp:consistence-stickiness-2
+  a sp:consistence-stickiness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-stickiness-2"^^xsd:anyURI ;
   rdfs:comment "C_H_STICKINESS" ;
@@ -468,6 +944,7 @@ sp:consistence-stickiness-2
   skos:prefLabel "Moderately sticky"@en ;
 .
 sp:consistence-stickiness-3
+  a sp:consistence-stickiness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-stickiness-3"^^xsd:anyURI ;
   rdfs:comment "C_H_STICKINESS" ;
@@ -476,9 +953,11 @@ sp:consistence-stickiness-3
   skos:prefLabel "Very sticky"@en ;
 .
 sp:consistence-strength
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-strength"^^xsd:anyURI ;
   rdfs:comment "C_STRG_CLASS" ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition """Strength of soil is the resistance to breaking or deformation. Strength is determined by the force just sufficient to break or deform a 20 mm diameter piece of soil when a compressive shearing force is applied between thumb and forefinger. The 20 mm piece of soil may be a ped, part of a ped, a compound ped or a fragment.
 
 Forces 0 to 5 are equivalent to the following dry consistence classes in the ‘USDA Soil Survey Manual’ (Soil Survey Staff 1951):
@@ -500,6 +979,7 @@ Forces 0 to 5 are equivalent to the following dry consistence classes in the ‘
   skos:related <https://anzsoil.org/def/au/property/consistence-strength> ;
 .
 sp:consistence-strength-0
+  a sp:consistence-strength ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-strength-0"^^xsd:anyURI ;
   rdfs:comment "C_STRG_CLASS" ;
@@ -509,6 +989,7 @@ sp:consistence-strength-0
   skos:prefLabel "Loose (consistence strength)"@en ;
 .
 sp:consistence-strength-1
+  a sp:consistence-strength ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-strength-1"^^xsd:anyURI ;
   rdfs:comment "C_STRG_CLASS" ;
@@ -518,6 +999,7 @@ sp:consistence-strength-1
   skos:prefLabel "Very weak (consistence strength)"@en ;
 .
 sp:consistence-strength-2
+  a sp:consistence-strength ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-strength-2"^^xsd:anyURI ;
   rdfs:comment "C_STRG_CLASS" ;
@@ -527,6 +1009,7 @@ sp:consistence-strength-2
   skos:prefLabel "Weak (consistence strength)"@en ;
 .
 sp:consistence-strength-3
+  a sp:consistence-strength ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-strength-3"^^xsd:anyURI ;
   rdfs:comment "C_STRG_CLASS" ;
@@ -536,6 +1019,7 @@ sp:consistence-strength-3
   skos:prefLabel "Firm (consistence strength)"@en ;
 .
 sp:consistence-strength-4
+  a sp:consistence-strength ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-strength-4"^^xsd:anyURI ;
   rdfs:comment "C_STRG_CLASS" ;
@@ -545,6 +1029,7 @@ sp:consistence-strength-4
   skos:prefLabel "Very Firm (consistence strength)"@en ;
 .
 sp:consistence-strength-5
+  a sp:consistence-strength ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-strength-5"^^xsd:anyURI ;
   rdfs:comment "C_STRG_CLASS" ;
@@ -554,6 +1039,7 @@ sp:consistence-strength-5
   skos:prefLabel "Strong (consistence strength)"@en ;
 .
 sp:consistence-strength-6
+  a sp:consistence-strength ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-strength-6"^^xsd:anyURI ;
   rdfs:comment "C_STRG_CLASS" ;
@@ -562,6 +1048,7 @@ sp:consistence-strength-6
   skos:prefLabel "Very Strong (consistence strength)"@en ;
 .
 sp:consistence-strength-7
+  a sp:consistence-strength ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/consistence-strength-7"^^xsd:anyURI ;
   rdfs:comment "C_STRG_CLASS" ;
@@ -581,9 +1068,11 @@ Cutans may be observed in the field (a ×10 hand lens is usually necessary) but 
   skos:prefLabel "Cutans"@en ;
 .
 sp:cutans-abundance
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-abundance"^^xsd:anyURI ;
   rdfs:comment "N_CUTAN_ABUN" ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "Abundance of cutans"@en ;
   skos:member sp:cutans-abundance-0 ;
   skos:member sp:cutans-abundance-1 ;
@@ -593,6 +1082,7 @@ sp:cutans-abundance
   skos:related <https://anzsoil.org/def/au/property/cutans-abundance> ;
 .
 sp:cutans-abundance-0
+  a sp:cutans-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-abundance-0"^^xsd:anyURI ;
   rdfs:comment "N_CUTAN_ABUN" ;
@@ -601,6 +1091,7 @@ sp:cutans-abundance-0
   skos:prefLabel "No cutans"@en ;
 .
 sp:cutans-abundance-1
+  a sp:cutans-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-abundance-1"^^xsd:anyURI ;
   rdfs:comment "N_CUTAN_ABUN" ;
@@ -609,6 +1100,7 @@ sp:cutans-abundance-1
   skos:prefLabel "Few (cutans abundance)"@en ;
 .
 sp:cutans-abundance-2
+  a sp:cutans-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-abundance-2"^^xsd:anyURI ;
   rdfs:comment "N_CUTAN_ABUN" ;
@@ -617,6 +1109,7 @@ sp:cutans-abundance-2
   skos:prefLabel "Common (cutans abundance)"@en ;
 .
 sp:cutans-abundance-3
+  a sp:cutans-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-abundance-3"^^xsd:anyURI ;
   rdfs:comment "N_CUTAN_ABUN" ;
@@ -625,9 +1118,11 @@ sp:cutans-abundance-3
   skos:prefLabel "Many (cutans abundance)"@en ;
 .
 sp:cutans-distinctness
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-distinctness"^^xsd:anyURI ;
   rdfs:comment "C_CUTAN_DISTINCT" ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "This refers to the ease and certainty with which a cutan is identified. Distinctness relates to thickness and to the colour contrast with the adjacent material; it may change markedly with moisture content."@en ;
   skos:member sp:cutans-distinctness-D ;
   skos:member sp:cutans-distinctness-F ;
@@ -636,6 +1131,7 @@ sp:cutans-distinctness
   skos:related <https://anzsoil.org/def/au/property/cutans-distinctness> ;
 .
 sp:cutans-distinctness-D
+  a sp:cutans-distinctness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-distinctness-D"^^xsd:anyURI ;
   rdfs:comment "C_CUTAN_DISTINCT" ;
@@ -644,6 +1140,7 @@ sp:cutans-distinctness-D
   skos:prefLabel "Distinct (cutans distinctness)"@en ;
 .
 sp:cutans-distinctness-F
+  a sp:cutans-distinctness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-distinctness-F"^^xsd:anyURI ;
   rdfs:comment "C_CUTAN_DISTINCT" ;
@@ -652,6 +1149,7 @@ sp:cutans-distinctness-F
   skos:prefLabel "Faint (cutans distinctness)"@en ;
 .
 sp:cutans-distinctness-P
+  a sp:cutans-distinctness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-distinctness-P"^^xsd:anyURI ;
   rdfs:comment "C_CUTAN_DISTINCT" ;
@@ -660,9 +1158,11 @@ sp:cutans-distinctness-P
   skos:prefLabel "Prominent (cutans distinctness)"@en ;
 .
 sp:cutans-type
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-type"^^xsd:anyURI ;
   rdfs:comment "C_CUTAN_TYPE" ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "Types of cutans"@en ;
   skos:member sp:cutans-type-C ;
   skos:member sp:cutans-type-K ;
@@ -675,6 +1175,7 @@ sp:cutans-type
   skos:related <https://anzsoil.org/def/au/property/cutans-type> ;
 .
 sp:cutans-type-C
+  a sp:cutans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-type-C"^^xsd:anyURI ;
   rdfs:comment "C_CUTAN_TYPE" ;
@@ -683,6 +1184,7 @@ sp:cutans-type-C
   skos:prefLabel "Clay skins"@en ;
 .
 sp:cutans-type-K
+  a sp:cutans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-type-K"^^xsd:anyURI ;
   rdfs:comment "C_CUTAN_TYPE" ;
@@ -691,6 +1193,7 @@ sp:cutans-type-K
   skos:prefLabel "Slickensides"@en ;
 .
 sp:cutans-type-M
+  a sp:cutans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-type-M"^^xsd:anyURI ;
   rdfs:comment "C_CUTAN_TYPE" ;
@@ -699,6 +1202,7 @@ sp:cutans-type-M
   skos:prefLabel "Mangans"@en ;
 .
 sp:cutans-type-O
+  a sp:cutans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-type-O"^^xsd:anyURI ;
   rdfs:comment "C_CUTAN_TYPE" ;
@@ -707,6 +1211,7 @@ sp:cutans-type-O
   skos:prefLabel "Other cutans"@en ;
 .
 sp:cutans-type-S
+  a sp:cutans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-type-S"^^xsd:anyURI ;
   rdfs:comment "C_CUTAN_TYPE" ;
@@ -715,6 +1220,7 @@ sp:cutans-type-S
   skos:prefLabel "Stress cutans"@en ;
 .
 sp:cutans-type-U
+  a sp:cutans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-type-U"^^xsd:anyURI ;
   rdfs:comment "C_CUTAN_TYPE" ;
@@ -723,6 +1229,7 @@ sp:cutans-type-U
   skos:prefLabel "Unspecified"@en ;
 .
 sp:cutans-type-Z
+  a sp:cutans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/cutans-type-Z"^^xsd:anyURI ;
   rdfs:comment "C_CUTAN_TYPE" ;
@@ -731,6 +1238,7 @@ sp:cutans-type-Z
   skos:prefLabel "Zero or no cutans"@en ;
 .
 sp:depth-of-horizon
+  a sp:horizons ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/depth-of-horizon"^^xsd:anyURI ;
   skos:definition """The upper and lower depths, in metres, of each horizon are measured from the soil surface, excluding O horizons. O horizon depths are measured above the mineral soil surface, for example O1 0.120.10 m, O2 0.10.0 m.
@@ -753,6 +1261,7 @@ sp:depth-of-horizon-upper
   skos:related <https://anzsoil.org/def/au/property/depth-of-horizon-upper> ;
 .
 sp:depth-to-r-horizon
+  a sp:horizons ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/depth-to-r-horizon"^^xsd:anyURI ;
   skos:definition """Give depth to R horizon or strongly cemented pan in metres.
@@ -761,6 +1270,7 @@ The purpose of recording this depth is to include in the soil description those 
   skos:related <https://anzsoil.org/def/au/property/depth-to-r-horizon> ;
 .
 sp:effervescence-H
+  a sp:effervescence-of-carbonate-in-fine-earth ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/effervescence-H"^^xsd:anyURI ;
   rdfs:comment "C_H_CARBONATE_EFF" ;
@@ -769,6 +1279,7 @@ sp:effervescence-H
   skos:prefLabel "Highly calcareous"@en ;
 .
 sp:effervescence-M
+  a sp:effervescence-of-carbonate-in-fine-earth ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/effervescence-M"^^xsd:anyURI ;
   rdfs:comment "C_H_CARBONATE_EFF" ;
@@ -777,6 +1288,7 @@ sp:effervescence-M
   skos:prefLabel "Moderately calcareous"@en ;
 .
 sp:effervescence-N
+  a sp:effervescence-of-carbonate-in-fine-earth ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/effervescence-N"^^xsd:anyURI ;
   rdfs:comment "C_H_CARBONATE_EFF" ;
@@ -785,6 +1297,7 @@ sp:effervescence-N
   skos:prefLabel "Non-calcareous"@en ;
 .
 sp:effervescence-S
+  a sp:effervescence-of-carbonate-in-fine-earth ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/effervescence-S"^^xsd:anyURI ;
   rdfs:comment "C_H_CARBONATE_EFF" ;
@@ -793,6 +1306,7 @@ sp:effervescence-S
   skos:prefLabel "Slightly calcareous"@en ;
 .
 sp:effervescence-V
+  a sp:effervescence-of-carbonate-in-fine-earth ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/effervescence-V"^^xsd:anyURI ;
   rdfs:comment "C_H_CARBONATE_EFF" ;
@@ -801,9 +1315,11 @@ sp:effervescence-V
   skos:prefLabel "Very highly calcareous"@en ;
 .
 sp:effervescence-of-carbonate-in-fine-earth
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/effervescence-of-carbonate-in-fine-earth"^^xsd:anyURI ;
   rdfs:comment "C_H_CARBONATE_EFF" ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "Effervescence of carbonate in fine earth using two or three drops of 1-molar HCl."@en ;
   skos:member sp:effervescence-H ;
   skos:member sp:effervescence-M ;
@@ -814,9 +1330,11 @@ sp:effervescence-of-carbonate-in-fine-earth
   skos:related <https://anzsoil.org/def/au/property/effervescence-of-carbonate-in-fine-earth> ;
 .
 sp:fabric
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/fabric"^^xsd:anyURI ;
   rdfs:comment "C_FAB_TYPE" ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition """The definition of soil fabric in Australia is incomplete. The following description is adapted from Northcote (1979).
 Fabric describes the appearance of the soil material (under ×10 hand lens). Differences in fabric are associated with the presence or absence of peds, the lustre or lack of lustre of the ped surfaces, and the presence, size and arrangement of pores (voids) in the soil mass. The descriptions given below apply primarily to B horizons."""@en ;
   skos:member sp:fabric-E ;
@@ -827,6 +1345,7 @@ Fabric describes the appearance of the soil material (under ×10 hand lens). Dif
   skos:related <https://anzsoil.org/def/au/property/fabric> ;
 .
 sp:fabric-E
+  a sp:fabric ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/fabric-E"^^xsd:anyURI ;
   rdfs:comment "C_FAB_TYPE" ;
@@ -836,6 +1355,7 @@ sp:fabric-E
   skos:prefLabel "Earthy (fabric)"@en ;
 .
 sp:fabric-G
+  a sp:fabric ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/fabric-G"^^xsd:anyURI ;
   rdfs:comment "C_FAB_TYPE" ;
@@ -844,6 +1364,7 @@ sp:fabric-G
   skos:prefLabel "Sandy (grains prominent)"@en ;
 .
 sp:fabric-R
+  a sp:fabric ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/fabric-R"^^xsd:anyURI ;
   rdfs:comment "C_FAB_TYPE" ;
@@ -852,6 +1373,7 @@ sp:fabric-R
   skos:prefLabel "Rough-ped"@en ;
 .
 sp:fabric-S
+  a sp:fabric ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/fabric-S"^^xsd:anyURI ;
   rdfs:comment "C_FAB_TYPE" ;
@@ -873,6 +1395,7 @@ pH may be measured either:
   skos:related <https://anzsoil.org/def/au/property/field-ph> ;
 .
 sp:field-texture-AP
+  a sp:field-texture-organic ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-AP"^^xsd:anyURI ;
   skos:altLabel "humified peat"@en ;
@@ -957,6 +1480,7 @@ sp:field-texture-CKS-light
   skos:prefLabel "Light clayey coarse sand"@en ;
 .
 sp:field-texture-CL
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-CL"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: coherent plastic bolus, smooth to manipulate; will form ribbon of 40–50 mm."@en ;
@@ -1117,6 +1641,7 @@ sp:field-texture-CLKS-light
   skos:prefLabel "Light clay loam, coarse sandy"@en ;
 .
 sp:field-texture-CLS
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-CLS"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: coherent plastic bolus; medium-size sand grains visible in finer matrix; will form ribbon of 40–50 mm."@en ;
@@ -1177,6 +1702,7 @@ sp:field-texture-CLS-light
   skos:prefLabel "Light clay loam, sandy"@en ;
 .
 sp:field-texture-CP
+  a sp:field-texture-organic ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-CP"^^xsd:anyURI ;
   skos:definition "bolus has obvious fine mineral particle content, is sticky when wet, and is coherent."@en ;
@@ -1185,6 +1711,7 @@ sp:field-texture-CP
   skos:prefLabel "Clayey peat"@en ;
 .
 sp:field-texture-CS
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-CS"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: slight coherence; sand grains of medium size; sticky when wet; many sand grains stick to fingers; will form minimal ribbon of 5–15 mm; discolours fingers with clay stain."@en ;
@@ -1489,6 +2016,7 @@ sp:field-texture-FSMHC-I
   skos:prefLabel "Fibric fine sandy medium heavy clay"@en ;
 .
 sp:field-texture-GP
+  a sp:field-texture-organic ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-GP"^^xsd:anyURI ;
   skos:definition "dominantly decomposed organic material, which has dried irreversibly to fine granules through exposure and drying and/or cultivation. Granules are approximately 1–2 mm in diameter and have granular or subangular blocky structure."@en ;
@@ -1497,6 +2025,7 @@ sp:field-texture-GP
   skos:prefLabel "Granular peat"@en ;
 .
 sp:field-texture-HC
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-HC"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: smooth plastic bolus; handles like stiff plasticine; can be moulded into rods without fracture; has firm resistance to ribboning shear; will form ribbon of 75 mm or more."@en ;
@@ -1537,6 +2066,7 @@ sp:field-texture-HC-I
   skos:prefLabel "Fibric heavy clay"@en ;
 .
 sp:field-texture-HP
+  a sp:field-texture-organic ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-HP"^^xsd:anyURI ;
   skos:altLabel "Semi-fibrous peat"@en ;
@@ -1546,6 +2076,7 @@ sp:field-texture-HP
   skos:prefLabel "Hemic peat"@en ;
 .
 sp:field-texture-IP
+  a sp:field-texture-organic ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-IP"^^xsd:anyURI ;
   skos:altLabel "Fibrous peat"@en ;
@@ -1825,6 +2356,7 @@ sp:field-texture-KSMHC-I
   skos:prefLabel "Fibric coarse sandy medium heavy clay"@en ;
 .
 sp:field-texture-L
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-L"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: bolus coherent and rather spongy; smooth feel when manipulated but with no obvious sandiness or ‘silkiness’; may be somewhat greasy to the touch if much organic matter present; will form ribbon of about 25 mm."@en ;
@@ -1855,6 +2387,7 @@ Organic and fibrous; dark organic stain discolours fingers; greasy feel in claye
   skos:prefLabel "Fibric loam"@en ;
 .
 sp:field-texture-LC
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-LC"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: plastic bolus; smooth to touch; slight resistance to shearing between thumb and forefinger; will form ribbon of 50–75 mm."@en ;
@@ -1961,6 +2494,7 @@ Organic and fibrous; dark organic stain discolours fingers; greasy feel in claye
   skos:prefLabel "Fibric loamy coarse sand"@en ;
 .
 sp:field-texture-LMC
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-LMC"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: plastic bolus; smooth to touch; slight to moderate resistance to ribboning shear; will form ribbon of about 75 mm."@en ;
@@ -2001,6 +2535,7 @@ sp:field-texture-LMC-I
   skos:prefLabel "Fibric light medium clay"@en ;
 .
 sp:field-texture-LP
+  a sp:field-texture-organic ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-LP"^^xsd:anyURI ;
   skos:definition "bolus has obvious mineral particle content but no obvious sandiness to touch and is smooth, non-sticky when wet, and weakly coherent."@en ;
@@ -2009,6 +2544,7 @@ sp:field-texture-LP
   skos:prefLabel "Loamy peat"@en ;
 .
 sp:field-texture-LS
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-LS"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: slight coherence; sand grains of medium size; can be sheared between thumb and forefinger to give minimal ribbon of about 5 mm."@en ;
@@ -2045,6 +2581,7 @@ Organic and fibrous; dark organic stain discolours fingers; greasy feel in claye
   skos:prefLabel "Fibric loamy sand"@en ;
 .
 sp:field-texture-MC
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-MC"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: smooth plastic bolus; handles like plasticine and can be moulded into rods without fracture; has moderate resistance to ribboning shear; will form ribbon of 75 mm or more."@en ;
@@ -2085,6 +2622,7 @@ sp:field-texture-MC-I
   skos:prefLabel "Fibric medium clay"@en ;
 .
 sp:field-texture-MHC
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-MHC"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: smooth plastic bolus; handles like plasticine; can be moulded into rods without fracture; has moderate to firm resistance to ribboning shear; will form ribbon of 75 mm or more."@en ;
@@ -2125,6 +2663,7 @@ sp:field-texture-MHC-I
   skos:prefLabel "Fibric medium heavy clay"@en ;
 .
 sp:field-texture-S
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-S"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: coherence nil to very slight, cannot be moulded; sand grains of medium size; single sand grains adhere to fingers."@en ;
@@ -2161,6 +2700,7 @@ Organic and fibrous; dark organic stain discolours fingers; greasy feel in claye
   skos:prefLabel "Fibric sand"@en ;
 .
 sp:field-texture-SCL
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-SCL"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: strongly coherent bolus, sandy to touch; medium-size sand grains visible in finer matrix; will form ribbon of 25–40 mm."@en ;
@@ -2250,6 +2790,7 @@ sp:field-texture-SHC-I
   skos:prefLabel "Fibric sandy heavy clay"@en ;
 .
 sp:field-texture-SL
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-SL"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: bolus coherent but very sandy to touch; will form ribbon of 15–25 mm; dominant sand grains are of medium size and are readily visible."@en ;
@@ -2408,6 +2949,7 @@ sp:field-texture-SMHC-I
   skos:prefLabel "Fibric sandy medium heavy clay"@en ;
 .
 sp:field-texture-SP
+  a sp:field-texture-organic ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-SP"^^xsd:anyURI ;
   skos:definition "bolus is sandy to touch."@en ;
@@ -2416,6 +2958,7 @@ sp:field-texture-SP
   skos:prefLabel "Sandy peat"@en ;
 .
 sp:field-texture-ZCL
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-ZCL"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: coherent smooth bolus, plastic and often silky to the touch; will form ribbon of 40–50 mm."@en ;
@@ -2495,6 +3038,7 @@ sp:field-texture-ZHC-I
   skos:prefLabel "Fibric silty heavy clay"@en ;
 .
 sp:field-texture-ZL
+  a sp:field-texture-mineral ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-ZL"^^xsd:anyURI ;
   skos:definition "Behaviour of moist bolus: coherent bolus; very smooth to often silky when manipulated; will form ribbon of about 25 mm."@en ;
@@ -2647,10 +3191,12 @@ sp:field-texture-ZMHC-I
   skos:prefLabel "Fibric silty medium heavy clay"@en ;
 .
 sp:field-texture-mineral
+  a owl:Class ;
   a skos:Collection ;
   dcterms:description """<p><img src=\"http://anzsoil.org/resources/yellowbook/Figure16.png\" /></p> 
 <p> Figure 16 Triangular texture diagram based on International fractions (Marshall 1947). </p>"""^^rdf:HTML ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-mineral"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition """The following description of determination of field texture is adapted from Northcote (1979).
 Field texture is a measure of the behaviour of a small handful of soil when moistened and kneaded into a ball and then pressed out between thumb and forefinger.
 Take a sample of soil sufficient to fit comfortably into the palm of the hand. Moisten the soil with water, a little at a time, and knead until the ball of soil, so formed, just fails to stick to the fingers. Add more soil or water to attain this condition, known as the sticky point, which approximates field capacity for that soil. Continue kneading and moistening until there is no apparent change in the soil ball, usually a working time of 1–2 minutes. The soil ball, or bolus, is now ready for shearing manipulation, but the behaviour of the soil during bolus formation is also indicative of its field texture. The behaviour of the bolus and of the ribbon produced by shearing (pressing out) between thumb and forefinger characterises the field texture. Do not assess field texture grade solely on the length of ribbon.
@@ -2674,8 +3220,10 @@ The recommended field texture grades as characterised by the behaviour of the mo
   skos:related <https://anzsoil.org/def/au/property/field-texture-mineral> ;
 .
 sp:field-texture-organic
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-organic"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "Organic soils do not have textural grades, as soil texture is determined by the size of mineral particles finer than 2 mm (NCST). In a sense, organic soils do have a texture related to the plant materials from which they formed and the degree of decomposition, exposure and drying. These field texture names may be used to characterise materials that on field examination are considered to be clearly dominated by organic matter. Peats may be assessed by examining the degree of decomposition and distinctness of plant remains. This work is adapted from Soil Survey Staff (1975) and Avery (1980)."@en ;
   skos:member sp:field-texture-AP ;
   skos:member sp:field-texture-CP ;
@@ -2688,8 +3236,10 @@ sp:field-texture-organic
   skos:related <https://anzsoil.org/def/au/property/field-texture-organic> ;
 .
 sp:field-texture-qualifier
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-qualifier"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition """The non-clay field texture grades (clay loams and coarser) may be qualified according to whether they are at, or near, the light (lower clay content) or heavy (higher clay content) end of the range for that 
 particular field texture grade. Note that clay field texture grades provide for light and heavy qualifiers in the clays and hence – and + are not required. 
 If the soils are appreciably organic, they are qualified as Sapric or Fibric.
@@ -2703,6 +3253,7 @@ It is strongly recommended that qualifiers only be used where considered essenti
   skos:related <https://anzsoil.org/def/au/property/field-texture-qualifier> ;
 .
 sp:field-texture-qualifier-fibric
+  a sp:field-texture-qualifier ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-qualifier-fibric"^^xsd:anyURI ;
   skos:definition "Organic and non-fibrous; dark organic stain discolours fingers; greasy feel in clayey textures and coherence in sandy textures. Fibres (excluding living roots) or plant tissue remains are not visible to naked eye and little or none visible with ×10 hand lens."@en ;
@@ -2711,6 +3262,7 @@ sp:field-texture-qualifier-fibric
   skos:prefLabel "Fibric"@en ;
 .
 sp:field-texture-qualifier-heavy
+  a sp:field-texture-qualifier ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-qualifier-heavy"^^xsd:anyURI ;
   skos:definition "Higher clay content end of the range"@en ;
@@ -2719,6 +3271,7 @@ sp:field-texture-qualifier-heavy
   skos:prefLabel "Heavy"@en ;
 .
 sp:field-texture-qualifier-light
+  a sp:field-texture-qualifier ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-qualifier-light"^^xsd:anyURI ;
   skos:definition "Lighter clay content end of the range"@en ;
@@ -2727,6 +3280,7 @@ sp:field-texture-qualifier-light
   skos:prefLabel "Light"@en ;
 .
 sp:field-texture-qualifier-sapric
+  a sp:field-texture-qualifier ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/field-texture-qualifier-sapric"^^xsd:anyURI ;
   skos:definition "Organic and non-fibrous; dark organic stain discolours fingers; greasy feel in clayey textures and coherence in sandy textures. Fibres (excluding living roots) or plant tissue remains are not visible to naked eye and little or none visible with ×10 hand lens."@en ;
@@ -2846,10 +3400,12 @@ sp:horizon-boundaries
   skos:prefLabel "Boundaries between horizons"@en ;
 .
 sp:horizon-boundary-distinctness
+  a owl:Class ;
   a skos:Collection ;
   dcterms:description "Distinctness of the boundaries between horizons"@en ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-distinctness"^^xsd:anyURI ;
   rdfs:comment "N_H_BOUND_DISTINCT" ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "Distinctness of the boundaries between horizons"@en ;
   skos:member sp:horizon-boundary-distinctness-A ;
   skos:member sp:horizon-boundary-distinctness-C ;
@@ -2860,6 +3416,7 @@ sp:horizon-boundary-distinctness
   skos:related <https://anzsoil.org/def/au/property/horizon-boundary-distinctness> ;
 .
 sp:horizon-boundary-distinctness-A
+  a sp:horizon-boundary-distinctness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-distinctness-A"^^xsd:anyURI ;
   skos:definition "width of boundary is 5-20 mm."@en ;
@@ -2867,6 +3424,7 @@ sp:horizon-boundary-distinctness-A
   skos:prefLabel "Abrupt"@en ;
 .
 sp:horizon-boundary-distinctness-C
+  a sp:horizon-boundary-distinctness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-distinctness-C"^^xsd:anyURI ;
   skos:definition "width of boundary is 20-50 mm."@en ;
@@ -2874,6 +3432,7 @@ sp:horizon-boundary-distinctness-C
   skos:prefLabel "Clear (horizon boundary distinctness)"@en ;
 .
 sp:horizon-boundary-distinctness-D
+  a sp:horizon-boundary-distinctness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-distinctness-D"^^xsd:anyURI ;
   skos:definition "width of boundary is >100 mm."@en ;
@@ -2881,6 +3440,7 @@ sp:horizon-boundary-distinctness-D
   skos:prefLabel "Diffuse (horizon boundary distinctness)"@en ;
 .
 sp:horizon-boundary-distinctness-G
+  a sp:horizon-boundary-distinctness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-distinctness-G"^^xsd:anyURI ;
   skos:definition "width of boundary is 50-100 mm."@en ;
@@ -2888,6 +3448,7 @@ sp:horizon-boundary-distinctness-G
   skos:prefLabel "Gradual (horizon boundary distinctness)"@en ;
 .
 sp:horizon-boundary-distinctness-S
+  a sp:horizon-boundary-distinctness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-distinctness-S"^^xsd:anyURI ;
   skos:definition "width of boundary is <5 mm."@en ;
@@ -2895,10 +3456,12 @@ sp:horizon-boundary-distinctness-S
   skos:prefLabel "Sharp (horizon boundary distinctness)"@en ;
 .
 sp:horizon-boundary-shape
+  a owl:Class ;
   a skos:Collection ;
   dcterms:description "Shape of boundary between horizons"@en ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-shape"^^xsd:anyURI ;
   rdfs:comment "H_BOUND_SHAPE" ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "Shape of boundary between horizons"@en ;
   skos:member sp:horizon-boundary-shape-B ;
   skos:member sp:horizon-boundary-shape-I ;
@@ -2909,6 +3472,7 @@ sp:horizon-boundary-shape
   skos:related <https://anzsoil.org/def/au/property/horizon-boundary-shape> ;
 .
 sp:horizon-boundary-shape-B
+  a sp:horizon-boundary-shape ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-shape-B"^^xsd:anyURI ;
   skos:definition "discontinuous."@en ;
@@ -2916,6 +3480,7 @@ sp:horizon-boundary-shape-B
   skos:prefLabel "Broken (horizon boundary shape)"@en ;
 .
 sp:horizon-boundary-shape-I
+  a sp:horizon-boundary-shape ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-shape-I"^^xsd:anyURI ;
   skos:definition "undulations with depressions deeper than they are wide."@en ;
@@ -2923,6 +3488,7 @@ sp:horizon-boundary-shape-I
   skos:prefLabel "Irregular"@en ;
 .
 sp:horizon-boundary-shape-S
+  a sp:horizon-boundary-shape ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-shape-S"^^xsd:anyURI ;
   skos:definition "almost a plane surface."@en ;
@@ -2930,6 +3496,7 @@ sp:horizon-boundary-shape-S
   skos:prefLabel "Smooth"@en ;
 .
 sp:horizon-boundary-shape-T
+  a sp:horizon-boundary-shape ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-shape-T"^^xsd:anyURI ;
   skos:definition "depressions considerably deeper than they are wide."@en ;
@@ -2937,6 +3504,7 @@ sp:horizon-boundary-shape-T
   skos:prefLabel "Tongued"@en ;
 .
 sp:horizon-boundary-shape-W
+  a sp:horizon-boundary-shape ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-boundary-shape-W"^^xsd:anyURI ;
   skos:definition "undulations with depressions wider than they are deep."@en ;
@@ -2944,6 +3512,7 @@ sp:horizon-boundary-shape-W
   skos:prefLabel "Wavy"@en ;
 .
 sp:horizon-prefix
+  a sp:horizons ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-prefix"^^xsd:anyURI ;
   skos:definition """Where obvious contrasts in lithology exist between different horizons in the soil profile, or between the soil profile and the underlying lithology, the different lithologic layers are given a numeric prefix (Figure 13).
@@ -2959,8 +3528,10 @@ Where lithologic discontinuities are suspected in the profile but there is no cl
   skos:prefLabel "Lithologic discontinuity"@en ;
 .
 sp:horizon-suffix
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "The horizon's alphabetic suffix is used to further define the horizon. It always comes after the numeric subdivision except for suffix p, where the number always follows the letter (e.g. Ap2)."@en ;
   skos:member sp:horizon-suffix-b ;
   skos:member sp:horizon-suffix-c ;
@@ -2984,6 +3555,7 @@ sp:horizon-suffix
   skos:prefLabel "Horizon suffixes"@en ;
 .
 sp:horizon-suffix-b
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-b"^^xsd:anyURI ;
   skos:altLabel "Buried soils"@en ;
@@ -2996,6 +3568,7 @@ sp:horizon-suffix-b
   skos:prefLabel "Horizon suffix b"@en ;
 .
 sp:horizon-suffix-c
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-c"^^xsd:anyURI ;
   skos:definition "used for horizons with accumulation of concretions or nodules of iron and/or aluminium and/or manganese, as in B2c."@en ;
@@ -3003,6 +3576,7 @@ sp:horizon-suffix-c
   skos:prefLabel "Horizon suffix c"@en ;
 .
 sp:horizon-suffix-d
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-d"^^xsd:anyURI ;
   skos:definition "used for densipans. Very fine, sandy, earthy pan."@en ;
@@ -3010,6 +3584,7 @@ sp:horizon-suffix-d
   skos:prefLabel "Horizon suffix d"@en ;
 .
 sp:horizon-suffix-e
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-e"^^xsd:anyURI ;
   skos:definition "used for conspicuously bleached horizons, for example A2e."@en ;
@@ -3017,6 +3592,7 @@ sp:horizon-suffix-e
   skos:prefLabel "Horizon suffix e"@en ;
 .
 sp:horizon-suffix-f
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-f"^^xsd:anyURI ;
   skos:definition "used when faunal accumulation, such as worm casts, dominates certain A1 horizons, for example A1f in some soils under rainforest."@en ;
@@ -3024,6 +3600,7 @@ sp:horizon-suffix-f
   skos:prefLabel "Horizon suffix f"@en ;
 .
 sp:horizon-suffix-g
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-g"^^xsd:anyURI ;
   skos:definition "indicates strong gleying, as in B2g. Gleying is indicative of permanent or periodic intense reduction due to wetness; it is characterised by greyish, bluish or greenish colours, generally of low chroma. Mottling may be prominent; mottles may have reddish hues and higher chromas if oxidising conditions occur periodically. Roots may have rusty or yellowish outlines; hence horizons such as A1g can occur."@en ;
@@ -3031,6 +3608,7 @@ sp:horizon-suffix-g
   skos:prefLabel "Horizon suffix g"@en ;
 .
 sp:horizon-suffix-h
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-h"^^xsd:anyURI ;
   skos:definition "used where horizons contain accumulation of amorphous, organic matter – aluminium complexes in which iron contents are very low. The dominantly organic matter – aluminium  complexes occur as discrete pellets between clean sand grains or completely fill the voids; occasionally they may coat sand grains. Such horizons may be soft or cemented and form the characteristic B horizon of poorly drained soils known as podzols or Podosols."@en ;
@@ -3038,6 +3616,7 @@ sp:horizon-suffix-h
   skos:prefLabel "Horizon suffix h"@en ;
 .
 sp:horizon-suffix-j
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-j"^^xsd:anyURI ;
   skos:definition "used for sporadically bleached horizons, for example A2j."@en ;
@@ -3045,6 +3624,7 @@ sp:horizon-suffix-j
   skos:prefLabel "Horizon suffix j"@en ;
 .
 sp:horizon-suffix-k
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-k"^^xsd:anyURI ;
   skos:definition "used for horizons with accumulation of carbonates, commonly calcium carbonate, as in B2k."@en ;
@@ -3053,6 +3633,7 @@ sp:horizon-suffix-k
   skos:prefLabel "Horizon suffix k"@en ;
 .
 sp:horizon-suffix-m
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-m"^^xsd:anyURI ;
   skos:definition "used for horizons with strong cementation or induration. It is confined to irreversibly cemented horizons that are essentially continuous (more than 90%) though they may be fractured."@en ;
@@ -3060,6 +3641,7 @@ sp:horizon-suffix-m
   skos:prefLabel "Horizon suffix m"@en ;
 .
 sp:horizon-suffix-p
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-p"^^xsd:anyURI ;
   skos:definition """used for horizons where ploughing, tillage practices or other disturbance by humans has occurred, for example deep ripping. This suffix is used only with A, as in Ap2. Where the plough layer clearly includes what was once B horizon and it is no longer possible to infer with any reliability what the texture and depth of the A horizon was, the plough layer is designated Ap.
@@ -3069,6 +3651,7 @@ An Ap horizon may be subdivided into subhorizons (e.g. Ap1, Ap2)."""@en ;
   skos:prefLabel "Horizon suffix p"@en ;
 .
 sp:horizon-suffix-q
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-q"^^xsd:anyURI ;
   skos:definition "used for horizons with accumulation of secondary silica. If silica cementation is continuous or nearly continuous, ‘qm’ is used."@en ;
@@ -3076,6 +3659,7 @@ sp:horizon-suffix-q
   skos:prefLabel "Horizon suffix q"@en ;
 .
 sp:horizon-suffix-r
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-r"^^xsd:anyURI ;
   skos:definition "used for horizons with layers of weathered rock (including saprolite) that, although consolidated, can be dug with hand tools."@en ;
@@ -3083,6 +3667,7 @@ sp:horizon-suffix-r
   skos:prefLabel "Horizon suffix r"@en ;
 .
 sp:horizon-suffix-s
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-s"^^xsd:anyURI ;
   skos:definition "used for horizons with an accumulation of sesquioxide – organic matter complexes in which iron is dominant relative to aluminium. These complexes coat sand grains, occur as discrete pellets, or, with moderate amounts of iron, may fill voids forming cemented patches. The content of organic matter is variable and its distribution is often irregular. The suffix ‘s’ is often used in combination with ‘h’ (as in Bhs) where both organic and iron components are significant; s or Bhs horizons may be soft or hard and form the characteristic B horizon of free-draining podzols or Podosols."@en ;
@@ -3090,6 +3675,7 @@ sp:horizon-suffix-s
   skos:prefLabel "Horizon suffix s"@en ;
 .
 sp:horizon-suffix-t
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-t"^^xsd:anyURI ;
   skos:definition "used for horizons with accumulation of silicate clay (from German ton, clay). Different mechanisms (such as illuviation, formation in situ) may be responsible for the clay accumulation, but these may be difficult to confirm. This suffix is used only with the B, for example B2t, to indicate the nature of the B."@en ;
@@ -3097,6 +3683,7 @@ sp:horizon-suffix-t
   skos:prefLabel "Horizon suffix t"@en ;
 .
 sp:horizon-suffix-w
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-w"^^xsd:anyURI ;
   skos:definition "used where development of colour and/or structure, or both, in the B horizon is observed, with little or no accumulation of sesquioxide – organic matter complexes."@en ;
@@ -3104,6 +3691,7 @@ sp:horizon-suffix-w
   skos:prefLabel "Horizon suffix w"@en ;
 .
 sp:horizon-suffix-x
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-x"^^xsd:anyURI ;
   skos:definition "used for fragipans or earthy pans. A horizon with high bulk density relative to the horizon above, seemingly cemented when dry, but showing a moderate to weak cementation when moist."@en ;
@@ -3111,6 +3699,7 @@ sp:horizon-suffix-x
   skos:prefLabel "Horizon suffix x"@en ;
 .
 sp:horizon-suffix-y
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-y"^^xsd:anyURI ;
   skos:definition "used for horizons with accumulation of calcium sulphate (gypsum), as in B21, B22."@en ;
@@ -3119,6 +3708,7 @@ sp:horizon-suffix-y
   skos:prefLabel "Horizon suffix y"@en ;
 .
 sp:horizon-suffix-z
+  a sp:horizon-suffix ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-suffix-z"^^xsd:anyURI ;
   skos:definition "used for horizons with accumulation of salts more soluble than calcium sulphate and calcium carbonate."@en ;
@@ -3126,8 +3716,10 @@ sp:horizon-suffix-z
   skos:prefLabel "Horizon suffix z"@en ;
 .
 sp:horizon-type
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizon-type"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition """A soil horizon is a layer of soil, approximately parallel to the land surface, with morphological properties different from layers below and/or above it. Tongues of material from one horizon may penetrate into adjacent horizons. Give horizon notation as described below.
 
 As horizon notation is deduced from the profile description data (Northcote 1979) and in some instances laboratory data, record it after the profile is described. Horizons may be difficult to name, but should be named in the field. Opinions formed at the time of description are useful for later reference.
@@ -3143,8 +3735,10 @@ With regard to horizon notation, the long-established usage in horizon designati
   skos:prefLabel "Type of soil horizon - enumeration"@en ;
 .
 sp:horizons
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizons"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "A soil horizon is a layer of soil, approximately parallel to the land surface, with morphological properties different from layers below and/or above it. Tongues of material from one horizon may penetrate into adjacent horizons."@en ;
   skos:member sp:depth-of-horizon ;
   skos:member sp:depth-to-r-horizon ;
@@ -3162,6 +3756,7 @@ The B horizon is the coarse angular blocky and/or lenticular horizon where ped f
   skos:prefLabel "Horizon classification"@en ;
 .
 sp:horizons-A
+  a sp:horizon-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizons-A"^^xsd:anyURI ;
   skos:definition "These are horizons either consisting of one or more surface mineral horizons with some organic accumulation and usually darker in colour than the underlying horizons, or consisting of surface and subsurface horizons that are lighter in colour but have a lower content of silicate clay and/or sesquioxides than the underlying horizons."@en ;
@@ -3172,6 +3767,7 @@ sp:horizons-A
   skos:prefLabel "A horizons"@en ;
 .
 sp:horizons-B
+  a sp:horizon-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizons-B"^^xsd:anyURI ;
   skos:definition "These are horizons consisting of one or more mineral soil layers characterised by one or more of the following: a concentration of silicate clay, iron, aluminium, organic material or several of these; a structure and/or consistence unlike that of the A horizons above or of any horizons immediately below; stronger colours, usually expressed as higher chroma and/or redder hue, than those of the A horizons above or those of the horizons below."@en ;
@@ -3182,6 +3778,7 @@ sp:horizons-B
   skos:prefLabel "B horizons"@en ;
 .
 sp:horizons-C
+  a sp:horizon-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizons-C"^^xsd:anyURI ;
   skos:definition "These are layers below the solum (AB profile) of consolidated or unconsolidated material, usually partially weathered, little affected by pedogenic processes, and either like or unlike the material from which the solum presumably formed. The C horizon lacks properties characteristic of O, P, A, B or D horizons. It is recognised by its lack of pedological development and/or the presence of geologic organisation frequently expressed as sedimentary laminae or as ghost rock structure as in saprolite. C horizons include consolidated rock and sediments that, when moist, can be dug with hand tools. Rock strength is generally weak or weaker. Because of their nature, C horizons may alternatively be described as substrate."@en ;
@@ -3189,6 +3786,7 @@ sp:horizons-C
   skos:prefLabel "C horizons"@en ;
 .
 sp:horizons-D
+  a sp:horizon-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizons-D"^^xsd:anyURI ;
   skos:definition "These are considered to be any soil material below the solum that is unlike the solum in its general character, is not C horizon, and cannot be given reliable horizon designation as with ‘Buried soils’ or ‘Lithologic discontinuities’. Thus a D horizon may be recognised by the contrast in pedologic organisation between it and the overlying horizons."@en ;
@@ -3196,6 +3794,7 @@ sp:horizons-D
   skos:prefLabel "D horizons"@en ;
 .
 sp:horizons-O
+  a sp:horizon-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizons-O"^^xsd:anyURI ;
   skos:definition "These are horizons dominated by organic materials in varying stages of decomposition that have accumulated on the mineral soil surface. They are usually divided into O1 and O2 horizons."@en ;
@@ -3205,6 +3804,7 @@ sp:horizons-O
   skos:prefLabel "O horizons"@en ;
 .
 sp:horizons-P
+  a sp:horizon-type ;
   a skos:Concept ;
   dcterms:description "These are horizons dominated by organic materials in various stages of decomposition that have accumulated either under water or in conditions of excessive wetness. They have long been known as peat. The organic material consists of the remains of plants that have been growing in place. "@en ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizons-P"^^xsd:anyURI ;
@@ -3216,6 +3816,7 @@ sp:horizons-P
   skos:prefLabel "P horizons"@en ;
 .
 sp:horizons-R
+  a sp:horizon-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizons-R"^^xsd:anyURI ;
   skos:definition "These horizons consist of continuous masses (not boulders) of moderately strong to very strong rock (excluding pans) such as bedrock. R horizons may have cracks but these are few enough and/or fine enough that few roots penetrate and there is no significant displacement of rock. It is usually too strong to dig with hand tools, even when moist."@en ;
@@ -3223,6 +3824,7 @@ sp:horizons-R
   skos:prefLabel "R horizons"@en ;
 .
 sp:horizons-bleached
+  a sp:horizons ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizons-bleached"^^xsd:anyURI ;
   skos:definition """Some horizons are white, near white or much paler than adjacent horizons. Bleached horizons most commonly occur as A2 horizons but are not restricted to them.
@@ -3240,6 +3842,7 @@ Sporadically bleached: bleach occurs:
   skos:prefLabel "Bleached horizons"@en ;
 .
 sp:horizons-subdivision
+  a sp:horizons ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizons-subdivision"^^xsd:anyURI ;
   skos:definition """All horizon subdivisions are numbered consecutively from the top of each horizon downward, as in A11, A12, A2, B21, B22, B23. The numeric suffix always precedes the alphabetic suffix except with the alphabetic suffix ‘p’ where the number always follows the letter.
@@ -3248,6 +3851,7 @@ The above horizon nomenclature will cover most soils, but there will be instance
   skos:prefLabel "Subdivision of horizons"@en ;
 .
 sp:horizons-transitional
+  a sp:horizons ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/horizons-transitional"^^xsd:anyURI ;
   skos:definition """Two main kinds are distinguished:
@@ -3257,20 +3861,8 @@ sp:horizons-transitional
 The two capital letters are separated by a virgule (/) as A/B, A/C, B/C. Most of the individual parts of at least one of the components are surrounded by the other. The first symbol is that of the horizon that makes up the greater volume."""@en ;
   skos:prefLabel "Transitional horizons"@en ;
 .
-sp:mottle-abundance
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-abundance"^^xsd:anyURI ;
-  rdfs:comment "N_MOTT_ABUN" ;
-  skos:definition "The percentage of mottles is estimated by eye using the chart in Figure 11 (ASLSFH3Ed) for comparison. "@en ;
-  skos:member sp:mottle-abundance-0 ;
-  skos:member sp:mottle-abundance-1 ;
-  skos:member sp:mottle-abundance-2 ;
-  skos:member sp:mottle-abundance-3 ;
-  skos:member sp:mottle-abundance-4 ;
-  skos:prefLabel "Mottle abundance - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/mottle-abundance> ;
-.
 sp:mottle-abundance-0
+  a sp:Mottle-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-abundance-0"^^xsd:anyURI ;
   rdfs:comment "N_MOTT_ABUN" ;
@@ -3279,6 +3871,7 @@ sp:mottle-abundance-0
   skos:prefLabel "No mottles or other colour patterns"@en ;
 .
 sp:mottle-abundance-1
+  a sp:Mottle-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-abundance-1"^^xsd:anyURI ;
   rdfs:comment "N_MOTT_ABUN" ;
@@ -3287,6 +3880,7 @@ sp:mottle-abundance-1
   skos:prefLabel "Very few (mottle abundance)"@en ;
 .
 sp:mottle-abundance-2
+  a sp:Mottle-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-abundance-2"^^xsd:anyURI ;
   rdfs:comment "N_MOTT_ABUN" ;
@@ -3295,6 +3889,7 @@ sp:mottle-abundance-2
   skos:prefLabel "Few (mottle abundance)"@en ;
 .
 sp:mottle-abundance-3
+  a sp:Mottle-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-abundance-3"^^xsd:anyURI ;
   rdfs:comment "N_MOTT_ABUN" ;
@@ -3303,6 +3898,7 @@ sp:mottle-abundance-3
   skos:prefLabel "Common (mottle abundance)"@en ;
 .
 sp:mottle-abundance-4
+  a sp:Mottle-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-abundance-4"^^xsd:anyURI ;
   rdfs:comment "N_MOTT_ABUN" ;
@@ -3311,6 +3907,7 @@ sp:mottle-abundance-4
   skos:prefLabel "Many (mottle abundance)"@en ;
 .
 sp:mottle-boundary-C
+  a sp:Mottle-distinctness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-boundary-C"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_BOUN_DISTINCT" ;
@@ -3319,6 +3916,7 @@ sp:mottle-boundary-C
   skos:prefLabel "Clear (mottle boundary)"@en ;
 .
 sp:mottle-boundary-D
+  a sp:Mottle-distinctness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-boundary-D"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_BOUN_DISTINCT" ;
@@ -3327,6 +3925,7 @@ sp:mottle-boundary-D
   skos:prefLabel "Diffuse (mottle boundary)"@en ;
 .
 sp:mottle-boundary-S
+  a sp:Mottle-distinctness ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-boundary-S"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_BOUN_DISTINCT" ;
@@ -3334,34 +3933,8 @@ sp:mottle-boundary-S
   skos:notation "S" ;
   skos:prefLabel "Sharp (mottle boundary)"@en ;
 .
-sp:mottle-boundary-distinctness
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-boundary-distinctness"^^xsd:anyURI ;
-  rdfs:comment "C_MOTT_BOUN_DISTINCT" ;
-  skos:definition "Mottle distinctness of boundaries"@en ;
-  skos:member sp:mottle-boundary-C ;
-  skos:member sp:mottle-boundary-D ;
-  skos:member sp:mottle-boundary-S ;
-  skos:prefLabel "Mottle distinctness of boundaries - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/mottle-boundary-distinctness> ;
-.
-sp:mottle-colour
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-colour"^^xsd:anyURI ;
-  rdfs:comment "C_MOTT_COLOUR" ;
-  skos:definition "This should be described in terms of Munsell or Revised Standard Soil colours, but abbreviated forms can be used"@en ;
-  skos:member sp:mottle-colour-B ;
-  skos:member sp:mottle-colour-D ;
-  skos:member sp:mottle-colour-G ;
-  skos:member sp:mottle-colour-L ;
-  skos:member sp:mottle-colour-O ;
-  skos:member sp:mottle-colour-P ;
-  skos:member sp:mottle-colour-R ;
-  skos:member sp:mottle-colour-Y ;
-  skos:prefLabel "Mottle colour - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/mottle-colour> ;
-.
 sp:mottle-colour-B
+  a sp:Mottle-colour ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-colour-B"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_COLOUR" ;
@@ -3370,6 +3943,7 @@ sp:mottle-colour-B
   skos:prefLabel "Brown"@en ;
 .
 sp:mottle-colour-D
+  a sp:Mottle-colour ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-colour-D"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_COLOUR" ;
@@ -3378,6 +3952,7 @@ sp:mottle-colour-D
   skos:prefLabel "Dark"@en ;
 .
 sp:mottle-colour-G
+  a sp:Mottle-colour ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-colour-G"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_COLOUR" ;
@@ -3386,6 +3961,7 @@ sp:mottle-colour-G
   skos:prefLabel "Grey"@en ;
 .
 sp:mottle-colour-L
+  a sp:Mottle-colour ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-colour-L"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_COLOUR" ;
@@ -3394,6 +3970,7 @@ sp:mottle-colour-L
   skos:prefLabel "Gley"@en ;
 .
 sp:mottle-colour-O
+  a sp:Mottle-colour ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-colour-O"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_COLOUR" ;
@@ -3402,6 +3979,7 @@ sp:mottle-colour-O
   skos:prefLabel "Orange"@en ;
 .
 sp:mottle-colour-P
+  a sp:Mottle-colour ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-colour-P"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_COLOUR" ;
@@ -3410,6 +3988,7 @@ sp:mottle-colour-P
   skos:prefLabel "Pale"@en ;
 .
 sp:mottle-colour-R
+  a sp:Mottle-colour ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-colour-R"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_COLOUR" ;
@@ -3418,6 +3997,7 @@ sp:mottle-colour-R
   skos:prefLabel "Red"@en ;
 .
 sp:mottle-colour-Y
+  a sp:Mottle-colour ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-colour-Y"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_COLOUR" ;
@@ -3425,18 +4005,8 @@ sp:mottle-colour-Y
   skos:notation "Y" ;
   skos:prefLabel "Yellow"@en ;
 .
-sp:mottle-contrast
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-constrast"^^xsd:anyURI ;
-  rdfs:comment "C_CONTRAST" ;
-  skos:definition "Mottle contrast"@en ;
-  skos:member sp:mottle-contrast-D ;
-  skos:member sp:mottle-contrast-F ;
-  skos:member sp:mottle-contrast-P ;
-  skos:prefLabel "Mottle contrast - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/mottle-contrast> ;
-.
 sp:mottle-contrast-D
+  a sp:Mottle-contrast ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-contrast-D"^^xsd:anyURI ;
   rdfs:comment "C_CONTRAST" ;
@@ -3445,6 +4015,7 @@ sp:mottle-contrast-D
   skos:prefLabel "Distinct (mottle contrast)"@en ;
 .
 sp:mottle-contrast-F
+  a sp:Mottle-contrast ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-contrast-F"^^xsd:anyURI ;
   rdfs:comment "C_CONTRAST" ;
@@ -3453,6 +4024,7 @@ sp:mottle-contrast-F
   skos:prefLabel "Faint (mottle contrast)"@en ;
 .
 sp:mottle-contrast-P
+  a sp:Mottle-contrast ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-contrast-P"^^xsd:anyURI ;
   rdfs:comment "C_CONTRAST" ;
@@ -3460,19 +4032,8 @@ sp:mottle-contrast-P
   skos:notation "P" ;
   skos:prefLabel "Prominent (mottle contrast)"@en ;
 .
-sp:mottle-size
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-size"^^xsd:anyURI ;
-  rdfs:comment "N_MOTT_SIZE" ;
-  skos:definition "Measure mottle size (mm) along the greatest dimension, except in streaks or linear forms where width is measured."@en ;
-  skos:member sp:mottle-size-1 ;
-  skos:member sp:mottle-size-2 ;
-  skos:member sp:mottle-size-3 ;
-  skos:member sp:mottle-size-4 ;
-  skos:prefLabel "Mottle size - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/mottle-size> ;
-.
 sp:mottle-size-1
+  a sp:Mottle-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-size-1"^^xsd:anyURI ;
   rdfs:comment "N_MOTT_SIZE" ;
@@ -3481,6 +4042,7 @@ sp:mottle-size-1
   skos:prefLabel "Fine (mottle size)"@en ;
 .
 sp:mottle-size-2
+  a sp:Mottle-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-size-2"^^xsd:anyURI ;
   rdfs:comment "N_MOTT_SIZE" ;
@@ -3489,6 +4051,7 @@ sp:mottle-size-2
   skos:prefLabel "Medium (mottle size)"@en ;
 .
 sp:mottle-size-3
+  a sp:Mottle-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-size-3"^^xsd:anyURI ;
   rdfs:comment "N_MOTT_SIZE" ;
@@ -3497,6 +4060,7 @@ sp:mottle-size-3
   skos:prefLabel "Coarse (mottle size)"@en ;
 .
 sp:mottle-size-4
+  a sp:Mottle-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-size-4"^^xsd:anyURI ;
   rdfs:comment "N_MOTT_SIZE" ;
@@ -3504,19 +4068,8 @@ sp:mottle-size-4
   skos:notation "4" ;
   skos:prefLabel "Very coarse (mottle size)"@en ;
 .
-sp:mottle-type
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-type"^^xsd:anyURI ;
-  rdfs:comment "C_MOTT_TYPE" ;
-  skos:definition "The type of mottle can suggest the origin of the mottles."@en ;
-  skos:member sp:mottle-type-M ;
-  skos:member sp:mottle-type-X ;
-  skos:member sp:mottle-type-Y ;
-  skos:member sp:mottle-type-Z ;
-  skos:prefLabel "Mottle or colour pattern type - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/mottle-type> ;
-.
 sp:mottle-type-M
+  a sp:Mottle-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-type-M"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_TYPE" ;
@@ -3525,6 +4078,7 @@ sp:mottle-type-M
   skos:prefLabel "Mottles"@en ;
 .
 sp:mottle-type-X
+  a sp:Mottle-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-type-X"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_TYPE" ;
@@ -3533,6 +4087,7 @@ sp:mottle-type-X
   skos:prefLabel "Mottle type X"@en ;
 .
 sp:mottle-type-Y
+  a sp:Mottle-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-type-Y"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_TYPE" ;
@@ -3541,6 +4096,7 @@ sp:mottle-type-Y
   skos:prefLabel "Mottle type Y"@en ;
 .
 sp:mottle-type-Z
+  a sp:Mottle-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottle-type-Z"^^xsd:anyURI ;
   rdfs:comment "C_MOTT_TYPE" ;
@@ -3552,18 +4108,20 @@ sp:mottles
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/mottles"^^xsd:anyURI ;
   skos:definition "Mottles are spots, blotches or streaks of subdominant colours different from the matrix colour and also different from the colour of the ped surface. Segregations of pedogenic origin are not considered to be mottles and are recorded elsewhere. Colour patterns due to biological or mechanical mixing and inclusions of weathered substrate material are described separately."@en ;
-  skos:member sp:mottle-abundance ;
-  skos:member sp:mottle-boundary-distinctness ;
-  skos:member sp:mottle-colour ;
-  skos:member sp:mottle-contrast ;
-  skos:member sp:mottle-size ;
-  skos:member sp:mottle-type ;
+  skos:member sp:Mottle-abundance ;
+  skos:member sp:Mottle-colour ;
+  skos:member sp:Mottle-contrast ;
+  skos:member sp:Mottle-distinctness ;
+  skos:member sp:Mottle-size ;
+  skos:member sp:Mottle-type ;
   skos:prefLabel "Mottles and other colour patterns"@en ;
 .
 sp:observable-properties
+  a owl:Class ;
   a skos:Collection ;
   dcterms:description "A set of soil-profile observable properties"@en ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/observable-properties"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "A set of soil-profile observable properties {@en}" ;
   skos:member <https://anzsoil.org/def/au/property/aggradation> ;
   skos:member <https://anzsoil.org/def/au/property/alteration> ;
@@ -3673,6 +4231,7 @@ sp:observable-properties
   skos:prefLabel "Observable properties of soil profiles"@en ;
 .
 sp:observation-type-A
+  a sp:Profile-construction ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/observation-type-A"^^xsd:anyURI ;
   rdfs:comment "C_O_TYPE" ;
@@ -3681,6 +4240,7 @@ sp:observation-type-A
   skos:prefLabel "Auger boring"@en ;
 .
 sp:observation-type-C
+  a sp:Profile-construction ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/observation-type-C"^^xsd:anyURI ;
   rdfs:comment "C_O_TYPE" ;
@@ -3689,6 +4249,7 @@ sp:observation-type-C
   skos:prefLabel "Relatively undisturbed soil core"@en ;
 .
 sp:observation-type-E
+  a sp:Profile-construction ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/observation-type-E"^^xsd:anyURI ;
   rdfs:comment "C_O_TYPE" ;
@@ -3697,6 +4258,7 @@ sp:observation-type-E
   skos:prefLabel "Existing vertical exposure"@en ;
 .
 sp:observation-type-P
+  a sp:Profile-construction ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/observation-type-P"^^xsd:anyURI ;
   rdfs:comment "C_O_TYPE" ;
@@ -3708,26 +4270,14 @@ sp:pans
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans"^^xsd:anyURI ;
   skos:definition "A pan is an indurated and/or cemented soil horizon."@en ;
-  skos:member sp:pans-cementation ;
-  skos:member sp:pans-continuity ;
-  skos:member sp:pans-structure ;
-  skos:member sp:pans-type ;
+  skos:member sp:Pans-cementation ;
+  skos:member sp:Pans-continuity ;
+  skos:member sp:Pans-structure ;
+  skos:member sp:Pans-type ;
   skos:prefLabel "Pans"@en ;
 .
-sp:pans-cementation
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-cementation"^^xsd:anyURI ;
-  rdfs:comment "C_PAN_CEMENTATION" ;
-  skos:definition "Place a 30 mm diameter piece of the pan in water for 1 hour. If it slakes, it is uncemented; if not, it is cemented. The degree of cementation is assessed on the following scale after the 1 hour soaking in water."@en ;
-  skos:member sp:pans-cementation-0 ;
-  skos:member sp:pans-cementation-1 ;
-  skos:member sp:pans-cementation-2 ;
-  skos:member sp:pans-cementation-3 ;
-  skos:member sp:pans-cementation-4 ;
-  skos:prefLabel "Cementation of pan - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/pans-cementation> ;
-.
 sp:pans-cementation-0
+  a sp:Pans-cementation ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-cementation-0"^^xsd:anyURI ;
   rdfs:comment "C_PAN_CEMENTATION" ;
@@ -3736,6 +4286,7 @@ sp:pans-cementation-0
   skos:prefLabel "Uncemented"@en ;
 .
 sp:pans-cementation-1
+  a sp:Pans-cementation ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-cementation-1"^^xsd:anyURI ;
   rdfs:comment "C_PAN_CEMENTATION" ;
@@ -3744,6 +4295,7 @@ sp:pans-cementation-1
   skos:prefLabel "Weakly cemented"@en ;
 .
 sp:pans-cementation-2
+  a sp:Pans-cementation ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-cementation-2"^^xsd:anyURI ;
   rdfs:comment "C_PAN_CEMENTATION" ;
@@ -3752,6 +4304,7 @@ sp:pans-cementation-2
   skos:prefLabel "Moderately cemented"@en ;
 .
 sp:pans-cementation-3
+  a sp:Pans-cementation ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-cementation-3"^^xsd:anyURI ;
   rdfs:comment "C_PAN_CEMENTATION" ;
@@ -3760,6 +4313,7 @@ sp:pans-cementation-3
   skos:prefLabel "Strongly cemented"@en ;
 .
 sp:pans-cementation-4
+  a sp:Pans-cementation ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-cementation-4"^^xsd:anyURI ;
   rdfs:comment "C_PAN_CEMENTATION" ;
@@ -3767,18 +4321,8 @@ sp:pans-cementation-4
   skos:notation "4" ;
   skos:prefLabel "Very strongly cemented"@en ;
 .
-sp:pans-continuity
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-continuity"^^xsd:anyURI ;
-  rdfs:comment "C_PAN_CONTINUITY" ;
-  skos:definition "Continuity of pan"@en ;
-  skos:member sp:pans-continuity-B ;
-  skos:member sp:pans-continuity-C ;
-  skos:member sp:pans-continuity-D ;
-  skos:prefLabel "Continuity of pan - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/pans-continuity> ;
-.
 sp:pans-continuity-B
+  a sp:Pans-continuity ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-continuity-B"^^xsd:anyURI ;
   skos:definition "broken by cracks and fragments are disoriented."@en ;
@@ -3786,6 +4330,7 @@ sp:pans-continuity-B
   skos:prefLabel "Broken (pans continuity)"@en ;
 .
 sp:pans-continuity-C
+  a sp:Pans-continuity ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-continuity-C"^^xsd:anyURI ;
   skos:definition "extends as a layer with little or no break across 1 m or more."@en ;
@@ -3793,27 +4338,15 @@ sp:pans-continuity-C
   skos:prefLabel "Continuous (pans continuity)"@en ;
 .
 sp:pans-continuity-D
+  a sp:Pans-continuity ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-continuity-D"^^xsd:anyURI ;
   skos:definition "broken by cracks but original orientation of fragments is preserved."@en ;
   skos:notation "D" ;
   skos:prefLabel "Discontinuous (pans continuity)"@en ;
 .
-sp:pans-structure
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-structure"^^xsd:anyURI ;
-  rdfs:comment "C_PAN_STRUCTURE" ;
-  skos:definition "Structure of pan"@en ;
-  skos:member sp:pans-structure-C ;
-  skos:member sp:pans-structure-L ;
-  skos:member sp:pans-structure-N ;
-  skos:member sp:pans-structure-R ;
-  skos:member sp:pans-structure-S ;
-  skos:member sp:pans-structure-V ;
-  skos:prefLabel "Structure of pan - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/pans-structure> ;
-.
 sp:pans-structure-C
+  a sp:Pans-structure ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-structure-C"^^xsd:anyURI ;
   skos:definition "spheroidal concretions cemented together."@en ;
@@ -3821,6 +4354,7 @@ sp:pans-structure-C
   skos:prefLabel "Concretionary"@en ;
 .
 sp:pans-structure-L
+  a sp:Pans-structure ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-structure-L"^^xsd:anyURI ;
   skos:definition "plate-like units cemented together."@en ;
@@ -3828,6 +4362,7 @@ sp:pans-structure-L
   skos:prefLabel "Platy (pans structure)"@en ;
 .
 sp:pans-structure-N
+  a sp:Pans-structure ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-structure-N"^^xsd:anyURI ;
   skos:definition "nodules of irregular shape cemented together."@en ;
@@ -3835,6 +4370,7 @@ sp:pans-structure-N
   skos:prefLabel "Nodular (pans)"@en ;
 .
 sp:pans-structure-R
+  a sp:Pans-structure ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-structure-R"^^xsd:anyURI ;
   skos:definition "worm-like structure and/or cavities."@en ;
@@ -3842,6 +4378,7 @@ sp:pans-structure-R
   skos:prefLabel "Vermicular"@en ;
 .
 sp:pans-structure-S
+  a sp:Pans-structure ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-structure-S"^^xsd:anyURI ;
   skos:definition "sponge-like structure having large pores, which may or may not be filled with softer material."@en ;
@@ -3849,36 +4386,15 @@ sp:pans-structure-S
   skos:prefLabel "Vesicular"@en ;
 .
 sp:pans-structure-V
+  a sp:Pans-structure ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-structure-V"^^xsd:anyURI ;
   skos:definition "no recognisable structure."@en ;
   skos:notation "V" ;
   skos:prefLabel "Massive (pans structure)"@en ;
 .
-sp:pans-type
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type"^^xsd:anyURI ;
-  rdfs:comment "C_PAN_TYPE" ;
-  skos:definition "Type of pan"@en ;
-  skos:member sp:pans-type-A ;
-  skos:member sp:pans-type-C ;
-  skos:member sp:pans-type-D ;
-  skos:member sp:pans-type-E ;
-  skos:member sp:pans-type-F ;
-  skos:member sp:pans-type-I ;
-  skos:member sp:pans-type-K ;
-  skos:member sp:pans-type-L ;
-  skos:member sp:pans-type-M ;
-  skos:member sp:pans-type-N ;
-  skos:member sp:pans-type-O ;
-  skos:member sp:pans-type-R ;
-  skos:member sp:pans-type-T ;
-  skos:member sp:pans-type-V ;
-  skos:member sp:pans-type-Z ;
-  skos:prefLabel "Type of pan - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/pans-type> ;
-.
 sp:pans-type-A
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-A"^^xsd:anyURI ;
   skos:altLabel "Bauxite (pans type)"@en ;
@@ -3887,6 +4403,7 @@ sp:pans-type-A
   skos:prefLabel "Alcrete (pans type)"@en ;
 .
 sp:pans-type-C
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-C"^^xsd:anyURI ;
   skos:definition "horizon relatively high in organic matter but low in iron. It is relatively thick and weakly to strongly cemented by aluminium and usually becomes progressively more cemented with depth. It is usually relatively uniform in appearance laterally. It is commonly the B horizon of humus podzols, where it is often known as coffee rock or sandrock."@en ;
@@ -3894,6 +4411,7 @@ sp:pans-type-C
   skos:prefLabel "Organic pan"@en ;
 .
 sp:pans-type-D
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-D"^^xsd:anyURI ;
   skos:definition "earthy pan so cemented by silica that dry fragments do not slake in water and are always brittle, even after prolonged wetting. (Described by Soil Survey Staff 1975.)"@en ;
@@ -3901,6 +4419,7 @@ sp:pans-type-D
   skos:prefLabel "Duripan"@en ;
 .
 sp:pans-type-E
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-E"^^xsd:anyURI ;
   skos:definition "indurated material rich in hydrated oxides of iron (usually goethite and hematite) occurring as cemented nodules and/or concretions, or as massive sheets. This material has been commonly referred to in local usage around Australia as laterite, duricrust or ironstone."@en ;
@@ -3908,6 +4427,7 @@ sp:pans-type-E
   skos:prefLabel "Ferricrete (pans type)"@en ;
 .
 sp:pans-type-F
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-F"^^xsd:anyURI ;
   skos:definition "earthy pan, which is usually loamy. A dry fragment slakes in water. A wet fragment does not slake in water but has moderate or weak brittleness. Fragipans are more stable on exposure than overlying or underlying horizons. (Described by Soil Survey Staff 1975.)"@en ;
@@ -3915,6 +4435,7 @@ sp:pans-type-F
   skos:prefLabel "Fragipan"@en ;
 .
 sp:pans-type-I
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-I"^^xsd:anyURI ;
   skos:definition "commonly thin (2–10 mm), black to dark reddish pan cemented by iron, iron and manganese, or iron – organic matter complexes. Rarely 40 mm thick. Has wavy or convolute form and usually occurs as a single pan. This is a placic horizon (described by Soil Survey Staff 1975.)"@en ;
@@ -3922,6 +4443,7 @@ sp:pans-type-I
   skos:prefLabel "Thin ironpan"@en ;
 .
 sp:pans-type-K
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-K"^^xsd:anyURI ;
   skos:definition "any cemented, terrestrial carbonate accumulation that may vary significantly in morphology and degree of cementation. Also known as carbonate pan, calcareous pan, caliche, kunkar, secondary limestone, travertine. All show slight to strong effervescence with 1 Molar HCl."@en ;
@@ -3929,6 +4451,7 @@ sp:pans-type-K
   skos:prefLabel "Calcrete (pans type)"@en ;
 .
 sp:pans-type-L
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-L"^^xsd:anyURI ;
   skos:definition "strongly indurated siliceous material cemented by, and largely composed of, forms of silica, including quartz, chalcedony, opal and chert."@en ;
@@ -3936,6 +4459,7 @@ sp:pans-type-L
   skos:prefLabel "Silcrete (pans type)"@en ;
 .
 sp:pans-type-M
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-M"^^xsd:anyURI ;
   skos:definition "indurated material dominated by oxides of manganese."@en ;
@@ -3943,6 +4467,7 @@ sp:pans-type-M
   skos:prefLabel "Manganiferous pan"@en ;
 .
 sp:pans-type-N
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-N"^^xsd:anyURI ;
   skos:definition "earthy pan, which is very fine sandy (0.02–0.05 mm). Fragments, both wet and dry, slake in water. Densipans are less stable on exposure than overlying or underlying horizons. (Described by Smith et al. 1975.)"@en ;
@@ -3950,6 +4475,7 @@ sp:pans-type-N
   skos:prefLabel "Densipan"@en ;
 .
 sp:pans-type-O
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-O"^^xsd:anyURI ;
   skos:definition "Other pans"@en ;
@@ -3957,6 +4483,7 @@ sp:pans-type-O
   skos:prefLabel "Other pans"@en ;
 .
 sp:pans-type-R
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-R"^^xsd:anyURI ;
   skos:definition "earthy pan, which is normally reddish brown to red with dense yet porous appearance; it is very hard, has an irregular laminar cleavage and some vertical cracks, and varies from less than 0.3 m to over 30 m thick. Other variable features are bedded and unsorted sand and gravel lenses; wavy black veinings, probably manganiferous; and, less commonly, off-white veins of calcium carbonate. (The presence of calcium carbonate is not common and the red-brown hardpan in which it occurs may be relatively brittle and finely laminar.) The red-brown hardpan is usually present below the soil profile and is not a feature of any particular soil group. (It has some similarity with other silica pans such as duripans of arid climates). In many instances, it is not known if the red-brown hardpan is a paleosol or a cemented sediment (Wright 1983). If thought to be the latter, it may be described as a substrate material. "@en ;
@@ -3964,6 +4491,7 @@ sp:pans-type-R
   skos:prefLabel "Red-brown hardpan (pans type)"@en ;
 .
 sp:pans-type-T
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-T"^^xsd:anyURI ;
   skos:definition "horizon strongly cemented by iron and organic matter. It has marked local variability in colour, both laterally and vertically. It may occur in the B horizon of podzols."@en ;
@@ -3971,6 +4499,7 @@ sp:pans-type-T
   skos:prefLabel "Ortstein"@en ;
 .
 sp:pans-type-V
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-V"^^xsd:anyURI ;
   skos:definition "subsurface soil horizon having higher bulk density, lower total porosity, and lower permeability to both air and water than horizons directly above and below as a result of cultivation practices. (After Morse et al. 1987.)"@en ;
@@ -3978,6 +4507,7 @@ sp:pans-type-V
   skos:prefLabel "Cultivation pan"@en ;
 .
 sp:pans-type-Z
+  a sp:Pans-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/pans-type-Z"^^xsd:anyURI ;
   skos:definition "Zero or no pan"@en ;
@@ -3985,24 +4515,28 @@ sp:pans-type-Z
   skos:prefLabel "Zero or no pan"@en ;
 .
 sp:particle-size-fraction-boulders
+  a sp:particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-boulders"^^xsd:anyURI ;
   skos:definition "600 - 2000 mm"@en ;
   skos:prefLabel "Boulders"@en ;
 .
 sp:particle-size-fraction-clay
+  a sp:particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-clay"^^xsd:anyURI ;
   skos:definition "0.0002 - 0.002 mm"@en ;
   skos:prefLabel "Clay"@en ;
 .
 sp:particle-size-fraction-coarse-gravel
+  a sp:particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-coarse-gravel"^^xsd:anyURI ;
   skos:definition "20 - 60 mm"@en ;
   skos:prefLabel "Coarse gravel"@en ;
 .
 sp:particle-size-fraction-coarse-sand
+  a sp:particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-coarse-sand"^^xsd:anyURI ;
   skos:broader sp:particle-size-fraction-sand ;
@@ -4010,24 +4544,28 @@ sp:particle-size-fraction-coarse-sand
   skos:prefLabel "Coarse sand (particle size fraction)"@en ;
 .
 sp:particle-size-fraction-cobbles
+  a sp:particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-cobbles"^^xsd:anyURI ;
   skos:definition "60 - 200 mm"@en ;
   skos:prefLabel "Cobbles"@en ;
 .
 sp:particle-size-fraction-fine-clay
+  a sp:particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-fine-clay"^^xsd:anyURI ;
   skos:definition "< 0.0002 mm"@en ;
   skos:prefLabel "Fine clay"@en ;
 .
 sp:particle-size-fraction-fine-gravel
+  a sp:particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-fine-gravel"^^xsd:anyURI ;
   skos:definition "2.0 - 6.0 mm"@en ;
   skos:prefLabel "Fine gravel"@en ;
 .
 sp:particle-size-fraction-fine-sand
+  a sp:particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-fine-sand"^^xsd:anyURI ;
   skos:broader sp:particle-size-fraction-sand ;
@@ -4035,12 +4573,14 @@ sp:particle-size-fraction-fine-sand
   skos:prefLabel "Fine sand (particle size fraction)"@en ;
 .
 sp:particle-size-fraction-medium-gravel
+  a sp:particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-medium-gravel"^^xsd:anyURI ;
   skos:definition "6.0 - 20 mm"@en ;
   skos:prefLabel "Medium gravel"@en ;
 .
 sp:particle-size-fraction-sand
+  a sp:particle-size-fractions ;
   a skos:Concept ;
   dcterms:description "0.2 - 2.0 mm"@en ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-sand"^^xsd:anyURI ;
@@ -4050,22 +4590,26 @@ sp:particle-size-fraction-sand
   skos:prefLabel "Sand (particle size fraction)"@en ;
 .
 sp:particle-size-fraction-silt
+  a sp:particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-silt"^^xsd:anyURI ;
   skos:definition "0.002 - 0.02 mm"@en ;
   skos:prefLabel "Silt"@en ;
 .
 sp:particle-size-fraction-stones
+  a sp:particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-stones"^^xsd:anyURI ;
   skos:definition "200 - 600 mm"@en ;
   skos:prefLabel "Stones"@en ;
 .
 sp:particle-size-fractions
+  a owl:Class ;
   a skos:Collection ;
   dcterms:description """<p><img src=\"http://anzsoil.org/resources/yellowbook/Figure15.png\" /></p> 
 <p> Figure 15 Size fractions in several major classification systems. </p>"""^^rdf:HTML ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fractions"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "Particle size is measured in the laboratory. The recommended scale in Australia uses these class boundaries for particle diameters, given in millimetres."@en ;
   skos:member sp:particle-size-fraction-boulders ;
   skos:member sp:particle-size-fraction-clay ;
@@ -4085,25 +4629,12 @@ sp:roots
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/roots"^^xsd:anyURI ;
   skos:definition "Record the presence of roots observed in each horizon in areas 100 mm square on a cleaned exposure face."@en ;
-  skos:member sp:roots-abundance ;
-  skos:member sp:roots-size ;
+  skos:member sp:Root-abundance ;
+  skos:member sp:Root-size ;
   skos:prefLabel "Roots"@en ;
 .
-sp:roots-abundance
-  a skos:Collection ;
-  dcterms:description "<p>Number of roots per 0.01 m<sup>2</sup> (100 mm × 100 mm)</p>"^^rdf:HTML ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/roots-abundance"^^xsd:anyURI ;
-  rdfs:comment "N_ROOT_ABUN" ;
-  skos:definition "Number of roots per 0.01 m2 (100 mm × 100 mm)"@en ;
-  skos:member sp:roots-abundance-0 ;
-  skos:member sp:roots-abundance-1 ;
-  skos:member sp:roots-abundance-2 ;
-  skos:member sp:roots-abundance-3 ;
-  skos:member sp:roots-abundance-4 ;
-  skos:prefLabel "Root abundance - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/roots-abundance> ;
-.
 sp:roots-abundance-0
+  a sp:Root-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/roots-abundance-0"^^xsd:anyURI ;
   skos:definition "0"@en ;
@@ -4111,6 +4642,7 @@ sp:roots-abundance-0
   skos:prefLabel "No roots"@en ;
 .
 sp:roots-abundance-1
+  a sp:Root-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/roots-abundance-1"^^xsd:anyURI ;
   skos:definition """1 - 10 very fine and fine roots
@@ -4120,6 +4652,7 @@ Or
   skos:prefLabel "Few (roots abundance)"@en ;
 .
 sp:roots-abundance-2
+  a sp:Root-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/roots-abundance-2"^^xsd:anyURI ;
   skos:definition """10 - 25 very fine and fine roots
@@ -4129,6 +4662,7 @@ Or
   skos:prefLabel "Common (roots abundance)"@en ;
 .
 sp:roots-abundance-3
+  a sp:Root-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/roots-abundance-3"^^xsd:anyURI ;
   skos:definition """25 - 200 very fine and fine roots
@@ -4138,6 +4672,7 @@ Or
   skos:prefLabel "Many (roots abundance)"@en ;
 .
 sp:roots-abundance-4
+  a sp:Root-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/roots-abundance-4"^^xsd:anyURI ;
   skos:definition """> 200 very fine and fine roots
@@ -4146,19 +4681,8 @@ Or
   skos:notation "4" ;
   skos:prefLabel "Abundant (roots abundance)"@en ;
 .
-sp:roots-size
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/roots-size"^^xsd:anyURI ;
-  rdfs:comment "N_ROOT_SIZE" ;
-  skos:definition "The size (diameter) of roots observed in the horizon in mm"@en ;
-  skos:member sp:roots-size-1 ;
-  skos:member sp:roots-size-2 ;
-  skos:member sp:roots-size-3 ;
-  skos:member sp:roots-size-4 ;
-  skos:prefLabel "Root size - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/roots-size> ;
-.
 sp:roots-size-1
+  a sp:Root-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/roots-size-1"^^xsd:anyURI ;
   skos:definition "less than 1 mm"@en ;
@@ -4166,6 +4690,7 @@ sp:roots-size-1
   skos:prefLabel "Very fine (roots size)"@en ;
 .
 sp:roots-size-2
+  a sp:Root-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/roots-size-2"^^xsd:anyURI ;
   skos:definition "1 - 2 mm"@en ;
@@ -4173,6 +4698,7 @@ sp:roots-size-2
   skos:prefLabel "Fine (roots size)"@en ;
 .
 sp:roots-size-3
+  a sp:Root-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/roots-size-3"^^xsd:anyURI ;
   skos:definition "2 - 5 mm"@en ;
@@ -4180,6 +4706,7 @@ sp:roots-size-3
   skos:prefLabel "Medium (roots size)"@en ;
 .
 sp:roots-size-4
+  a sp:Root-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/roots-size-4"^^xsd:anyURI ;
   skos:definition ">5 mm"@en ;
@@ -4191,30 +4718,16 @@ sp:segregations
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations"^^xsd:anyURI ;
   skos:definition """This refers to discrete segregations that have accumulated in the soil because of the concentration of some constituent, usually by chemical or biological action.
 Segregations may be relict or formed in situ by current pedogenic processes."""@en ;
-  skos:member sp:segregations-abundance ;
-  skos:member sp:segregations-form ;
-  skos:member sp:segregations-magnetic ;
-  skos:member sp:segregations-nature ;
-  skos:member sp:segregations-size ;
-  skos:member sp:segregations-strength ;
+  skos:member sp:Segregations-abundance ;
+  skos:member sp:Segregations-form ;
+  skos:member sp:Segregations-magnetic-attributes ;
+  skos:member sp:Segregations-nature ;
+  skos:member sp:Segregations-size ;
+  skos:member sp:Segregations-strength ;
   skos:prefLabel "Segregations of pedogenic origin"@en ;
 .
-sp:segregations-abundance
-  a skos:Collection ;
-  dcterms:description "<p>Use Figure 11 as a guide <img src=\"http://anzsoil.org/resources/yellowbook/Figure11.png\" /></p>"^^rdf:HTML ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-abundance"^^xsd:anyURI ;
-  rdfs:comment "N_SEG_ABUN" ;
-  skos:definition "Abundance of segregations. Use figure 11 as a guide."@en ;
-  skos:member sp:segregations-abundance-0 ;
-  skos:member sp:segregations-abundance-1 ;
-  skos:member sp:segregations-abundance-2 ;
-  skos:member sp:segregations-abundance-3 ;
-  skos:member sp:segregations-abundance-4 ;
-  skos:member sp:segregations-abundance-5 ;
-  skos:prefLabel "Abundance of segregations - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/segregations-abundance> ;
-.
 sp:segregations-abundance-0
+  a sp:Segregations-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-abundance-0"^^xsd:anyURI ;
   rdfs:comment "N_SEG_ABUN" ;
@@ -4223,6 +4736,7 @@ sp:segregations-abundance-0
   skos:prefLabel "No segregations"@en ;
 .
 sp:segregations-abundance-1
+  a sp:Segregations-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-abundance-1"^^xsd:anyURI ;
   rdfs:comment "N_SEG_ABUN" ;
@@ -4231,6 +4745,7 @@ sp:segregations-abundance-1
   skos:prefLabel "Very few (segregations abundance)"@en ;
 .
 sp:segregations-abundance-2
+  a sp:Segregations-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-abundance-2"^^xsd:anyURI ;
   rdfs:comment "N_SEG_ABUN" ;
@@ -4239,6 +4754,7 @@ sp:segregations-abundance-2
   skos:prefLabel "Few (segregations abundance)"@en ;
 .
 sp:segregations-abundance-3
+  a sp:Segregations-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-abundance-3"^^xsd:anyURI ;
   rdfs:comment "N_SEG_ABUN" ;
@@ -4247,6 +4763,7 @@ sp:segregations-abundance-3
   skos:prefLabel "Common (segregations abundance)"@en ;
 .
 sp:segregations-abundance-4
+  a sp:Segregations-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-abundance-4"^^xsd:anyURI ;
   rdfs:comment "N_SEG_ABUN" ;
@@ -4255,6 +4772,7 @@ sp:segregations-abundance-4
   skos:prefLabel "Many (segregations abundance)"@en ;
 .
 sp:segregations-abundance-5
+  a sp:Segregations-abundance ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-abundance-5"^^xsd:anyURI ;
   rdfs:comment "N_SEG_ABUN" ;
@@ -4262,24 +4780,8 @@ sp:segregations-abundance-5
   skos:notation "5" ;
   skos:prefLabel "Very many (segregations abundance)"@en ;
 .
-sp:segregations-form
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-form"^^xsd:anyURI ;
-  rdfs:comment "C_SEG_FORM" ;
-  skos:definition "Form of segregations"@en ;
-  skos:member sp:segregations-form-C ;
-  skos:member sp:segregations-form-F ;
-  skos:member sp:segregations-form-L ;
-  skos:member sp:segregations-form-N ;
-  skos:member sp:segregations-form-R ;
-  skos:member sp:segregations-form-S ;
-  skos:member sp:segregations-form-T ;
-  skos:member sp:segregations-form-V ;
-  skos:member sp:segregations-form-X ;
-  skos:prefLabel "Form of segregations - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/segregations-form> ;
-.
 sp:segregations-form-C
+  a sp:Segregations-form ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-form-C"^^xsd:anyURI ;
   rdfs:comment "C_SEG_FORM" ;
@@ -4288,6 +4790,7 @@ sp:segregations-form-C
   skos:prefLabel "Concretions"@en ;
 .
 sp:segregations-form-F
+  a sp:Segregations-form ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-form-F"^^xsd:anyURI ;
   rdfs:comment "C_SEG_FORM" ;
@@ -4296,6 +4799,7 @@ sp:segregations-form-F
   skos:prefLabel "Fragments"@en ;
 .
 sp:segregations-form-L
+  a sp:Segregations-form ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-form-L"^^xsd:anyURI ;
   rdfs:comment "C_SEG_FORM" ;
@@ -4304,6 +4808,7 @@ sp:segregations-form-L
   skos:prefLabel "Laminae"@en ;
 .
 sp:segregations-form-N
+  a sp:Segregations-form ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-form-N"^^xsd:anyURI ;
   rdfs:comment "C_SEG_FORM" ;
@@ -4312,6 +4817,7 @@ sp:segregations-form-N
   skos:prefLabel "Nodules (segregations)"@en ;
 .
 sp:segregations-form-R
+  a sp:Segregations-form ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-form-R"^^xsd:anyURI ;
   rdfs:comment "C_SEG_FORM" ;
@@ -4320,6 +4826,7 @@ sp:segregations-form-R
   skos:prefLabel "Root linings"@en ;
 .
 sp:segregations-form-S
+  a sp:Segregations-form ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-form-S"^^xsd:anyURI ;
   rdfs:comment "C_SEG_FORM" ;
@@ -4328,6 +4835,7 @@ sp:segregations-form-S
   skos:prefLabel "Soft segregations"@en ;
 .
 sp:segregations-form-T
+  a sp:Segregations-form ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-form-T"^^xsd:anyURI ;
   rdfs:comment "C_SEG_FORM" ;
@@ -4336,6 +4844,7 @@ sp:segregations-form-T
   skos:prefLabel "Tubules"@en ;
 .
 sp:segregations-form-V
+  a sp:Segregations-form ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-form-V"^^xsd:anyURI ;
   rdfs:comment "C_SEG_FORM" ;
@@ -4344,6 +4853,7 @@ sp:segregations-form-V
   skos:prefLabel "Veins"@en ;
 .
 sp:segregations-form-X
+  a sp:Segregations-form ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-form-X"^^xsd:anyURI ;
   rdfs:comment "C_SEG_FORM" ;
@@ -4351,17 +4861,8 @@ sp:segregations-form-X
   skos:notation "X" ;
   skos:prefLabel "Crystals"@en ;
 .
-sp:segregations-magnetic
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-magnetic"^^xsd:anyURI ;
-  rdfs:comment "C_SEG_MAGNETIC_ATTR" ;
-  skos:definition "attraction to surface of hand-held magnet"@en ;
-  skos:member sp:segregations-magnetic-M ;
-  skos:member sp:segregations-magnetic-N ;
-  skos:prefLabel "Magnetic attributes of segregations - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/segregations-magnetic> ;
-.
 sp:segregations-magnetic-M
+  a sp:Segregations-magnetic-attributes ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-magnetic-M"^^xsd:anyURI ;
   rdfs:comment "C_SEG_MAGNETIC_ATTR" ;
@@ -4370,6 +4871,7 @@ sp:segregations-magnetic-M
   skos:prefLabel "Magnetic"@en ;
 .
 sp:segregations-magnetic-N
+  a sp:Segregations-magnetic-attributes ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-magnetic-N"^^xsd:anyURI ;
   rdfs:comment "C_SEG_MAGNETIC_ATTR" ;
@@ -4377,29 +4879,8 @@ sp:segregations-magnetic-N
   skos:notation "N" ;
   skos:prefLabel "Non-magnetic"@en ;
 .
-sp:segregations-nature
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature"^^xsd:anyURI ;
-  rdfs:comment "C_SEG_NATURE" ;
-  skos:definition "Nature of segregations"@en ;
-  skos:member sp:segregations-nature-A ;
-  skos:member sp:segregations-nature-E ;
-  skos:member sp:segregations-nature-F ;
-  skos:member sp:segregations-nature-G ;
-  skos:member sp:segregations-nature-H ;
-  skos:member sp:segregations-nature-K ;
-  skos:member sp:segregations-nature-L ;
-  skos:member sp:segregations-nature-M ;
-  skos:member sp:segregations-nature-N ;
-  skos:member sp:segregations-nature-O ;
-  skos:member sp:segregations-nature-S ;
-  skos:member sp:segregations-nature-U ;
-  skos:member sp:segregations-nature-Y ;
-  skos:member sp:segregations-nature-Z ;
-  skos:prefLabel "Nature of segregations - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/segregations-nature> ;
-.
 sp:segregations-nature-A
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-A"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4408,6 +4889,7 @@ sp:segregations-nature-A
   skos:prefLabel "Aluminous"@en ;
 .
 sp:segregations-nature-E
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-E"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4416,6 +4898,7 @@ sp:segregations-nature-E
   skos:prefLabel "Earthy"@en ;
 .
 sp:segregations-nature-F
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-F"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4424,6 +4907,7 @@ sp:segregations-nature-F
   skos:prefLabel "Ferruginous"@en ;
 .
 sp:segregations-nature-G
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-G"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4432,6 +4916,7 @@ sp:segregations-nature-G
   skos:prefLabel "Ferruginous–organic"@en ;
 .
 sp:segregations-nature-H
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-H"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4440,6 +4925,7 @@ sp:segregations-nature-H
   skos:prefLabel "Organic"@en ;
 .
 sp:segregations-nature-K
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-K"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4448,6 +4934,7 @@ sp:segregations-nature-K
   skos:prefLabel "Calcareous"@en ;
 .
 sp:segregations-nature-L
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-L"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4456,6 +4943,7 @@ sp:segregations-nature-L
   skos:prefLabel "Argillaceous"@en ;
 .
 sp:segregations-nature-M
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-M"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4464,6 +4952,7 @@ sp:segregations-nature-M
   skos:prefLabel "Manganiferous"@en ;
 .
 sp:segregations-nature-N
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-N"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4472,6 +4961,7 @@ sp:segregations-nature-N
   skos:prefLabel "Ferromanganiferous"@en ;
 .
 sp:segregations-nature-O
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-O"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4480,6 +4970,7 @@ sp:segregations-nature-O
   skos:prefLabel "Other (segregations nature)"@en ;
 .
 sp:segregations-nature-S
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-S"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4488,6 +4979,7 @@ sp:segregations-nature-S
   skos:prefLabel "Sulphurous"@en ;
 .
 sp:segregations-nature-U
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-U"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4496,6 +4988,7 @@ sp:segregations-nature-U
   skos:prefLabel "Unidentified"@en ;
 .
 sp:segregations-nature-Y
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-Y"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4504,6 +4997,7 @@ sp:segregations-nature-Y
   skos:prefLabel "Gypseous"@en ;
 .
 sp:segregations-nature-Z
+  a sp:Segregations-nature ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-nature-Z"^^xsd:anyURI ;
   rdfs:comment "C_SEG_NATURE" ;
@@ -4511,20 +5005,8 @@ sp:segregations-nature-Z
   skos:notation "Z" ;
   skos:prefLabel "Saline (segregations nature)"@en ;
 .
-sp:segregations-size
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-size"^^xsd:anyURI ;
-  rdfs:comment "N_SEG_SIZE" ;
-  skos:definition "Approximately equidimensional segregations (concretions, nodules) are measured in the greatest dimension. Segregations where one dimension is much greater than the other two (tubules, root linings, veins, laminae) are measured in the least dimension"@en ;
-  skos:member sp:segregations-size-1 ;
-  skos:member sp:segregations-size-2 ;
-  skos:member sp:segregations-size-3 ;
-  skos:member sp:segregations-size-4 ;
-  skos:member sp:segregations-size-5 ;
-  skos:prefLabel "Size of segregations - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/segregations-size> ;
-.
 sp:segregations-size-1
+  a sp:Segregations-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-size-1"^^xsd:anyURI ;
   rdfs:comment "N_SEG_SIZE" ;
@@ -4533,6 +5015,7 @@ sp:segregations-size-1
   skos:prefLabel "Fine (segregations size)"@en ;
 .
 sp:segregations-size-2
+  a sp:Segregations-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-size-2"^^xsd:anyURI ;
   rdfs:comment "N_SEG_SIZE" ;
@@ -4541,6 +5024,7 @@ sp:segregations-size-2
   skos:prefLabel "Medium (segregations size)"@en ;
 .
 sp:segregations-size-3
+  a sp:Segregations-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-size-3"^^xsd:anyURI ;
   rdfs:comment "N_SEG_SIZE" ;
@@ -4549,6 +5033,7 @@ sp:segregations-size-3
   skos:prefLabel "Coarse (segregations size)"@en ;
 .
 sp:segregations-size-4
+  a sp:Segregations-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-size-4"^^xsd:anyURI ;
   rdfs:comment "N_SEG_SIZE" ;
@@ -4557,6 +5042,7 @@ sp:segregations-size-4
   skos:prefLabel "Very coarse (segregations size)"@en ;
 .
 sp:segregations-size-5
+  a sp:Segregations-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-size-5"^^xsd:anyURI ;
   rdfs:comment "N_SEG_SIZE" ;
@@ -4564,17 +5050,8 @@ sp:segregations-size-5
   skos:notation "5" ;
   skos:prefLabel "Extremely coarse (segregations size)"@en ;
 .
-sp:segregations-strength
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-strength"^^xsd:anyURI ;
-  rdfs:comment "C_SEG_STRENGTH" ;
-  skos:definition "Strength may be recorded where appropriate"@en ;
-  skos:member sp:segregations-strength-1 ;
-  skos:member sp:segregations-strength-2 ;
-  skos:prefLabel "Strength of segregations - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/segregations-strength> ;
-.
 sp:segregations-strength-1
+  a sp:Segregations-strength ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-strength-1"^^xsd:anyURI ;
   rdfs:comment "C_SEG_STRENGTH" ;
@@ -4583,6 +5060,7 @@ sp:segregations-strength-1
   skos:prefLabel "Weak (segregations strength)"@en ;
 .
 sp:segregations-strength-2
+  a sp:Segregations-strength ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/segregations-strength-2"^^xsd:anyURI ;
   rdfs:comment "C_SEG_STRENGTH" ;
@@ -4590,21 +5068,8 @@ sp:segregations-strength-2
   skos:notation "2" ;
   skos:prefLabel "Strong (segregations strength)"@en ;
 .
-sp:soil-water-drainage
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-drainage"^^xsd:anyURI ;
-  rdfs:comment "C_O_DRAINAGE" ;
-  skos:definition "Drainage is a useful term to summarise local soil wetness conditions, that is, it provides a statement about soil and site drainage likely to occur in most years. It is affected by a number of attributes, both internal and external, that may act separately or together. Internal attributes include soil structure, texture, porosity, hydraulic conductivity, and water-holding capacity, while external attributes are source and quality of water, evapotranspiration, gradient and length of slope, and position in the landscape."@en ;
-  skos:member sp:soil-water-drainage-1 ;
-  skos:member sp:soil-water-drainage-2 ;
-  skos:member sp:soil-water-drainage-3 ;
-  skos:member sp:soil-water-drainage-4 ;
-  skos:member sp:soil-water-drainage-5 ;
-  skos:member sp:soil-water-drainage-6 ;
-  skos:prefLabel "Drainage - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/soil-water-drainage> ;
-.
 sp:soil-water-drainage-1
+  a sp:Site-drainage ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-drainage-1"^^xsd:anyURI ;
   rdfs:comment "C_O_DRAINAGE" ;
@@ -4613,6 +5078,7 @@ sp:soil-water-drainage-1
   skos:prefLabel "Very poorly drained"@en ;
 .
 sp:soil-water-drainage-2
+  a sp:Site-drainage ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-drainage-2"^^xsd:anyURI ;
   rdfs:comment "C_O_DRAINAGE" ;
@@ -4621,6 +5087,7 @@ sp:soil-water-drainage-2
   skos:prefLabel "Poorly drained"@en ;
 .
 sp:soil-water-drainage-3
+  a sp:Site-drainage ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-drainage-3"^^xsd:anyURI ;
   rdfs:comment "C_O_DRAINAGE" ;
@@ -4629,6 +5096,7 @@ sp:soil-water-drainage-3
   skos:prefLabel "Imperfectly drained"@en ;
 .
 sp:soil-water-drainage-4
+  a sp:Site-drainage ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-drainage-4"^^xsd:anyURI ;
   rdfs:comment "C_O_DRAINAGE" ;
@@ -4637,6 +5105,7 @@ sp:soil-water-drainage-4
   skos:prefLabel "Moderately well drained"@en ;
 .
 sp:soil-water-drainage-5
+  a sp:Site-drainage ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-drainage-5"^^xsd:anyURI ;
   rdfs:comment "C_O_DRAINAGE" ;
@@ -4645,6 +5114,7 @@ sp:soil-water-drainage-5
   skos:prefLabel "Well drained"@en ;
 .
 sp:soil-water-drainage-6
+  a sp:Site-drainage ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-drainage-6"^^xsd:anyURI ;
   rdfs:comment "C_O_DRAINAGE" ;
@@ -4652,19 +5122,8 @@ sp:soil-water-drainage-6
   skos:notation "6" ;
   skos:prefLabel "Rapidly drained"@en ;
 .
-sp:soil-water-permeability
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-permeability"^^xsd:anyURI ;
-  rdfs:comment "C_PERMEABILITY" ;
-  skos:definition "Permeability is independent of climate and drainage, and – as applied to a soil – is controlled by the potential to transmit water (saturated hydraulic conductivity, Ks) of the least permeable layer in the soil. Therefore it is inferred from attributes of the soil such as structure, texture, porosity, cracks and shrink–swell properties. The rate of transmission of water in the profile is based on the assumption that loss by evapotranspiration is minimal. The Ks ranges are compatible with those of Nowland in Canada, as reported by McKeague et al. (1982)."@en ;
-  skos:member sp:soil-water-permeability-1 ;
-  skos:member sp:soil-water-permeability-2 ;
-  skos:member sp:soil-water-permeability-3 ;
-  skos:member sp:soil-water-permeability-4 ;
-  skos:prefLabel "Permeability - enumeration"@en ;
-  skos:related <https://anzsoil.org/def/au/property/soil-water-permeability> ;
-.
 sp:soil-water-permeability-1
+  a sp:Soil-permeability ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-permeability-1"^^xsd:anyURI ;
   rdfs:comment "C_PERMEABILITY" ;
@@ -4675,6 +5134,7 @@ Drainage time: months"""@en ;
   skos:prefLabel "Very slowly permeable"@en ;
 .
 sp:soil-water-permeability-2
+  a sp:Soil-permeability ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-permeability-2"^^xsd:anyURI ;
   rdfs:comment "C_PERMEABILITY" ;
@@ -4685,6 +5145,7 @@ Drainage time: weeks"""@en ;
   skos:prefLabel "Slowly permeable"@en ;
 .
 sp:soil-water-permeability-3
+  a sp:Soil-permeability ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-permeability-3"^^xsd:anyURI ;
   rdfs:comment "C_PERMEABILITY" ;
@@ -4695,6 +5156,7 @@ Drainage time: days"""@en ;
   skos:prefLabel "Moderately permeable"@en ;
 .
 sp:soil-water-permeability-4
+  a sp:Soil-permeability ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-permeability-4"^^xsd:anyURI ;
   rdfs:comment "C_PERMEABILITY" ;
@@ -4709,13 +5171,15 @@ sp:soil-water-regime
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-regime"^^xsd:anyURI ;
   skos:definition """Traditional approaches to soil drainage do not adequately differentiate between hydrological setting and permeability of the material of the profile. For example, a very permeable, coarse-textured soil occurring in a wet depression would have to be classed as very poorly drained. Hence there is a need to consider permeability, which refers to the potential of a soil to transmit water internally, and drainage, which refers to the rapidity and extent of water removal from the soil profile or site. Both these aspects of internal drainage may be difficult to assess in the field, and cannot be based solely on profile morphology. Mottling may, but not always, reflect drainage status, since mottling may be a relict feature. Vegetation and topography may be useful guides.
 These concepts of permeability and drainage are largely based on Canada Soil Survey Committee (1978)."""@en ;
-  skos:member sp:soil-water-drainage ;
-  skos:member sp:soil-water-permeability ;
+  skos:member sp:Site-drainage ;
+  skos:member sp:Soil-permeability ;
   skos:prefLabel "Soil water regime"@en ;
 .
 sp:soil-water-status
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-status"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition """Give soil water status of the soil at the time of description.
 It may also be relevant to note the weather conditions immediately prior to examination of the soil if these are known, for example a soil may be wet because of local rain or from seepage.
 The following guidelines may be used as a crude approximation of soil water status:
@@ -4732,6 +5196,7 @@ Wet is at, or exceeding, field capacity. Will wet and/or stick to fingers when m
   skos:related <https://anzsoil.org/def/au/property/soil-water-status> ;
 .
 sp:soil-water-status-D
+  a sp:soil-water-status ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-status-D"^^xsd:anyURI ;
   skos:definition """Dry is below wilting point. Material becomes darker or has lower colour value when moistened.
@@ -4745,6 +5210,7 @@ Clay loams, clays: will not ball when squeezed in hand. Fragments will break to 
   skos:prefLabel "Dry (soil water status)"@en ;
 .
 sp:soil-water-status-M
+  a sp:soil-water-status ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-status-M"^^xsd:anyURI ;
   skos:definition """Moist is the wetter half of the available moisture range.
@@ -4758,6 +5224,7 @@ Clay loams, clays: will ball. Will ribbon easily."""@en ;
   skos:prefLabel "Moist (soil water status)"@en ;
 .
 sp:soil-water-status-T
+  a sp:soil-water-status ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-status-T"^^xsd:anyURI ;
   skos:definition """Moderately moist is the drier half of the available moisture range.
@@ -4771,6 +5238,7 @@ Clay loams, clays: will ball. Will not ribbon."""@en ;
   skos:prefLabel "Moderately moist (soil water status)"@en ;
 .
 sp:soil-water-status-W
+  a sp:soil-water-status ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/soil-water-status-W"^^xsd:anyURI ;
   skos:definition """Wet is at, or exceeding, field capacity. Will wet and/or stick to fingers when moulded.
@@ -4788,14 +5256,15 @@ sp:structure
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure"^^xsd:anyURI ;
   skos:definition """Soil structure refers to the distinctness, size and shape of peds. A ped is an individual natural soil aggregate consisting of a cluster of primary particles. Peds are separated from adjoining peds by surfaces of weakness that are recognisable as natural voids or by the occurrence of cutans (Brewer 1960).
 Soil structure can only be described reliably in a relatively fresh vertical exposure or relatively undisturbed soil core, not from an auger boring. Vertical exposures that have been exposed for a long time (road cuttings, gullies) are unsuitable for the determination of structure that may alter due to daily or seasonal changes in moisture and temperature."""@en ;
+  skos:member sp:Pedality-size ;
+  skos:member sp:Pedality-type ;
   skos:member sp:structure-artificial-aggregates ;
   skos:member sp:structure-pedality-compound ;
   skos:member sp:structure-pedality-grade ;
-  skos:member sp:structure-pedality-size ;
-  skos:member sp:structure-pedality-type ;
   skos:prefLabel "Structure"@en ;
 .
 sp:structure-artificial-CL
+  a sp:structure-artificial-aggregates ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-artificial-CL"^^xsd:anyURI ;
   skos:definition "artificial aggregate with diameter 100 mm or more."@en ;
@@ -4803,6 +5272,7 @@ sp:structure-artificial-CL
   skos:prefLabel "Clod"@en ;
 .
 sp:structure-artificial-FR
+  a sp:structure-artificial-aggregates ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-artificial-FR"^^xsd:anyURI ;
   skos:definition "artificial aggregate with diameter less than 100 mm."@en ;
@@ -4810,21 +5280,15 @@ sp:structure-artificial-FR
   skos:prefLabel "Fragment"@en ;
 .
 sp:structure-artificial-aggregates
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-artificial-aggregates"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "Cultivated horizons (Ap horizons) often consist of artificial aggregates formed by cultivation or work being done on the soil. The distinction between artificial aggregates and peds can be difficult. In cultivated horizons, where the pedologist is confident the aggregates are natural peds they should be recorded as such. If the pedologist is doubtful, or the aggregates are obviously artificial, they should be recorded as clods or fragments."@en ;
   skos:member sp:structure-artificial-CL ;
   skos:member sp:structure-artificial-FR ;
   skos:prefLabel "Structure of artificial aggregates"@en ;
   skos:related <https://anzsoil.org/def/au/property/structure-artificial-aggregates> ;
-.
-sp:structure-pedality-apedal
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-apedal"^^xsd:anyURI ;
-  skos:definition "Apedal soils have no observable peds and are divided into:" ;
-  skos:member sp:structure-pedality-grade-G ;
-  skos:member sp:structure-pedality-grade-V ;
-  skos:prefLabel "Apedal soil grades" ;
 .
 sp:structure-pedality-compound
   a skos:Collection ;
@@ -4843,12 +5307,13 @@ sp:structure-pedality-grade
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-grade"^^xsd:anyURI ;
   rdfs:comment "C_STR_PED_GRADE" ;
   skos:definition "Grade of pedality is the degree of development and distinctness of peds. In virtually all material that has structure, the surface of individual peds will differ in some way from the interior of peds. The degree of development expresses the relative difference between the strength of cohesion within peds and the strength of adhesion between adjacent peds. Determination of grade of structure in the field depends on the proportion of peds that hold together as entire peds when displaced and also on the ease with which the soil separates into discrete peds. Grade of pedality varies with the soil water status. It is important to record the soil water status of the described profile, and it is desirable that the grade of pedality be described at the soil water status most common for the horizon."@en ;
-  skos:member sp:structure-pedality-apedal ;
-  skos:member sp:structure-pedality-pedal ;
+  skos:member sp:Pedality-grade-apedal ;
+  skos:member sp:Pedality-grade-pedal ;
   skos:prefLabel "Grade of pedality"@en ;
   skos:related <https://anzsoil.org/def/au/property/structure-pedality-grade> ;
 .
 sp:structure-pedality-grade-G
+  a sp:Pedality-grade-apedal ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-grade-G"^^xsd:anyURI ;
   skos:definition "loose, incoherent* mass of individual particles. When displaced, soil separates into ultimate particles."@en ;
@@ -4858,6 +5323,7 @@ sp:structure-pedality-grade-G
   skos:prefLabel "Single grain"@en ;
 .
 sp:structure-pedality-grade-M
+  a sp:Pedality-grade-pedal ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-grade-M"^^xsd:anyURI ;
   skos:definition "peds well-formed and evident but not distinct in undisplaced soil. Adhesion between peds is usually firm or stronger. When displaced, more than one-third of the soil material consists of entire peds, the remainder consisting of broken peds, fragments and ultimate particles."@en ;
@@ -4866,6 +5332,7 @@ sp:structure-pedality-grade-M
   skos:prefLabel "Moderate (structure pedality grade)"@en ;
 .
 sp:structure-pedality-grade-S
+  a sp:Pedality-grade-pedal ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-grade-S"^^xsd:anyURI ;
   skos:definition "peds quite distinct in undisplaced soil. Adhesion between peds is usually firm or weaker. When displaced, more than two-thirds of the soil material consists of entire peds."@en ;
@@ -4874,6 +5341,7 @@ sp:structure-pedality-grade-S
   skos:prefLabel "Strong (structure pedality grade)"@en ;
 .
 sp:structure-pedality-grade-V
+  a sp:Pedality-grade-apedal ;
   a skos:Concept ;
   dcterms:description "coherent. When displaced, soil separates into fragments, which may be crushed to ultimate particles."@en ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-grade-V"^^xsd:anyURI ;
@@ -4884,6 +5352,7 @@ sp:structure-pedality-grade-V
   skos:prefLabel "Massive (structure pedality grade)"@en ;
 .
 sp:structure-pedality-grade-W
+  a sp:Pedality-grade-pedal ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-grade-W"^^xsd:anyURI ;
   skos:definition "peds indistinct and barely observable in undisplaced soil. When displaced, up to one-third of the soil material consists of peds, the remainder consisting of variable amounts of fragments and ultimate particles."@en ;
@@ -4891,34 +5360,8 @@ sp:structure-pedality-grade-W
   skos:note "Pedal soil (observable peds)."@en ;
   skos:prefLabel "Weak (structure pedality grade)"@en ;
 .
-sp:structure-pedality-pedal
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-pedal"^^xsd:anyURI ;
-  skos:definition "Pedal soils have observable peds and are divided into:" ;
-  skos:member sp:structure-pedality-grade-M ;
-  skos:member sp:structure-pedality-grade-S ;
-  skos:member sp:structure-pedality-grade-W ;
-  skos:prefLabel "Pedal soil grades - enumeration" ;
-.
-sp:structure-pedality-size
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-size"^^xsd:anyURI ;
-  rdfs:comment "N_STR_PED_SIZE" ;
-  skos:definition "The average least dimension of peds is used to determine the class interval. Use figure 17. The least dimension is the vertical dimension for platy structure; the horizontal dimension for prismatic, columnar, blocky and polyhedral peds; the maximum separation of convex faces for lenticular peds; and the diameter for granular peds."@en ;
-  skos:member sp:structure-pedality-size-1 ;
-  skos:member sp:structure-pedality-size-2 ;
-  skos:member sp:structure-pedality-size-3 ;
-  skos:member sp:structure-pedality-size-4 ;
-  skos:member sp:structure-pedality-size-5 ;
-  skos:member sp:structure-pedality-size-6 ;
-  skos:member sp:structure-pedality-size-7 ;
-  skos:member sp:structure-pedality-size-8 ;
-  skos:member sp:structure-pedality-size-9 ;
-  skos:note "<p>Figure 17	Ped size. <img src=\"http://anzsoil.org/resources/yellowbook/Figure17.png\" alt=\"Ped Size\"/> </p>"^^rdf:HTML ;
-  skos:prefLabel "Size of peds"@en ;
-  skos:related <https://anzsoil.org/def/au/property/structure-pedality-size> ;
-.
 sp:structure-pedality-size-1
+  a sp:Pedality-size ;
   a skos:Concept ;
   dcterms:description "<2 mm"@en ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-size-1"^^xsd:anyURI ;
@@ -4927,6 +5370,7 @@ sp:structure-pedality-size-1
   skos:prefLabel "< 2 mm"@en ;
 .
 sp:structure-pedality-size-2
+  a sp:Pedality-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-size-2"^^xsd:anyURI ;
   skos:definition "2-5 mm"@en ;
@@ -4934,6 +5378,7 @@ sp:structure-pedality-size-2
   skos:prefLabel "2-5 mm"@en ;
 .
 sp:structure-pedality-size-3
+  a sp:Pedality-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-size-3"^^xsd:anyURI ;
   skos:definition "5-10 mm"@en ;
@@ -4941,6 +5386,7 @@ sp:structure-pedality-size-3
   skos:prefLabel "5-10 mm"@en ;
 .
 sp:structure-pedality-size-4
+  a sp:Pedality-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-size-4"^^xsd:anyURI ;
   skos:definition "10-20 mm"@en ;
@@ -4948,6 +5394,7 @@ sp:structure-pedality-size-4
   skos:prefLabel "10-20 mm"@en ;
 .
 sp:structure-pedality-size-5
+  a sp:Pedality-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-size-5"^^xsd:anyURI ;
   skos:definition "20-50 mm"@en ;
@@ -4955,6 +5402,7 @@ sp:structure-pedality-size-5
   skos:prefLabel "20-50 mm"@en ;
 .
 sp:structure-pedality-size-6
+  a sp:Pedality-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-size-6"^^xsd:anyURI ;
   skos:definition "50-100 mm"@en ;
@@ -4962,6 +5410,7 @@ sp:structure-pedality-size-6
   skos:prefLabel "50-100 mm"@en ;
 .
 sp:structure-pedality-size-7
+  a sp:Pedality-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-size-7"^^xsd:anyURI ;
   skos:definition "100-200 mm"@en ;
@@ -4969,6 +5418,7 @@ sp:structure-pedality-size-7
   skos:prefLabel "100-200 mm"@en ;
 .
 sp:structure-pedality-size-8
+  a sp:Pedality-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-size-8"^^xsd:anyURI ;
   skos:definition "200-500 mm"@en ;
@@ -4976,31 +5426,15 @@ sp:structure-pedality-size-8
   skos:prefLabel "200-500 mm"@en ;
 .
 sp:structure-pedality-size-9
+  a sp:Pedality-size ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-size-9"^^xsd:anyURI ;
   skos:definition "> 500 mm"@en ;
   skos:notation "9" ;
   skos:prefLabel "> 500 mm"@en ;
 .
-sp:structure-pedality-type
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-type"^^xsd:anyURI ;
-  rdfs:comment "C_STR_PED_TYPE" ;
-  skos:definition "The types of structure are illustrated in diagrammatic form. See figure 17."@en ;
-  skos:member sp:structure-pedality-type-AB ;
-  skos:member sp:structure-pedality-type-CA ;
-  skos:member sp:structure-pedality-type-CO ;
-  skos:member sp:structure-pedality-type-GR ;
-  skos:member sp:structure-pedality-type-LE ;
-  skos:member sp:structure-pedality-type-PL ;
-  skos:member sp:structure-pedality-type-PO ;
-  skos:member sp:structure-pedality-type-PR ;
-  skos:member sp:structure-pedality-type-SB ;
-  skos:note "<p>Figure 17	Ped size. <img src=\"http://anzsoil.org/resources/yellowbook/Figure17.png\" alt=\"Ped Size\"/> </p>"^^rdf:HTML ;
-  skos:prefLabel "Type of pedality"@en ;
-  skos:related <https://anzsoil.org/def/au/property/structure-pedality-type> ;
-.
 sp:structure-pedality-type-AB
+  a sp:Pedality-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-type-AB"^^xsd:anyURI ;
   skos:definition "soil particles arranged around a point and bounded by six relatively flat, roughly equal faces. Re-entrant angles between adjoining faces are few or absent. There is usually much accommodation of ped faces to the faces of surrounding peds. Most vertices between adjoining faces are angular.	Angular blocky	Soil particles arranged around a point and bounded by six relatively flat, roughly equal faces. Re-entrant angles between adjoining faces are few or absent. There is usually much accommodation of ped faces to the faces of surrounding peds. Most vertices between adjoining faces are angular."@en ;
@@ -5008,6 +5442,7 @@ sp:structure-pedality-type-AB
   skos:prefLabel "Angular blocky"@en ;
 .
 sp:structure-pedality-type-CA
+  a sp:Pedality-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-type-CA"^^xsd:anyURI ;
   skos:definition "faunal casts are strictly not peds, but they are described in a similar manner. They are formed from, or are deposited in, the O horizons or the soil solum and include: excreta of soil fauna which may be discrete particles, for example insect faeces or the dense, coherent, globular forms of earthworm excreta. They are generally spherical or ovate in shape and have a strong conchoidal fracture; soil masticated with salivary secretions into globular forms, for example, by ants, crickets, wasps.	Cast	Faunal casts are strictly not peds, but they are described in a similar manner. They are formed from, or are deposited in, the O horizons or the soil solum and include: excreta of soil fauna which may be discrete particles, for example insect faeces or the dense, coherent, globular forms of earthworm excreta. They are generally spherical or ovate in shape and have a strong conchoidal fracture; soil masticated with salivary secretions into globular forms, for example, by ants, crickets, wasps."@en ;
@@ -5015,6 +5450,7 @@ sp:structure-pedality-type-CA
   skos:prefLabel "Cast"@en ;
 .
 sp:structure-pedality-type-CO
+  a sp:Pedality-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-type-CO"^^xsd:anyURI ;
   skos:definition "soil particles arranged around a vertical axis and bounded by well-defined, relatively flat faces with much accommodation to the faces of surrounding peds. Vertices between adjoining faces are usually angular with domed tops.	Columnar	Soil particles arranged around a vertical axis and bounded by well-defined, relatively flat faces with much accommodation to the faces of surrounding peds. Vertices between adjoining faces are usually angular with domed tops."@en ;
@@ -5022,6 +5458,7 @@ sp:structure-pedality-type-CO
   skos:prefLabel "Columnar"@en ;
 .
 sp:structure-pedality-type-GR
+  a sp:Pedality-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-type-GR"^^xsd:anyURI ;
   skos:definition "spheroidal with limited accommodation to the faces of surrounding peds.	Granular	Spheroidal with limited accommodation to the faces of surrounding peds."@en ;
@@ -5029,6 +5466,7 @@ sp:structure-pedality-type-GR
   skos:prefLabel "Granular"@en ;
 .
 sp:structure-pedality-type-LE
+  a sp:Pedality-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-type-LE"^^xsd:anyURI ;
   skos:definition "soil particles arranged around an elliptical or circular plane and bounded by curved faces with much accommodation to the faces of surrounding peds. Most vertices are angular and acute.	Lenticular	Soil particles arranged around an elliptical or circular plane and bounded by curved faces with much accommodation to the faces of surrounding peds. Most vertices are angular and acute."@en ;
@@ -5036,6 +5474,7 @@ sp:structure-pedality-type-LE
   skos:prefLabel "Lenticular"@en ;
 .
 sp:structure-pedality-type-PL
+  a sp:Pedality-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-type-PL"^^xsd:anyURI ;
   skos:definition "soil particles arranged around a horizontal plane and bounded by relatively flat horizontal faces with much accommodation to the faces of surrounding peds.	Platy	Soil particles arranged around a horizontal plane and bounded by relatively flat horizontal faces with much accommodation to the faces of surrounding peds."@en ;
@@ -5043,6 +5482,7 @@ sp:structure-pedality-type-PL
   skos:prefLabel "Platy (structure pedality)"@en ;
 .
 sp:structure-pedality-type-PO
+  a sp:Pedality-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-type-PO"^^xsd:anyURI ;
   skos:definition "soil particles arranged around a point and bounded by more than six relatively flat, unequal, dissimilar faces. Re-entrant angles between adjoining faces are a feature. There is usually much accommodation of ped faces to the faces of surrounding peds. Most vertices are angular.	Polyhedral	Soil particles arranged around a point and bounded by more than six relatively flat, unequal, dissimilar faces. Re-entrant angles between adjoining faces are a feature. There is usually much accommodation of ped faces to the faces of surrounding peds. Most vertices are angular."@en ;
@@ -5050,6 +5490,7 @@ sp:structure-pedality-type-PO
   skos:prefLabel "Polyhedral"@en ;
 .
 sp:structure-pedality-type-PR
+  a sp:Pedality-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-type-PR"^^xsd:anyURI ;
   skos:definition "soil particles arranged around a vertical axis and bounded by well-defined, relatively flat faces with much accommodation to the faces of surrounding peds. Vertices between adjoining faces are usually angular.	Prismatic	Soil particles arranged around a vertical axis and bounded by well-defined, relatively flat faces with much accommodation to the faces of surrounding peds. Vertices between adjoining faces are usually angular."@en ;
@@ -5057,6 +5498,7 @@ sp:structure-pedality-type-PR
   skos:prefLabel "Prismatic"@en ;
 .
 sp:structure-pedality-type-SB
+  a sp:Pedality-type ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-pedality-type-SB"^^xsd:anyURI ;
   skos:definition "soil particles arranged around a point and bounded by flat and rounded faces with limited accommodation to the faces of surrounding peds. Many vertices are rounded.	Subangular blocky	Soil particles arranged around a point and bounded by flat and rounded faces with limited accommodation to the faces of surrounding peds. Many vertices are rounded."@en ;
@@ -5064,6 +5506,7 @@ sp:structure-pedality-type-SB
   skos:prefLabel "Subangular blocky"@en ;
 .
 sp:surfacecondition-C
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-C"^^xsd:anyURI ;
   skos:definition "distinct surface layer, often laminated, ranging in thickness from a few millimetres to a few tens of millimetres, which is hard and brittle when dry and cannot be readily separated from, and lifted off, the underlying soil material."@en ;
@@ -5071,6 +5514,7 @@ sp:surfacecondition-C
   skos:prefLabel "Surface crust"@en ;
 .
 sp:surfacecondition-F
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-F"^^xsd:anyURI ;
   skos:definition "coherent mass of individual particles or aggregates. Surface disturbed or indented by moderate pressure of forefinger."@en ;
@@ -5079,6 +5523,7 @@ sp:surfacecondition-F
   skos:prefLabel "Firm (surface condition)"@en ;
 .
 sp:surfacecondition-G
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-G"^^xsd:anyURI ;
   skos:definition "cracks at least 5 mm wide and extending upwards to the surface or to the base of any plough layer or thin (<0.03 m) surface horizon."@en ;
@@ -5086,6 +5531,7 @@ sp:surfacecondition-G
   skos:prefLabel "Cracking"@en ;
 .
 sp:surfacecondition-H
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-H"^^xsd:anyURI ;
   skos:definition "compact, hard, apparently apedal condition forms on drying but softens on wetting. When dry, the material is hard below any surface crust or flake that may occur, and is not disturbed or indented by pressure of forefinger."@en ;
@@ -5093,6 +5539,7 @@ sp:surfacecondition-H
   skos:prefLabel "Hard setting"@en ;
 .
 sp:surfacecondition-L
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-L"^^xsd:anyURI ;
   skos:definition "incoherent mass of individual particles or aggregates. Surface easily disturbed by pressure of forefinger."@en ;
@@ -5101,6 +5548,7 @@ sp:surfacecondition-L
   skos:prefLabel "Loose (surface condition)"@en ;
 .
 sp:surfacecondition-M
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-M"^^xsd:anyURI ;
   skos:definition "strongly pedal loose surface mulch forms on wetting and drying. Peds commonly less than 5 mm in least dimension."@en ;
@@ -5108,6 +5556,7 @@ sp:surfacecondition-M
   skos:prefLabel "Self-mulching"@en ;
 .
 sp:surfacecondition-O
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-O"^^xsd:anyURI ;
   skos:definition "Other"@en ;
@@ -5115,6 +5564,7 @@ sp:surfacecondition-O
   skos:prefLabel "Other (surface condition)"@en ;
 .
 sp:surfacecondition-P
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-P"^^xsd:anyURI ;
   skos:definition "soil that has been extensively trampled under wet conditions by hoofed animals."@en ;
@@ -5122,6 +5572,7 @@ sp:surfacecondition-P
   skos:prefLabel "Poached"@en ;
 .
 sp:surfacecondition-R
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-R"^^xsd:anyURI ;
   skos:definition "effect of cultivation is obvious."@en ;
@@ -5129,6 +5580,7 @@ sp:surfacecondition-R
   skos:prefLabel "Recently cultivated"@en ;
 .
 sp:surfacecondition-S
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-S"^^xsd:anyURI ;
   skos:definition "coherent mass of individual particles or aggregates. Surface easily disturbed by pressure of forefinger."@en ;
@@ -5137,6 +5589,7 @@ sp:surfacecondition-S
   skos:prefLabel "Soft"@en ;
 .
 sp:surfacecondition-T
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-T"^^xsd:anyURI ;
   skos:definition "soil that has been extensively trampled under dry conditions by hoofed animals."@en ;
@@ -5144,6 +5597,7 @@ sp:surfacecondition-T
   skos:prefLabel "Trampled"@en ;
 .
 sp:surfacecondition-X
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-X"^^xsd:anyURI ;
   skos:definition "thin, massive surface layer, usually less than 10 mm thick, which on drying separates from, and can be readily lifted off, the soil below. It usually consists mainly of dispersed clay, and may become increasingly fragile as the soil dries."@en ;
@@ -5151,6 +5605,7 @@ sp:surfacecondition-X
   skos:prefLabel "Surface flake"@en ;
 .
 sp:surfacecondition-Y
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-Y"^^xsd:anyURI ;
   skos:definition "thin, more or less continuous crust of biologically stabilised soil material usually due to algae, liverworts and mosses."@en ;
@@ -5158,26 +5613,18 @@ sp:surfacecondition-Y
   skos:prefLabel "Cryptogam surface"@en ;
 .
 sp:surfacecondition-Z
+  a sp:Surface-condition ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/surfacecondition-Z"^^xsd:anyURI ;
   skos:definition "surface has visible salt, or salinity is evident from the absence or nature of the vegetation or from soil consistence. These conditions are characterised by their notable difference from adjacent non-saline areas."@en ;
   skos:notation "Z" ;
   skos:prefLabel "Saline (surface condition)"@en ;
 .
-sp:type-of-soil-observation
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/type-of-soil-observation"^^xsd:anyURI ;
-  rdfs:comment "C_O_TYPE" ;
-  skos:definition "The soil profile may be described using several types of observation."@en ;
-  skos:member sp:observation-type-A ;
-  skos:member sp:observation-type-C ;
-  skos:member sp:observation-type-E ;
-  skos:member sp:observation-type-P ;
-  skos:prefLabel "Type of soil observation - enumeration"@en ;
-.
 sp:voids
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "This is a general term for pore space and other openings in soils not occupied by solid mineral matter. The most important are cracks (planar voids) and pores, which are approximately circular in cross-section."@en ;
   skos:member sp:voids-cracks ;
   skos:member sp:voids-micropores ;
@@ -5185,8 +5632,10 @@ sp:voids
   skos:prefLabel "Voids"@en ;
 .
 sp:voids-cracks
+  a owl:Class ;
   a skos:Collection ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-cracks"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
   skos:definition "Width of planar voids"@en ;
   skos:member sp:voids-cracks-1 ;
   skos:member sp:voids-cracks-2 ;
@@ -5197,6 +5646,7 @@ sp:voids-cracks
   skos:related <https://anzsoil.org/def/au/property/voids-cracks-width> ;
 .
 sp:voids-cracks-1
+  a sp:voids-cracks ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-cracks-1"^^xsd:anyURI ;
   skos:definition "<5 mm width"@en ;
@@ -5204,6 +5654,7 @@ sp:voids-cracks-1
   skos:prefLabel "Fine (voids cracks)"@en ;
 .
 sp:voids-cracks-2
+  a sp:voids-cracks ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-cracks-2"^^xsd:anyURI ;
   skos:definition "5 - 10 mm width"@en ;
@@ -5211,6 +5662,7 @@ sp:voids-cracks-2
   skos:prefLabel "Medium (voids cracks)"@en ;
 .
 sp:voids-cracks-3
+  a sp:voids-cracks ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-cracks-3"^^xsd:anyURI ;
   skos:definition "10–20 mm width"@en ;
@@ -5218,6 +5670,7 @@ sp:voids-cracks-3
   skos:prefLabel "Coarse (voids cracks)"@en ;
 .
 sp:voids-cracks-4
+  a sp:voids-cracks ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-cracks-4"^^xsd:anyURI ;
   skos:definition "20–50 mm width"@en ;
@@ -5225,6 +5678,7 @@ sp:voids-cracks-4
   skos:prefLabel "Very coarse (voids cracks)"@en ;
 .
 sp:voids-cracks-5
+  a sp:voids-cracks ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-cracks-5"^^xsd:anyURI ;
   skos:definition "20–50 mm width"@en ;
@@ -5236,12 +5690,14 @@ sp:voids-macropores-abundance
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-abundance"^^xsd:anyURI ;
   rdfs:comment "N_PORE_ABUN" ;
   skos:definition "abundance of macropores based relevant to the diameter of the macropores"@en ;
-  skos:member sp:voids-macropores-abundance-coarse ;
-  skos:member sp:voids-macropores-abundance-fine ;
+  skos:member sp:Pore-abundance-coarse ;
+  skos:member sp:Pore-abundance-fine ;
   skos:prefLabel "Abundance of macropores"@en ;
   skos:related <https://anzsoil.org/def/au/property/voids-macropores-abundance> ;
 .
 sp:voids-macropores-abundance-0
+  a sp:Pore-abundance-coarse ;
+  a sp:Pore-abundance-fine ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-abundance-0"^^xsd:anyURI ;
   skos:definition "No fine, very fine, medium or coarse macropores"@en ;
@@ -5249,6 +5705,7 @@ sp:voids-macropores-abundance-0
   skos:prefLabel "No macropores"@en ;
 .
 sp:voids-macropores-abundance-1
+  a sp:Pore-abundance-fine ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-abundance-1"^^xsd:anyURI ;
   skos:definition "<1 per 100 mm2 of diameter less than 2mm"@en ;
@@ -5256,6 +5713,7 @@ sp:voids-macropores-abundance-1
   skos:prefLabel "Few fine or very fine macropores"@en ;
 .
 sp:voids-macropores-abundance-2
+  a sp:Pore-abundance-fine ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-abundance-2"^^xsd:anyURI ;
   skos:definition "1–5 per 100 mm2 of diameter less than 2mm"@en ;
@@ -5263,6 +5721,7 @@ sp:voids-macropores-abundance-2
   skos:prefLabel "Common fine or very fine macropores"@en ;
 .
 sp:voids-macropores-abundance-3
+  a sp:Pore-abundance-fine ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-abundance-3"^^xsd:anyURI ;
   skos:definition ">5 per 100 mm2 of diameter less than 2mm"@en ;
@@ -5270,6 +5729,7 @@ sp:voids-macropores-abundance-3
   skos:prefLabel "Many fine or very fine macropores"@en ;
 .
 sp:voids-macropores-abundance-4
+  a sp:Pore-abundance-coarse ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-abundance-4"^^xsd:anyURI ;
   skos:definition "<1 per 0.01 m2 of diameter greater than 2mm"@en ;
@@ -5277,6 +5737,7 @@ sp:voids-macropores-abundance-4
   skos:prefLabel "Few medium or coarse macropores"@en ;
 .
 sp:voids-macropores-abundance-5
+  a sp:Pore-abundance-coarse ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-abundance-5"^^xsd:anyURI ;
   skos:definition "1–5 per 0.01 m2 of diameter greater than 2mm"@en ;
@@ -5284,48 +5745,15 @@ sp:voids-macropores-abundance-5
   skos:prefLabel "Common medium or coarse macropores"@en ;
 .
 sp:voids-macropores-abundance-6
+  a sp:Pore-abundance-coarse ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-abundance-6"^^xsd:anyURI ;
   skos:definition ">5 per 0.01 m2 of diameter greater than 2mm"@en ;
   skos:notation "6" ;
   skos:prefLabel "Many medium or coarse macropores"@en ;
 .
-sp:voids-macropores-abundance-coarse
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-abundance-coarse"^^xsd:anyURI ;
-  skos:definition "Abundance of medium and coarse macropores (greater than 2 mm diameter)" ;
-  skos:member sp:voids-macropores-abundance-0 ;
-  skos:member sp:voids-macropores-abundance-4 ;
-  skos:member sp:voids-macropores-abundance-5 ;
-  skos:member sp:voids-macropores-abundance-6 ;
-  skos:prefLabel "Abundance of medium and coarse macropores" ;
-  skos:related <https://anzsoil.org/def/au/property/voids-macropores-abundance-coarse> ;
-.
-sp:voids-macropores-abundance-fine
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-abundance-fine"^^xsd:anyURI ;
-  skos:definition "Abundance of very fine and fine macropores (less than 2mm diameter)" ;
-  skos:member sp:voids-macropores-abundance-0 ;
-  skos:member sp:voids-macropores-abundance-1 ;
-  skos:member sp:voids-macropores-abundance-2 ;
-  skos:member sp:voids-macropores-abundance-3 ;
-  skos:prefLabel "Abundance of very fine and fine macropores" ;
-  skos:related <https://anzsoil.org/def/au/property/voids-macropores-abundance-fine> ;
-.
-sp:voids-macropores-diameter
-  a skos:Collection ;
-  dcterms:description "<p>Figure 18	Size of macropores.<img src=\"http://anzsoil.org/resources/yellowbook/Figure18.png\" /></p>"^^rdf:HTML ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-diameter"^^xsd:anyURI ;
-  rdfs:comment "N_PORE_DIAMETER" ;
-  skos:definition "Diameter of macropores Use Figure 18 as a guide to average diameter"@en ;
-  skos:member sp:voids-macropores-diameter-1 ;
-  skos:member sp:voids-macropores-diameter-2 ;
-  skos:member sp:voids-macropores-diameter-3 ;
-  skos:member sp:voids-macropores-diameter-4 ;
-  skos:prefLabel "Diameter of macropores"@en ;
-  skos:related <https://anzsoil.org/def/au/property/voids-macropores-diameter> ;
-.
 sp:voids-macropores-diameter-1
+  a sp:Pore-diameter ;
   a skos:Concept ;
   dcterms:description "0.075–1 mm"@en ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-diameter-1"^^xsd:anyURI ;
@@ -5335,6 +5763,7 @@ sp:voids-macropores-diameter-1
   skos:prefLabel "Very fine (voids macropores)"@en ;
 .
 sp:voids-macropores-diameter-2
+  a sp:Pore-diameter ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-diameter-2"^^xsd:anyURI ;
   skos:definition "1–2 mm"@en ;
@@ -5343,6 +5772,7 @@ sp:voids-macropores-diameter-2
   skos:prefLabel "Fine (voids macropores)"@en ;
 .
 sp:voids-macropores-diameter-3
+  a sp:Pore-diameter ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-diameter-3"^^xsd:anyURI ;
   skos:definition "2–5 mm"@en ;
@@ -5351,6 +5781,7 @@ sp:voids-macropores-diameter-3
   skos:prefLabel "Medium (voids macropores)"@en ;
 .
 sp:voids-macropores-diameter-4
+  a sp:Pore-diameter ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-macropores-diameter-4"^^xsd:anyURI ;
   skos:definition ">5 mm"@en ;
@@ -5359,6 +5790,7 @@ sp:voids-macropores-diameter-4
   skos:prefLabel "Coarse (voids macropores)"@en ;
 .
 sp:voids-micropores
+  a sp:voids ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/voids-micropores" ;
   skos:definition "voids that are approximately circular in cross-section and less than 0.075 mm diameter"@en ;
@@ -5375,23 +5807,13 @@ Micropores	less than 0.075 mm diameter
 Macropores	greater than 0.075 mm diameter
 
 Only macropores can be seen with the naked eye. All visible pores, holes and tubes within peds, clods, fragments or apedal soil are recorded in the classes below."""@en ;
+  skos:member sp:Pore-diameter ;
   skos:member sp:voids-macropores-abundance ;
-  skos:member sp:voids-macropores-diameter ;
   skos:note "Only macropores can be seen with the naked eye"@en ;
   skos:prefLabel "Pores"@en ;
 .
-sp:water-repellence
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/water-repellence"^^xsd:anyURI ;
-  skos:definition "Water repellence of some soils, usually sandy, is caused by a series of long-chain polymethylene waxes, made up of acids, alcohols and esters, attached to the sand grains (Ma’shum et al. 1988). These soils occur Australia-wide but are more widespread in southern Australia (Wetherby 1984, McGhie and Posner 1980). Degree of repellence is assessed by determining the concentration of ethanol required to wet the sand in 10 seconds (King 1981). An abbreviated form of this method is recommended for routine field situations."@en ;
-  skos:member sp:water-repellence-N ;
-  skos:member sp:water-repellence-R ;
-  skos:member sp:water-repellence-S ;
-  skos:note "Soil temperature at testing should be between 15ºC and 25ºC. Higher temperatures will increase, and lower decrease, rates of absorption. Industrial-grade methylated spirits, available from chemists, at a concentration of 23.9 ml per 200 ml water can be substituted for the 2-molar ethanol to obtain approximate values."@en ;
-  skos:prefLabel "Water repellence"@en ;
-  skos:related <https://anzsoil.org/def/au/property/water-repellence> ;
-.
 sp:water-repellence-N
+  a sp:Water-repellence ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/water-repellence-N"^^xsd:anyURI ;
   skos:definition "water is absorbed into soil in 10 seconds or less."@en ;
@@ -5399,6 +5821,7 @@ sp:water-repellence-N
   skos:prefLabel "Non water repellent"@en ;
 .
 sp:water-repellence-R
+  a sp:Water-repellence ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/water-repellence-R"^^xsd:anyURI ;
   skos:definition "water takes greater than 10 seconds and 2-molar ethanol takes 10 seconds or less to be absorbed into soil."@en ;
@@ -5406,6 +5829,7 @@ sp:water-repellence-R
   skos:prefLabel "Water repellent"@en ;
 .
 sp:water-repellence-S
+  a sp:Water-repellence ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/water-repellence-S"^^xsd:anyURI ;
   skos:definition "2 Molar ethanol takes greater than 10 seconds to be absorbed into soil."@en ;
