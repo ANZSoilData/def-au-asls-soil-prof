@@ -2,7 +2,6 @@
 # imports: http://anzsoil.org/def/au/asls/land-surface
 # imports: http://anzsoil.org/def/au/asls/substrate
 # imports: http://purl.org/dc/elements/1.1/
-# imports: https://anzsoil.org/def/au/property
 
 @prefix asls: <http://anzsoil.org/def/au/asls/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -190,7 +189,6 @@ A soil profile is a vertical section of a soil from the soil surface through all
   owl:imports asls:land-surface ;
   owl:imports asls:substrate ;
   owl:imports dc: ;
-  owl:imports <https://anzsoil.org/def/au/property> ;
   skos:changeNote "2020-09-16 - Added skos:inScheme and skos:topConceptOf links to asls:soil-profile; removed redundant owl:sameAs links" ;
   skos:changeNote "2021-04-07 - replace local lithology concepts with common lithology concepts from Substrate and Land-surface" ;
   skos:changeNote "2021-04-08 - replace local material strength concepts with common material strength concepts from Substrate" ;
