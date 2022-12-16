@@ -345,7 +345,7 @@ A soil profile is a vertical section of a soil from the soil surface through all
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile"^^xsd:anyURI ;
   dcterms:isFormatOf <https://catalogue.nla.gov.au/Record/4273240> ;
   dcterms:license <http://creativecommons.org/licences/by/4.0> ;
-  dcterms:modified "2022-12-07"^^xsd:date ;
+  dcterms:modified "2022-12-16"^^xsd:date ;
   dcterms:publisher <http://www.publish.csiro.au/> ;
   dcterms:rights "copyright CSIRO 2009, 2021. All rights reserved."@en ;
   dcterms:source "National Committee on Soil and Terrain (2009), 'Australian soil and land survey field handbook (3rd edn).' (CSIRO Publishing: Melbourne)"@en ;
@@ -367,6 +367,16 @@ A soil profile is a vertical section of a soil from the soil surface through all
   skos:editorialNote "<p>The data was converted from the print representation to this linked-data form by <a href='https://orcid.org/0000-0002-0693-1899'>Linda Gregory</a> assisted by <a href='https://orcid.org/0000-0002-3884-3420'>Simon J D Cox</a>.</p>"^^rdf:HTML ;
   skos:notation "soil-profile"@en ;
   skos:prefLabel "Soil Profile classifiers"@en ;
+.
+sp:Artificial-aggregates-structure
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-artificial-aggregates"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Cultivated horizons (Ap horizons) often consist of artificial aggregates formed by cultivation or work being done on the soil. The distinction between artificial aggregates and peds can be difficult. In cultivated horizons, where the pedologist is confident the aggregates are natural peds they should be recorded as such. If the pedologist is doubtful, or the aggregates are obviously artificial, they should be recorded as clods or fragments."@en ;
+  skos:member sp:structure-artificial-CL ;
+  skos:member sp:structure-artificial-FR ;
+  skos:prefLabel "Structure of artificial aggregates"@en ;
 .
 sp:Boundary-distinctness
   a owl:Class ;
@@ -397,6 +407,20 @@ sp:Boundary-shape
   skos:member sp:horizon-boundary-shape-T ;
   skos:member sp:horizon-boundary-shape-W ;
   skos:prefLabel "Boundary shape - enumeration"@en ;
+.
+sp:Carbonate-effervescence
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/effervescence-of-carbonate-in-fine-earth"^^xsd:anyURI ;
+  rdfs:comment "C_H_CARBONATE_EFF" ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Effervescence of carbonate in fine earth using two or three drops of 1-molar HCl."@en ;
+  skos:member sp:effervescence-H ;
+  skos:member sp:effervescence-M ;
+  skos:member sp:effervescence-N ;
+  skos:member sp:effervescence-S ;
+  skos:member sp:effervescence-V ;
+  skos:prefLabel "Effervescence of carbonate in fine earth - enumeration"@en ;
 .
 sp:Coarse-fragments-distribution
   a owl:Class ;
@@ -804,6 +828,28 @@ sp:Pans-type
   skos:member sp:pans-type-V ;
   skos:member sp:pans-type-Z ;
   skos:prefLabel "Type of pan - enumeration"@en ;
+.
+sp:Particle-size-fractions
+  a owl:Class ;
+  a skos:Collection ;
+  dcterms:description """<p><img src=\"http://anzsoil.org/resources/yellowbook/Figure15.png\" /></p> 
+<p> Figure 15 Size fractions in several major classification systems. </p>"""^^rdf:HTML ;
+  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fractions"^^xsd:anyURI ;
+  rdfs:subClassOf skos:Concept ;
+  skos:definition "Particle size is measured in the laboratory. The recommended scale in Australia uses these class boundaries for particle diameters, given in millimetres."@en ;
+  skos:member sp:particle-size-fraction-boulders ;
+  skos:member sp:particle-size-fraction-clay ;
+  skos:member sp:particle-size-fraction-coarse-gravel ;
+  skos:member sp:particle-size-fraction-coarse-sand ;
+  skos:member sp:particle-size-fraction-cobbles ;
+  skos:member sp:particle-size-fraction-fine-clay ;
+  skos:member sp:particle-size-fraction-fine-gravel ;
+  skos:member sp:particle-size-fraction-fine-sand ;
+  skos:member sp:particle-size-fraction-medium-gravel ;
+  skos:member sp:particle-size-fraction-sand ;
+  skos:member sp:particle-size-fraction-silt ;
+  skos:member sp:particle-size-fraction-stones ;
+  skos:prefLabel "Particle size fractions (Australia)"@en ;
 .
 sp:Pedality-grade-apedal
   a owl:Class ;
@@ -1573,7 +1619,7 @@ The purpose of recording this depth is to include in the soil description those 
   skos:prefLabel "Depth to R horizon or strongly cemented pan"@en ;
 .
 sp:effervescence-H
-  a sp:effervescence-of-carbonate-in-fine-earth ;
+  a sp:Carbonate-effervescence ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/effervescence-H"^^xsd:anyURI ;
   rdfs:comment "C_H_CARBONATE_EFF" ;
@@ -1582,7 +1628,7 @@ sp:effervescence-H
   skos:prefLabel "Highly calcareous"@en ;
 .
 sp:effervescence-M
-  a sp:effervescence-of-carbonate-in-fine-earth ;
+  a sp:Carbonate-effervescence ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/effervescence-M"^^xsd:anyURI ;
   rdfs:comment "C_H_CARBONATE_EFF" ;
@@ -1591,7 +1637,7 @@ sp:effervescence-M
   skos:prefLabel "Moderately calcareous"@en ;
 .
 sp:effervescence-N
-  a sp:effervescence-of-carbonate-in-fine-earth ;
+  a sp:Carbonate-effervescence ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/effervescence-N"^^xsd:anyURI ;
   rdfs:comment "C_H_CARBONATE_EFF" ;
@@ -1600,7 +1646,7 @@ sp:effervescence-N
   skos:prefLabel "Non-calcareous"@en ;
 .
 sp:effervescence-S
-  a sp:effervescence-of-carbonate-in-fine-earth ;
+  a sp:Carbonate-effervescence ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/effervescence-S"^^xsd:anyURI ;
   rdfs:comment "C_H_CARBONATE_EFF" ;
@@ -1609,27 +1655,13 @@ sp:effervescence-S
   skos:prefLabel "Slightly calcareous"@en ;
 .
 sp:effervescence-V
-  a sp:effervescence-of-carbonate-in-fine-earth ;
+  a sp:Carbonate-effervescence ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/effervescence-V"^^xsd:anyURI ;
   rdfs:comment "C_H_CARBONATE_EFF" ;
   skos:definition "strong visible effervescence."@en ;
   skos:notation "V" ;
   skos:prefLabel "Very highly calcareous"@en ;
-.
-sp:effervescence-of-carbonate-in-fine-earth
-  a owl:Class ;
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/effervescence-of-carbonate-in-fine-earth"^^xsd:anyURI ;
-  rdfs:comment "C_H_CARBONATE_EFF" ;
-  rdfs:subClassOf skos:Concept ;
-  skos:definition "Effervescence of carbonate in fine earth using two or three drops of 1-molar HCl."@en ;
-  skos:member sp:effervescence-H ;
-  skos:member sp:effervescence-M ;
-  skos:member sp:effervescence-N ;
-  skos:member sp:effervescence-S ;
-  skos:member sp:effervescence-V ;
-  skos:prefLabel "Effervescence of carbonate in fine earth - enumeration"@en ;
 .
 sp:fabric-E
   a sp:Fabric-type ;
@@ -4549,28 +4581,28 @@ sp:pans-type-Z
   skos:prefLabel "Zero or no pan"@en ;
 .
 sp:particle-size-fraction-boulders
-  a sp:particle-size-fractions ;
+  a sp:Particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-boulders"^^xsd:anyURI ;
   skos:definition "600 - 2000 mm"@en ;
   skos:prefLabel "Boulders"@en ;
 .
 sp:particle-size-fraction-clay
-  a sp:particle-size-fractions ;
+  a sp:Particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-clay"^^xsd:anyURI ;
   skos:definition "0.0002 - 0.002 mm"@en ;
   skos:prefLabel "Clay"@en ;
 .
 sp:particle-size-fraction-coarse-gravel
-  a sp:particle-size-fractions ;
+  a sp:Particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-coarse-gravel"^^xsd:anyURI ;
   skos:definition "20 - 60 mm"@en ;
   skos:prefLabel "Coarse gravel"@en ;
 .
 sp:particle-size-fraction-coarse-sand
-  a sp:particle-size-fractions ;
+  a sp:Particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-coarse-sand"^^xsd:anyURI ;
   skos:broader sp:particle-size-fraction-sand ;
@@ -4578,28 +4610,28 @@ sp:particle-size-fraction-coarse-sand
   skos:prefLabel "Coarse sand (particle size fraction)"@en ;
 .
 sp:particle-size-fraction-cobbles
-  a sp:particle-size-fractions ;
+  a sp:Particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-cobbles"^^xsd:anyURI ;
   skos:definition "60 - 200 mm"@en ;
   skos:prefLabel "Cobbles"@en ;
 .
 sp:particle-size-fraction-fine-clay
-  a sp:particle-size-fractions ;
+  a sp:Particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-fine-clay"^^xsd:anyURI ;
   skos:definition "< 0.0002 mm"@en ;
   skos:prefLabel "Fine clay"@en ;
 .
 sp:particle-size-fraction-fine-gravel
-  a sp:particle-size-fractions ;
+  a sp:Particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-fine-gravel"^^xsd:anyURI ;
   skos:definition "2.0 - 6.0 mm"@en ;
   skos:prefLabel "Fine gravel"@en ;
 .
 sp:particle-size-fraction-fine-sand
-  a sp:particle-size-fractions ;
+  a sp:Particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-fine-sand"^^xsd:anyURI ;
   skos:broader sp:particle-size-fraction-sand ;
@@ -4607,14 +4639,14 @@ sp:particle-size-fraction-fine-sand
   skos:prefLabel "Fine sand (particle size fraction)"@en ;
 .
 sp:particle-size-fraction-medium-gravel
-  a sp:particle-size-fractions ;
+  a sp:Particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-medium-gravel"^^xsd:anyURI ;
   skos:definition "6.0 - 20 mm"@en ;
   skos:prefLabel "Medium gravel"@en ;
 .
 sp:particle-size-fraction-sand
-  a sp:particle-size-fractions ;
+  a sp:Particle-size-fractions ;
   a skos:Concept ;
   dcterms:description "0.2 - 2.0 mm"@en ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-sand"^^xsd:anyURI ;
@@ -4624,40 +4656,18 @@ sp:particle-size-fraction-sand
   skos:prefLabel "Sand (particle size fraction)"@en ;
 .
 sp:particle-size-fraction-silt
-  a sp:particle-size-fractions ;
+  a sp:Particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-silt"^^xsd:anyURI ;
   skos:definition "0.002 - 0.02 mm"@en ;
   skos:prefLabel "Silt"@en ;
 .
 sp:particle-size-fraction-stones
-  a sp:particle-size-fractions ;
+  a sp:Particle-size-fractions ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fraction-stones"^^xsd:anyURI ;
   skos:definition "200 - 600 mm"@en ;
   skos:prefLabel "Stones"@en ;
-.
-sp:particle-size-fractions
-  a owl:Class ;
-  a skos:Collection ;
-  dcterms:description """<p><img src=\"http://anzsoil.org/resources/yellowbook/Figure15.png\" /></p> 
-<p> Figure 15 Size fractions in several major classification systems. </p>"""^^rdf:HTML ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/particle-size-fractions"^^xsd:anyURI ;
-  rdfs:subClassOf skos:Concept ;
-  skos:definition "Particle size is measured in the laboratory. The recommended scale in Australia uses these class boundaries for particle diameters, given in millimetres."@en ;
-  skos:member sp:particle-size-fraction-boulders ;
-  skos:member sp:particle-size-fraction-clay ;
-  skos:member sp:particle-size-fraction-coarse-gravel ;
-  skos:member sp:particle-size-fraction-coarse-sand ;
-  skos:member sp:particle-size-fraction-cobbles ;
-  skos:member sp:particle-size-fraction-fine-clay ;
-  skos:member sp:particle-size-fraction-fine-gravel ;
-  skos:member sp:particle-size-fraction-fine-sand ;
-  skos:member sp:particle-size-fraction-medium-gravel ;
-  skos:member sp:particle-size-fraction-sand ;
-  skos:member sp:particle-size-fraction-silt ;
-  skos:member sp:particle-size-fraction-stones ;
-  skos:prefLabel "Particle size fractions (Australia)"@en ;
 .
 sp:roots
   a skos:Collection ;
@@ -5270,15 +5280,15 @@ sp:structure
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure"^^xsd:anyURI ;
   skos:definition """Soil structure refers to the distinctness, size and shape of peds. A ped is an individual natural soil aggregate consisting of a cluster of primary particles. Peds are separated from adjoining peds by surfaces of weakness that are recognisable as natural voids or by the occurrence of cutans (Brewer 1960).
 Soil structure can only be described reliably in a relatively fresh vertical exposure or relatively undisturbed soil core, not from an auger boring. Vertical exposures that have been exposed for a long time (road cuttings, gullies) are unsuitable for the determination of structure that may alter due to daily or seasonal changes in moisture and temperature."""@en ;
+  skos:member sp:Artificial-aggregates-structure ;
   skos:member sp:Pedality-size ;
   skos:member sp:Pedality-type ;
-  skos:member sp:structure-artificial-aggregates ;
   skos:member sp:structure-pedality-compound ;
   skos:member sp:structure-pedality-grade ;
   skos:prefLabel "Structure"@en ;
 .
 sp:structure-artificial-CL
-  a sp:structure-artificial-aggregates ;
+  a sp:Artificial-aggregates-structure ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-artificial-CL"^^xsd:anyURI ;
   skos:definition "artificial aggregate with diameter 100 mm or more."@en ;
@@ -5286,22 +5296,12 @@ sp:structure-artificial-CL
   skos:prefLabel "Clod"@en ;
 .
 sp:structure-artificial-FR
-  a sp:structure-artificial-aggregates ;
+  a sp:Artificial-aggregates-structure ;
   a skos:Concept ;
   dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-artificial-FR"^^xsd:anyURI ;
   skos:definition "artificial aggregate with diameter less than 100 mm."@en ;
   skos:notation "FR" ;
   skos:prefLabel "Fragment"@en ;
-.
-sp:structure-artificial-aggregates
-  a owl:Class ;
-  a skos:Collection ;
-  dcterms:identifier "http://anzsoil.org/def/au/asls/soil-profile/structure-artificial-aggregates"^^xsd:anyURI ;
-  rdfs:subClassOf skos:Concept ;
-  skos:definition "Cultivated horizons (Ap horizons) often consist of artificial aggregates formed by cultivation or work being done on the soil. The distinction between artificial aggregates and peds can be difficult. In cultivated horizons, where the pedologist is confident the aggregates are natural peds they should be recorded as such. If the pedologist is doubtful, or the aggregates are obviously artificial, they should be recorded as clods or fragments."@en ;
-  skos:member sp:structure-artificial-CL ;
-  skos:member sp:structure-artificial-FR ;
-  skos:prefLabel "Structure of artificial aggregates"@en ;
 .
 sp:structure-pedality-compound
   a skos:Collection ;
