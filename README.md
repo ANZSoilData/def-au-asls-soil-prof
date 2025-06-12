@@ -1,6 +1,8 @@
 # def-au-asls-soil-prof
 Machine-readable representation of the classifiers described in chapter 8 Soil Profile, by R.C. McDonald and R.F. Isbell, in Australian soil and land survey field handbook (3rd edn)
 
+This work supersedes: Cox, Simon; & Gregory, Linda (2020): RDF representation of ASLS soil profile classification. v1. CSIRO. Data Collection. https://doi.org/10.25919/5f42f324b2ef8
+
 ## Preparing the vocabulary for loading in RVA
 
 All collection members must have an `rdf:type`, else they won't render in the RVA browse view. 
