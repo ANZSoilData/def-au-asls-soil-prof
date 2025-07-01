@@ -4,7 +4,8 @@ Machine-readable representation of the classifiers described in chapter 8 Soil P
 This work supersedes: Cox, Simon; & Gregory, Linda (2020): RDF representation of ASLS soil profile classification. v1. CSIRO. Data Collection. https://doi.org/10.25919/5f42f324b2ef8
 
 Cite as: 
- DOI: 10.5281/zenodo.15779135
+![image](https://github.com/user-attachments/assets/c245f575-5652-4371-9db3-5516d9af0428)
+
 
 ## Preparing the vocabulary for loading in RVA
 
