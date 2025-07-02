@@ -3,7 +3,7 @@
 
 cff-version: 1.2.0
 title: >-
-  Machine-readable representation (Resource Description format, RDF) of the classifiers for Soil Profiles - from Chapter 8 of the Australian soil and land survey field handbook (3rd edn) - GitHub repository code release.
+  Machine-readable representation (Resource Description format, RDF) of the classifiers for Soil Profiles - from Chapter 8 of the Australian Soil and Land Survey Field Handbook (3rd edn) - GitHub repository code release.
 message: >-
   If you use this dataset, please cite it using the metadata from this file.
 type: dataset
